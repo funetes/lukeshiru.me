@@ -1,0 +1,70 @@
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="profile-icons.html">
+
+<dom-module id="profile-link">
+	<template>
+		<style>
+		:host {
+			--icon-size: 6vw;
+			display: block;
+			width: var(--icon-size);
+		}
+		@media(max-width: 720px) {
+			:host {
+				--icon-size: 15vw;
+			}
+		}
+		@media(max-width: 480px) {
+			:host {
+				--icon-size: 21vw;
+			}
+		}
+		@media(max-width: 320px) {
+			:host {
+				--icon-size: 28vw;
+			}
+		}
+		[aria-hidden=true] {
+			display: none;
+		}
+		paper-icon-button {
+			padding: calc(var(--icon-size) * .2);
+			width: var(--icon-size);
+			height: var(--icon-size);
+		}
+		</style>
+		<paper-icon-button
+			icon=[[computedIcon]]
+			on-tap="tapHandler"
+		><[[title]]></paper-icon-button>
+		<span aria-hidden="true">
+			<span>[[title]]</span>
+			<span> - </span>
+			<span>[[href]]</span>
+		</span>
+	</template>
+	<script>
+		class ProfileLink extends Polymer.Element {
+			static get is() { return 'profile-link'; }
+			static get properties() {
+				return {
+					title: String,
+					href: String,
+					icon: String,
+					computedIcon: {
+						type: String,
+						computed: "computeIcon(icon)"
+					}
+				};
+			}
+			computeIcon(icon) {
+				return `profile-icons:${icon}`;
+			}
+			tapHandler() {
+				window.open(this.href);
+			}
+		}
+		window.customElements.define(ProfileLink.is, ProfileLink);
+	</script>
+</dom-module>

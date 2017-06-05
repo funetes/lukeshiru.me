@@ -1,0 +1,23 @@
+{
+	"compilerOptions": {
+		"allowSyntheticDefaultImports": true,
+		"charset": "utf-8",
+		"importHelpers": true,
+		"inlineSourceMap": true,
+		"module": "commonjs",
+		"moduleResolution": "node",
+		"newLine": "LF",
+		"noEmitOnError": true,
+		"noImplicitAny": true,
+		"noImplicitThis": true,
+		"noUnusedLocals": true,
+		"preserveConstEnums": true,
+		"pretty": true,
+		"strictNullChecks": true,
+		"suppressImplicitAnyIndexErrors": true,
+		"target": "es3"
+	},
+	"exclude": [
+		"node_modules"
+	]
+}

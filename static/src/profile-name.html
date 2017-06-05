@@ -1,0 +1,60 @@
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout.html">
+
+<dom-module id="profile-name">
+	<template>
+		<style>
+		:host {
+			@apply --layout-horizontal;
+			@apply --layout-center-center;
+			@apply --paper-font-common-base
+		}
+		span {
+			vertical-align: middle;
+			display: inline-block;
+		}
+		[itemprop=alternateName]::before {
+			content: " @";
+		}
+		</style>
+		<span itemscope itemtype="http://schema.org/Person">
+			<template is="dom-if" if=[[name]] restamp>
+				<span itemprop="name">
+					<template is="dom-if" if=[[givenName]] restamp>
+						<span itemprop="givenName">[[givenName]]</span>
+					</template>
+					<template is="dom-if" if=[[additionalName]] restamp>
+						<span itemprop="additionalName">[[additionalName]]</span>
+					</template>
+					<template is="dom-if" if=[[familyName]] restamp>
+						<span itemprop="familyName">[[familyName]]</span>
+					</template>
+				</span>
+			</template>
+			<template is="dom-if" if=[[alternateName]] restamp>
+				<span itemprop="alternateName">[[alternateName]]</span>
+			</template>
+		</span>
+	</template>
+	<script>
+		class ProfileName extends Polymer.Element {
+			static get is() { return 'profile-name'; }
+			static get properties() {
+				return {
+					givenName: String,
+					additionalName: String,
+					familyName: String,
+					alternateName: String,
+					name: {
+						type: Boolean,
+						computed: "computedName(givenName, additionalName, familyName)"
+					}
+				};
+			}
+			computedName(givenName, additionalName, familyName) {
+				return Boolean(givenName || additionalName || familyName);
+			}
+		}
+		window.customElements.define(ProfileName.is, ProfileName);
+	</script>
+</dom-module>

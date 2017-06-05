@@ -1,0 +1,33 @@
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="profile-link.html">
+
+<dom-module id="profile-links">
+	<template>
+		<style>
+		:host {
+			@apply --layout-horizontal;
+			@apply --layout-center-center;
+			@apply --layout-wrap;
+		}
+		</style>
+		<template is="dom-repeat" items=[[links]]>
+			<profile-link
+				href=[[item.href]]
+				title=[[item.title]]
+				icon=[[item.icon]]
+			></profile-link>
+		</template>
+	</template>
+	<script>
+		class ProfileLinks extends Polymer.Element {
+			static get is() { return 'profile-links'; }
+			static get properties() {
+				return {
+					links: Array
+				};
+			}
+		}
+		window.customElements.define(ProfileLinks.is, ProfileLinks);
+	</script>
+</dom-module>

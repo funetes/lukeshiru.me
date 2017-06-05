@@ -1,0 +1,53 @@
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../bower_components/iron-ajax/iron-ajax.html">
+<link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="../bower_components/paper-styles/typography.html">
+<link rel="import" href="profile-links.html">
+<link rel="import" href="profile-name.html">
+<link rel="import" href="profile-logo.html">
+
+<dom-module id="profile-app">
+	<template>
+		<style>
+		:host {
+			@apply --layout-vertical;
+			@apply --layout-fullbleed;
+			@apply --layout-center-center;
+			--paper-icon-button-ink-color: #FFF;
+		}
+		profile-logo {
+			max-height: 50vh;
+			height: 100vw;
+			max-width: 50vw;
+			width: 100vw;
+		}
+		</style>
+		<profile-logo>
+			<profile-name
+				given-name=[[data.name.given]]
+				family-name=[[data.name.family]]
+			></profile-name>
+		</profile-logo>
+		<profile-links
+			links=[[data.links]]
+		></profile-links>
+		<iron-ajax
+			auto
+			url=[[dataHref]]
+			handle-as="json"
+			last-response={{data}}
+			debounce-duration="300"
+		></iron-ajax>
+	</template>
+	<script>
+		class ProfileApp extends Polymer.Element {
+			static get is() { return 'profile-app'; }
+			static get properties() {
+				return {
+					dataHref: String
+				};
+			}
+		}
+		window.customElements.define(ProfileApp.is, ProfileApp);
+	</script>
+</dom-module>
