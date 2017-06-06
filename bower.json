@@ -1,0 +1,20 @@
+{
+  "name": "lukeshiru",
+  "authors": [
+    "Lucas Ciruzzi <hello@lukeshiru.me>"
+  ],
+  "license": "UNLICENSED",
+  "dependencies": {
+    "iron-ajax": "PolymerElements/iron-ajax#^2.0.2",
+    "iron-flex-layout": "PolymerElements/iron-flex-layout#^2.0.0",
+    "iron-iconset-svg": "PolymerElements/iron-iconset-svg#^2.0.0",
+    "paper-icon-button": "PolymerElements/paper-icon-button#^2.0.0",
+    "paper-styles": "PolymerElements/paper-styles#^2.0.0",
+    "polymer": "Polymer/polymer#^2.0.1",
+    "webcomponentsjs": "webcomponents/webcomponentsjs#^1.0.1"
+  },
+  "resolutions": {
+    "polymer": "^2.0.1"
+  },
+  "private": true
+}
