@@ -6,7 +6,7 @@
   "scripts": {
     "test": "ts-node ./index.ts",
     "build": "tsc",
-    "start": "ts-node --fast ./index.ts",
+    "start": "node ./index.js",
     "postinstall": "export HOME=$HOME/app-root/runtime/repo; bower i"
   },
   "repository": {
