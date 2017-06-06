@@ -3,7 +3,7 @@
  *
  * @exports
  */
-export const cors: string = [
+export const CORS: string = [
 	"default-src 'self'",
 	"child-src 'self'",
 	"connect-src 'self'",
@@ -19,16 +19,16 @@ export const cors: string = [
  *
  * @exports
  */
-export const port: number = process.env.OPENSHIFT_NODEJS_PORT || 8080;
+export const PORT: number = process.env.OPENSHIFT_NODEJS_PORT || 8080;
 /**
  * Server host.
  *
  * @exports
  */
-export const host: string = process.env.OPENSHIFT_NODEJS_IP || "localhost";
+export const HOST: string = process.env.OPENSHIFT_NODEJS_IP || "localhost";
 /**
  * Static directory.
  *
  * @exports
  */
-export const staticDir: string = "static/build/es6-bundled";
+export const STATIC_DIR: string = "static/build/es6-bundled";
