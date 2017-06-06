@@ -1,7 +1,7 @@
 import * as compression from "compression";
 import * as express from "express";
 import * as helmet from "helmet";
-import { cors, port } from "./settings";
+import { cors, port, host } from "./settings";
 
 /**
  * Express App
@@ -38,6 +38,6 @@ app
 	.set("Vary", "Accept-Encoding")
 
 	// Start server on configured port
-	.listen(port, () => {
-		console.log(`Listening to port ${port}`);
+	.listen(port, host, () => {
+		console.log(`Listening to port ${host}:${port}`);
 	});

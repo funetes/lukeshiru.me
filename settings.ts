@@ -19,4 +19,10 @@ export const cors: string = [
  *
  * @exports
  */
-export const port: number = 8080;
+export const port: number = process.env.OPENSHIFT_NODEJS_PORT || 8080;
+/**
+ * Server host
+ *
+ * @exports
+ */
+export const host: string = process.env.OPENSHIFT_NODEJS_IP || "localhost";
