@@ -7,12 +7,12 @@ export const cors: string = [
 	"default-src 'self'",
 	"child-src 'self'",
 	"connect-src 'self'",
-	"font-src 'self'",
+	"font-src 'self' *.gstatic.com",
 	"img-src 'self'",
 	"media-src 'self'",
 	"object-src 'self'",
-	"script-src 'self'",
-	"style-src 'self'"
+	"script-src 'self' 'unsafe-inline'",
+	"style-src 'self' 'unsafe-inline' *.googleapis.com"
 ].join("; ");
 /**
  * Server port
