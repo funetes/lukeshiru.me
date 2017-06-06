@@ -7,7 +7,9 @@
     "test": "ts-node ./index.ts",
     "build": "tsc",
     "start": "node ./index.js",
-    "postinstall": "cd static && export HOME=$HOME/app-root/runtime/repo; bower i && export HOME=$HOME/app-root/runtime/repo; polymer build"
+    "bower-install": "cd static && export HOME=$HOME/app-root/runtime/repo; bower i",
+    "polymer-build": "cd static && export HOME=$HOME/app-root/runtime/repo; polymer build",
+    "postinstall": "npm run build && npm run bower-install && npm run polymer-build"
   },
   "repository": {
     "type": "git",

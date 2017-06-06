@@ -3,3 +3,4 @@ bower_components/
 node_modules/
 thumbs.db
 static/build
+/*.js
