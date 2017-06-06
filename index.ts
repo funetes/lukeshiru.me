@@ -1,7 +1,7 @@
 import * as compression from "compression";
 import * as express from "express";
 import * as helmet from "helmet";
-import { cors, port, host } from "./settings";
+import { cors, port, host, staticDir } from "./settings";
 
 const minute = 60;
 const hour = 60 * minute;
@@ -50,12 +50,12 @@ app.set("Pragma", "public");
 app.set("Vary", "Accept-Encoding");
 	
 // Load everything from static folder
-app.use(express.static("static", { setHeaders }));
+app.use(express.static(staticDir, { setHeaders }));
 app.get("*", (request, response) => {
-	response.sendFile("static/index.html", { root: ".", setHeaders });
+	response.sendFile(`${staticDir}/index.html`, { root: ".", setHeaders });
 });
 
 // Start server on configured port
 app.listen(port, host, () => {
-	console.log(`Listening to port ${host}:${port}`);
+	console.log(`Listening to port ${host}:${port} (${staticDir})`);
 });

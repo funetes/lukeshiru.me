@@ -9,6 +9,14 @@
   ],
   "extraDependencies": [
     "manifest.json",
-    "bower_components/webcomponentsjs/*.js"
-  ]
+    "bower_components/webcomponentsjs/webcomponents-lite.js",
+    "data.json"
+  ],
+  "builds": [{
+    "preset": "es5-bundled",
+    "addServiceWorker": false
+  }, {
+    "preset": "es6-bundled",
+    "addServiceWorker": true
+  }]
 }

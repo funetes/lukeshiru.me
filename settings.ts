@@ -1,5 +1,5 @@
 /**
- * CORS settings
+ * CORS settings.
  *
  * @exports
  */
@@ -15,14 +15,20 @@ export const cors: string = [
 	"style-src 'self' 'unsafe-inline' *.googleapis.com"
 ].join("; ");
 /**
- * Server port
+ * Server port.
  *
  * @exports
  */
 export const port: number = process.env.OPENSHIFT_NODEJS_PORT || 8080;
 /**
- * Server host
+ * Server host.
  *
  * @exports
  */
 export const host: string = process.env.OPENSHIFT_NODEJS_IP || "localhost";
+/**
+ * Static directory.
+ *
+ * @exports
+ */
+export const staticDir: string = "static/build/es6-bundled";
