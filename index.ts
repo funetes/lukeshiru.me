@@ -35,7 +35,9 @@ app
 	.set("Pragma", "public")
 	
 	// Bettter caching
-	.set("Vary", "Accept-Encoding");
-	
-// Start server on configured port
-require("http").createServer(app).listen(port);
+	.set("Vary", "Accept-Encoding")
+
+	// Start server on configured port
+	.listen(port, () => {
+		console.log(`Listening to port ${port}`);
+	});

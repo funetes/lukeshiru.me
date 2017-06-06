@@ -4,9 +4,9 @@
   "description": "https://lukeshiru.me",
   "main": "index.js",
   "scripts": {
-    "test": "npm run build && npm start",
+    "test": "ts-node ./index.ts",
     "build": "tsc",
-    "start": "node index"
+    "start": "ts-node --fast ./index.ts"
   },
   "repository": {
     "type": "git",
@@ -35,7 +35,8 @@
     "express": "^4.15.3",
     "helmet": "^3.6.1",
     "mz": "^2.6.0",
-    "spdy": "^3.4.7"
+    "spdy": "^3.4.7",
+    "ts-node": "^3.0.4"
   },
   "devDependencies": {
     "@types/compression": "0.0.33",
