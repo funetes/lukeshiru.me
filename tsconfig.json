@@ -7,7 +7,7 @@
 		"module": "commonjs",
 		"moduleResolution": "node",
 		"newLine": "LF",
-		"noEmitOnError": true,
+		"noEmitOnError": false,
 		"noImplicitAny": true,
 		"noImplicitThis": true,
 		"noUnusedLocals": true,
