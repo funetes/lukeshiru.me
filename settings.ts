@@ -19,4 +19,4 @@ export const cors: string = [
  *
  * @exports
  */
-export const port: number = 3000;
+export const port: number = 8080;
