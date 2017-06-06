@@ -3,41 +3,59 @@ import * as express from "express";
 import * as helmet from "helmet";
 import { cors, port, host } from "./settings";
 
+const minute = 60;
+const hour = 60 * minute;
+const day = 24 * hour;
+const week = 7 * day;
+const year = 365 * day;
+
 /**
  * Express App
  */
 const app: express.Express = express();
 
-app
-	// Disable X-Powered-By to don't allow users know what is the server made of
-	.disable("x-powered-by")
-	
-	// Use Helmet for general protection
-	.use(helmet())
-	
-	// Compress data in the highest level
-	.use(compression({ level: 9 }))
-	
-	// Load everything from static folder
-	.use(express.static("static"))
-	.get("*", (request, response) => {
-		response.sendFile("static/index.html", { root: "." });
-	})
-	
+const setHeaders = (response: express.Response) => {
 	// Add CORS headers
-	.set("Content-Security-Policy", cors)
-	.set("X-Content-Security-Policy", cors)
-	
-	// HTTP/1.1 Cache
-	.set("Cache-Control", "max-age=31536000, private")
-	
-	// HTTP/1.0 Cache
-	.set("Pragma", "public")
-	
-	// Bettter caching
-	.set("Vary", "Accept-Encoding")
+	response.set("Content-Security-Policy", cors);
+	response.set("X-Content-Security-Policy", cors);
+		
+	// Cache
+	response.set("Expires", new Date(Date.now() + week).toUTCString());
+	response.set("Cache-Control", `max-age=${year}, private`);
+	response.set("Pragma", "public");
 
-	// Start server on configured port
-	.listen(port, host, () => {
-		console.log(`Listening to port ${host}:${port}`);
-	});
+	// Bettter caching
+	response.set("Vary", "Accept-Encoding");
+};
+
+// Disable X-Powered-By to don't allow users know what is the server made of
+app.disable("x-powered-by");
+	
+// Use Helmet for general protection
+app.use(helmet());
+	
+// Compress data in the highest level
+app.use(compression({ level: 9 }));
+	
+// Add CORS headers
+app.set("Content-Security-Policy", cors);
+app.set("X-Content-Security-Policy", cors);
+	
+// Cache
+app.set("Expires", new Date(Date.now() + week).toUTCString());
+app.set("Cache-Control", `max-age=${year}, private`);
+app.set("Pragma", "public");
+	
+// Bettter caching
+app.set("Vary", "Accept-Encoding");
+	
+// Load everything from static folder
+app.use(express.static("static", { setHeaders }));
+app.get("*", (request, response) => {
+	response.sendFile("static/index.html", { root: ".", setHeaders });
+});
+
+// Start server on configured port
+app.listen(port, host, () => {
+	console.log(`Listening to port ${host}:${port}`);
+});
