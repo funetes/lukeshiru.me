@@ -7,7 +7,7 @@
     "test": "ts-node ./index.ts",
     "build": "tsc",
     "start": "ts-node --fast ./index.ts",
-    "postinstall": "bower i"
+    "postinstall": "export HOME=$HOME/app-root/runtime/repo; bower i"
   },
   "repository": {
     "type": "git",
