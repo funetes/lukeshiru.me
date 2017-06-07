@@ -6,32 +6,23 @@
 	<template>
 		<style>
 		:host {
-			--icon-size: 6vw;
+			--icon-size: 15vmin;
 			display: block;
+			left: 50%;
+			margin: calc(var(--icon-size) * -0.5);
+			position: absolute;
+			top: 50%;
 			width: var(--icon-size);
-		}
-		@media(max-width: 720px) {
-			:host {
-				--icon-size: 15vw;
-			}
-		}
-		@media(max-width: 480px) {
-			:host {
-				--icon-size: 21vw;
-			}
-		}
-		@media(max-width: 320px) {
-			:host {
-				--icon-size: 28vw;
-			}
 		}
 		[aria-hidden=true] {
 			display: none;
 		}
 		paper-icon-button {
-			padding: calc(var(--icon-size) * .2);
-			width: var(--icon-size);
+			border-radius: 50%;
 			height: var(--icon-size);
+			overflow: hidden;
+			padding: calc(var(--icon-size) * .25);
+			width: var(--icon-size);
 		}
 		</style>
 		<paper-icon-button

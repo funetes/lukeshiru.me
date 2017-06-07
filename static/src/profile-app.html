@@ -1,6 +1,5 @@
 <link rel="import" href="../bower_components/polymer/polymer-element.html">
 <link rel="import" href="../bower_components/iron-ajax/iron-ajax.html">
-<link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout.html">
 <link rel="import" href="../bower_components/paper-styles/typography.html">
 <link rel="import" href="profile-links.html">
 <link rel="import" href="profile-name.html">
@@ -10,16 +9,15 @@
 	<template>
 		<style>
 		:host {
-			@apply --layout-vertical;
-			@apply --layout-fullbleed;
-			@apply --layout-center-center;
 			--paper-icon-button-ink-color: #FFF;
 		}
-		profile-logo {
-			max-height: 50vh;
-			height: 100vw;
-			max-width: 50vw;
-			width: 100vw;
+		profile-logo, profile-links {
+			height: 50vh;
+			left: 25vw;
+			position: absolute;
+			top: 25vh;
+			width: 50vw;
+			vertical-align: top;
 		}
 		</style>
 		<profile-logo>
