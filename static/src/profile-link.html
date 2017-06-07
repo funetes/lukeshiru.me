@@ -5,6 +5,10 @@
 <dom-module id="profile-link">
 	<template>
 		<style>
+		@keyframes rotate {
+			from { transform: rotate(360deg); }
+			to { transform: rotate(0deg); }
+		}
 		:host {
 			--icon-size: 15vmin;
 			display: block;
@@ -18,6 +22,8 @@
 			display: none;
 		}
 		paper-icon-button {
+			animation: rotate 240s linear infinite;
+			will-change: transform;
 			border-radius: 50%;
 			height: var(--icon-size);
 			overflow: hidden;

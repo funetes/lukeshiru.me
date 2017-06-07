@@ -15,7 +15,7 @@
   ],
   "builds": [{
     "preset": "es5-bundled",
-    "addServiceWorker": false
+    "addServiceWorker": true
   }, {
     "preset": "es6-bundled",
     "addServiceWorker": true

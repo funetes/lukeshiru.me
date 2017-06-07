@@ -4,22 +4,53 @@
 <dom-module id="profile-links">
 	<template>
 		<style>
+		@keyframes rotate {
+			from { transform: rotate(0deg); }
+			to { transform: rotate(360deg); }
+		}
 		:host {
 			--translate-size: 35vmin;
+			--base-deg: calc(360deg / 12);
+			animation: rotate 240s linear infinite;
 			position: relative;
+			will-change: transform;
 		}
-		profile-link:nth-of-type(1) { transform: translate(var(--translate-size)); }
-		profile-link:nth-of-type(2) { transform: rotate(calc(30deg * 1)) translate(var(--translate-size)) rotate(calc(-30deg * 1)); }
-		profile-link:nth-of-type(3) { transform: rotate(calc(30deg * 2)) translate(var(--translate-size)) rotate(calc(-30deg * 2)); }
-		profile-link:nth-of-type(4) { transform: rotate(calc(30deg * 3)) translate(var(--translate-size)) rotate(calc(-30deg * 3)); }
-		profile-link:nth-of-type(5) { transform: rotate(calc(30deg * 4)) translate(var(--translate-size)) rotate(calc(-30deg * 4)); }
-		profile-link:nth-of-type(6) { transform: rotate(calc(30deg * 5)) translate(var(--translate-size)) rotate(calc(-30deg * 5)); }
-		profile-link:nth-of-type(7) { transform: rotate(calc(30deg * 6)) translate(var(--translate-size)) rotate(calc(-30deg * 6)); }
-		profile-link:nth-of-type(8) { transform: rotate(calc(30deg * 7)) translate(var(--translate-size)) rotate(calc(-30deg * 7)); }
-		profile-link:nth-of-type(9) { transform: rotate(calc(30deg * 8)) translate(var(--translate-size)) rotate(calc(-30deg * 8)); }
-		profile-link:nth-of-type(10) { transform: rotate(calc(30deg * 9)) translate(var(--translate-size)) rotate(calc(-30deg * 9)); }
-		profile-link:nth-of-type(11) { transform: rotate(calc(30deg * 10)) translate(var(--translate-size)) rotate(calc(-30deg * 10)); }
-		profile-link:nth-of-type(12) { transform: rotate(calc(30deg * 11)) translate(var(--translate-size)) rotate(calc(-30deg * 11)); }
+		profile-link:nth-of-type(1) {
+			transform: rotate(calc(var(--base-deg) * 0)) translate(var(--translate-size)) rotate(calc(var(--base-deg) * 0));
+		}
+		profile-link:nth-of-type(2) {
+			transform: rotate(calc(var(--base-deg) * 1)) translate(var(--translate-size)) rotate(calc(var(--base-deg) * -1));
+		}
+		profile-link:nth-of-type(3) {
+			transform: rotate(calc(var(--base-deg) * 2)) translate(var(--translate-size)) rotate(calc(var(--base-deg) * -2));
+		}
+		profile-link:nth-of-type(4) {
+			transform: rotate(calc(var(--base-deg) * 3)) translate(var(--translate-size)) rotate(calc(var(--base-deg) * -3));
+		}
+		profile-link:nth-of-type(5) {
+			transform: rotate(calc(var(--base-deg) * 4)) translate(var(--translate-size)) rotate(calc(var(--base-deg) * -4));
+		}
+		profile-link:nth-of-type(6) {
+			transform: rotate(calc(var(--base-deg) * 5)) translate(var(--translate-size)) rotate(calc(var(--base-deg) * -5));
+		}
+		profile-link:nth-of-type(7) {
+			transform: rotate(calc(var(--base-deg) * 6)) translate(var(--translate-size)) rotate(calc(var(--base-deg) * -6));
+		}
+		profile-link:nth-of-type(8) {
+			transform: rotate(calc(var(--base-deg) * 7)) translate(var(--translate-size)) rotate(calc(var(--base-deg) * -7));
+		}
+		profile-link:nth-of-type(9) {
+			transform: rotate(calc(var(--base-deg) * 8)) translate(var(--translate-size)) rotate(calc(var(--base-deg) * -8));
+		}
+		profile-link:nth-of-type(10) {
+			transform: rotate(calc(var(--base-deg) * 9)) translate(var(--translate-size)) rotate(calc(var(--base-deg) * -9));
+		}
+		profile-link:nth-of-type(11) {
+			transform: rotate(calc(var(--base-deg) * 10)) translate(var(--translate-size)) rotate(calc(var(--base-deg) * -10));
+		}
+		profile-link:nth-of-type(12) {
+			transform: rotate(calc(var(--base-deg) * 11)) translate(var(--translate-size)) rotate(calc(var(--base-deg) * -11));
+		}
 		</style>
 		<template is="dom-repeat" items=[[links]]>
 			<profile-link

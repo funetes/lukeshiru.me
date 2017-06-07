@@ -31,4 +31,4 @@ export const HOST: string = process.env.OPENSHIFT_NODEJS_IP || "localhost";
  *
  * @exports
  */
-export const STATIC_DIR: string = "static/build/es6-bundled";
+export const STATIC_DIR: string = "static/build/es5-bundled";
