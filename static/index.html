@@ -69,8 +69,8 @@
 	<link rel="import" href="./src/profile-app.html">
 	<style>body {
 		background-color: #000;
-		color: #FFF;
 		margin: 0;
+		overflow: hidden;
 	}</style>
 </head>
 <body fullbleed>
@@ -78,13 +78,14 @@
 	<noscript>
 		<style>
 			noscript {
+				border-radius: .5em;
+				border: 1px solid #FFF;
+				color: #FFF;
 				display: block;
 				font-family: monospace;
-				text-align: center;
 				margin: 1em;
 				padding: 1em;
-				border: 1px solid #000;
-				border-radius: .5em;
+				text-align: center;
 			}
 		</style>
 		<p>Are you seriously browsing with your JavaScript turned off?</p>
