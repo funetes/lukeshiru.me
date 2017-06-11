@@ -4,16 +4,14 @@
 <dom-module id="profile-links">
 	<template>
 		<style>
-		@keyframes rotate {
-			from { transform: rotate(0deg); }
-			to { transform: rotate(360deg); }
-		}
 		:host {
 			--translate-size: 35vmin;
 			--base-deg: calc(360deg / 12);
-			animation: rotate 240s linear infinite;
 			position: relative;
 			will-change: transform;
+		}
+		rotating-element {
+			height: 100%;
 		}
 		profile-link:nth-of-type(1) {
 			transform: rotate(calc(var(--base-deg) * 0)) translate(var(--translate-size)) rotate(calc(var(--base-deg) * 0));
@@ -52,20 +50,24 @@
 			transform: rotate(calc(var(--base-deg) * 11)) translate(var(--translate-size)) rotate(calc(var(--base-deg) * -11));
 		}
 		</style>
-		<template is="dom-repeat" items=[[links]]>
-			<profile-link
-				href=[[item.href]]
-				title=[[item.title]]
-				icon=[[item.icon]]
-			></profile-link>
-		</template>
+		<rotating-element rpm=[[rpm]]>
+			<template is="dom-repeat" items=[[links]]>
+				<profile-link
+					href=[[item.href]]
+					title=[[item.title]]
+					icon=[[item.icon]]
+					rpm=[[rpm]]
+				></profile-link>
+			</template>
+		</rotating-element>
 	</template>
 	<script>
 		class ProfileLinks extends Polymer.Element {
 			static get is() { return 'profile-links'; }
 			static get properties() {
 				return {
-					links: Array
+					links: Array,
+					rpm: Number
 				};
 			}
 		}

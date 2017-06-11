@@ -1,14 +1,11 @@
 <link rel="import" href="../bower_components/polymer/polymer-element.html">
 <link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
 <link rel="import" href="profile-icons.html">
+<link rel="import" href="rotating-element.html">
 
 <dom-module id="profile-link">
 	<template>
 		<style>
-		@keyframes rotate {
-			from { transform: rotate(360deg); }
-			to { transform: rotate(0deg); }
-		}
 		:host {
 			--icon-size: 15vmin;
 			display: block;
@@ -22,7 +19,6 @@
 			display: none;
 		}
 		paper-icon-button {
-			animation: rotate 240s linear infinite;
 			will-change: transform;
 			border-radius: 50%;
 			height: var(--icon-size);
@@ -31,17 +27,19 @@
 			width: var(--icon-size);
 		}
 		</style>
-		<paper-icon-button
-			id="button"
-			icon=[[computedIcon]]
-			aria-label=[[title]]
-			on-tap="tapHandler"
-		>[[title]]</paper-icon-button>
-		<span aria-hidden="true">
-			<span>[[title]]</span>
-			<span> - </span>
-			<span>[[href]]</span>
-		</span>
+		<rotating-element rpm=[[rpm]] inverted>
+			<paper-icon-button
+				id="button"
+				icon=[[computedIcon]]
+				aria-label=[[title]]
+				on-tap="tapHandler"
+			>[[title]]</paper-icon-button>
+			<span aria-hidden="true">
+				<span>[[title]]</span>
+				<span> - </span>
+				<span>[[href]]</span>
+			</span>
+		</rotating-element>
 	</template>
 	<script>
 		class ProfileLink extends Polymer.Element {
@@ -54,7 +52,8 @@
 					computedIcon: {
 						type: String,
 						computed: "computeIcon(icon)"
-					}
+					},
+					rpm: Number
 				};
 			}
 			computeIcon(icon) {

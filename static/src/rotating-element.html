@@ -1,0 +1,49 @@
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout.html">
+
+<dom-module id="rotating-element">
+	<template>
+		<style>
+		@keyframes rotate {
+			from { transform: rotate(0deg); }
+			to { transform: rotate(360deg); }
+		}
+		@keyframes rotate-inverted {
+			from { transform: rotate(360deg); }
+			to { transform: rotate(0deg); }
+		}
+		:host {
+			--rpm: [[rpm]];
+			--animation: [[animation]];
+			animation: var(--animation) calc(60s / var(--rpm)) linear infinite;
+			display: block;
+		}
+		</style>
+		<slot></slot>
+	</template>
+	<script>
+		class RotatingElement extends Polymer.Element {
+			static get is() { return 'rotating-element'; }
+			static get properties() {
+				return {
+					rpm: {
+						type: Number,
+						value: 0
+					},
+					animation: {
+						type: String,
+						computed: "_computeAnimation(inverted)"
+					},
+					inverted: {
+						type: Boolean,
+						value: false
+					}
+				};
+			}
+			_computeAnimation(inverted) {
+				return `rotate${inverted ? "-inverted" : ""}`;
+			}
+		}
+		window.customElements.define(RotatingElement.is, RotatingElement);
+	</script>
+</dom-module>
