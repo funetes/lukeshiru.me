@@ -1,6 +1,13 @@
 import * as compression from "compression";
 import * as express from "express";
 import * as helmet from "helmet";
+import * as expressGraphql from "express-graphql";
+import { readFileSync } from "fs";
+import {
+	GraphQLSchema,
+	GraphQLObjectType,
+	GraphQLString
+} from 'graphql';
 import { CORS, PORT, HOST, STATIC_DIR } from "./settings";
 import { WEEK, YEAR } from "./time";
 
@@ -40,12 +47,30 @@ app.set("Pragma", "public");
 	
 // Bettter caching
 app.set("Vary", "Accept-Encoding");
+
+const schema = new GraphQLSchema({
+	query: new GraphQLObjectType({
+		name: "RootQueryType",
+		fields: {
+			hello: {
+				type: GraphQLString,
+				resolve() {
+					return readFileSync(__dirname + "/data.json");
+				}
+			}
+		}
+	})
+});
+
+app.use("/graphql", expressGraphql({ schema }));
 	
 // Load everything from static folder
 app.use(express.static(STATIC_DIR, { setHeaders }));
+/*
 app.get("*", (request, response) => {
 	response.sendFile(`${STATIC_DIR}/index.html`, { root: ".", setHeaders });
 });
+*/
 
 // Start server on configured port
 app.listen(PORT, HOST, () => console.log(`Listening to port ${HOST}:${PORT} (${STATIC_DIR})`));

@@ -1,5 +1,6 @@
 {
 	"compilerOptions": {
+		"allowJs": true,
 		"allowSyntheticDefaultImports": true,
 		"charset": "utf-8",
 		"importHelpers": true,
@@ -17,6 +18,7 @@
 		"target": "es3"
 	},
 	"exclude": [
-		"node_modules"
+		"node_modules",
+		"static"
 	]
 }

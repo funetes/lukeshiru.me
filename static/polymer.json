@@ -10,7 +10,6 @@
   "extraDependencies": [
     "manifest.json",
     "bower_components/webcomponentsjs/webcomponents-lite.js",
-    "data.json",
     "robots.txt"
   ],
   "builds": [{
