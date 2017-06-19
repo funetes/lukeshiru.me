@@ -69,22 +69,29 @@
 	<link rel="import" href="./src/profile-app.html">
 	<style>body {
 		background-color: #000;
+		height: 100vh;
 		margin: 0;
 		overflow: hidden;
 	}</style>
 </head>
 <body fullbleed>
-	<profile-app data-href="./data.json"></profile-app>
+	<profile-app></profile-app>
 	<noscript>
 		<style>
+			body {
+				align-items: center;
+				display: flex;
+				justify-content: center;
+			}
 			noscript {
-				border-radius: .5em;
+				border-radius: 5vmin;
 				border: 1px solid #FFF;
 				color: #FFF;
 				display: block;
 				font-family: monospace;
-				margin: 1em;
-				padding: 1em;
+				font-size: 4vw;
+				margin: 5vmin;
+				padding: 5vmin;
 				text-align: center;
 			}
 		</style>

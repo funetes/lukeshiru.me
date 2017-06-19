@@ -1,0 +1,70 @@
+<!--
+@license
+Copyright (c) 2017 Vangware. All rights reserved.
+https://vangware.com
+-->
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="social-icons.html">
+
+<!--
+Link represented by an icon with aria label for a11y.
+
+`title` Title of the link.
+`href` Location of the link.
+`icon` Icon to be used from social-icons.
+`size` Size of the icon.
+-->
+<dom-module id="icon-link">
+	<template>
+		<style>
+		:host {
+			--size: [[size]];
+			border-radius: 50%;
+			box-sizing: border-box;
+			display: inline-block;
+			height: var(--size);
+			overflow: hidden;
+			width: var(--size);
+		}
+		paper-icon-button {
+			box-sizing: border-box;
+			height: 100%;
+			overflow: hidden;
+			padding: calc(var(--size) * .25);
+			width: 100%;
+		}
+		</style>
+		<paper-icon-button
+			aria-label=[[title]]
+			icon=[[computedIcon]]
+			on-click="tapHandler"
+			on-touch="tapHandler"
+			title=[[title]]
+		>[[title]]</paper-icon-button>
+	</template>
+	<script>
+		class IconLink extends Polymer.Element {
+			static get is() { return 'icon-link'; }
+			static get properties() {
+				return {
+					title: String,
+					href: String,
+					icon: String,
+					size: String,
+					computedIcon: {
+						type: String,
+						computed: "computeIcon(icon)"
+					}
+				};
+			}
+			computeIcon(icon) {
+				return `social-icons:${icon}`;
+			}
+			tapHandler() {
+				window.open(this.href);
+			}
+		}
+		window.customElements.define(IconLink.is, IconLink);
+	</script>
+</dom-module>
