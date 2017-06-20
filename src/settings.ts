@@ -32,3 +32,9 @@ export const HOST: string = process.env.OPENSHIFT_NODEJS_IP || "localhost";
  * @exports
  */
 export const STATIC_DIR: string = `${__dirname}/../static/build/es5-bundled`;
+/**
+ * File with data for GraphQL.
+ *
+ * @exports
+ */
+export const DATA_FILE: string = `${__dirname}/data.json`;

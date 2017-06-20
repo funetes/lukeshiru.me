@@ -58,14 +58,16 @@
 				return (isNaN(parseFloat(linksSize))) ? linksSize : linksSize + "vmin";
 			}
 			computedOrbitLinks(links) {
-				const angle = 360 / links.length;
-				return links.map((link, index) => Object.assign({}, link, {
+				const linksArray = Array.isArray(links) ? links : [];
+				const angle = 360 / linksArray.length;
+				return linksArray.map((link, index) => Object.assign({}, link, {
 					degrees: angle * index,
 					orbitOutDelay: index * .1 + .25
 				}));
 			}
 			computedOrbitSize(linksSize, links) {
-				return parseFloat(linksSize) * links.length / 5;
+				const length = Array.isArray(links) ? links.length : 0;
+				return parseFloat(linksSize) * length / 5;
 			}
 		}
 		window.customElements.define(OrbitLinks.is, OrbitLinks);

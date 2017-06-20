@@ -27,9 +27,15 @@
 			will-change: transform;
 		}
 		</style>
-		<orbit-links links=[[data]]></orbit-links>
+		<orbit-links links=[[ajaxResponse.data.links]]></orbit-links>
 		<lukeshiru-logo></lukeshiru-logo>
-		<iron-ajax auto url="./data.json" handle-as="json" last-response={{data}}></iron-ajax>
+		<iron-ajax
+			auto
+			handle-as="json"
+			last-response={{ajaxResponse}}
+			params='{"query":"{links{title,href,icon}}"}'
+			url="/graphql"
+		></iron-ajax>
 	</template>
 	<script>
 		class ProfileApp extends Polymer.Element {
