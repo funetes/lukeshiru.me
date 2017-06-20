@@ -11,7 +11,7 @@ export const CORS: string = [
 	"img-src 'self'",
 	"media-src 'self'",
 	"object-src 'self'",
-	"script-src 'self' 'unsafe-inline'",
+	"script-src 'self' 'unsafe-inline' data:",
 	"style-src 'self' 'unsafe-inline' *.googleapis.com"
 ].join("; ");
 /**

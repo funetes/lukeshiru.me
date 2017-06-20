@@ -16,15 +16,16 @@
 		}
 		lukeshiru-logo,
 		orbit-links {
-			height: 50vh;
-			left: 25vw;
+			height: 50vmin;
+			left: calc(50% - 25vmin);
 			position: absolute;
-			top: 25vh;
-			width: 50vw;
+			top: calc(50% - 25vmin);
+			width: 50vmin;
 		}
 		lukeshiru-logo {
-			transform: scale(0, 0);
 			animation: grow-logo .5s ease-in-out 0s forwards;
+			transform: scale(0, 0);
+			will-change: transform;
 		}
 		</style>
 		<orbit-links links=[[data]]></orbit-links>
