@@ -1,5 +1,17 @@
+<!--
+@license
+Copyright (c) 2017 Vangware. All rights reserved.
+https://vangware.com
+-->
 <link rel="import" href="../bower_components/polymer/polymer-element.html">
 
+<!--
+Element that will "orbit away" a defined distance in a defined angle.
+
+`degrees` orbit angle.
+`distance` orbit distance.
+`orbit-out-delay` delay of the orbit to orbit away.
+-->
 <dom-module id="orbit-element">
 	<template>
 		<style>
@@ -11,11 +23,7 @@
 		}
 		@keyframes orbit-out {
 			to {
-				transform: 
-					translate(-50%, -50%)
-					rotate(var(--degrees))
-					translate(var(--distance))
-					rotate(var(--degrees-negative));
+				transform: translate(-50%, -50%) rotate(var(--degrees)) translate(var(--distance)) rotate(var(--degrees-negative));
 				opacity: 1;
 			}
 		}
