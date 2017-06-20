@@ -1,51 +1,39 @@
 <link rel="import" href="../bower_components/polymer/polymer-element.html">
 <link rel="import" href="../bower_components/iron-ajax/iron-ajax.html">
-<link rel="import" href="../bower_components/paper-styles/typography.html">
-<link rel="import" href="profile-links.html">
-<link rel="import" href="profile-name.html">
-<link rel="import" href="profile-logo.html">
+<link rel="import" href="./lukeshiru-logo.html">
+<link rel="import" href="./orbit-links.html">
 
 <dom-module id="profile-app">
 	<template>
 		<style>
+		@keyframes grow-logo {
+			to {
+				transform: scale(1, 1);
+			}
+		}
 		:host {
 			--paper-icon-button-ink-color: #FFF;
 		}
-		profile-logo, profile-links {
-			height: 50vh;
-			left: 25vw;
+		lukeshiru-logo, orbit-links {
+			height: 50vmin;
+			left: calc(50% - 25vmin);
 			position: absolute;
-			top: 25vh;
-			width: 50vw;
-			vertical-align: top;
+			top: calc(50% - 25vmin);
+			width: 50vmin;
+		}
+		lukeshiru-logo {
+			animation: grow-logo .5s ease-in-out 0s forwards;
+			transform: scale(0, 0);
+			will-change: transform;
 		}
 		</style>
-		<profile-logo>
-			<profile-name
-				given-name=[[data.name.given]]
-				family-name=[[data.name.family]]
-			></profile-name>
-		</profile-logo>
-		<profile-links
-			links=[[data.links]]
-			rpm=".25"
-		></profile-links>
-		<iron-ajax
-			auto
-			url=[[dataHref]]
-			handle-as="json"
-			last-response={{data}}
-			debounce-duration="300"
-		></iron-ajax>
+		<orbit-links links=[[data]]></orbit-links>
+		<lukeshiru-logo></lukeshiru-logo>
+		<iron-ajax auto url="./data.json" handle-as="json" last-response={{data}}></iron-ajax>
 	</template>
 	<script>
 		class ProfileApp extends Polymer.Element {
 			static get is() { return 'profile-app'; }
-			static get properties() {
-				return {
-					dataHref: String
-				};
-			}
 		}
 		window.customElements.define(ProfileApp.is, ProfileApp);
 	</script>

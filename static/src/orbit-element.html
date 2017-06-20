@@ -1,0 +1,80 @@
+<!--
+@license
+Copyright (c) 2017 Vangware. All rights reserved.
+https://vangware.com
+-->
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+
+<!--
+Element that will "orbit away" a defined distance in a defined angle.
+
+`degrees` orbit angle.
+`distance` orbit distance.
+`orbit-out-delay` delay of the orbit to orbit away.
+-->
+<dom-module id="orbit-element">
+	<template>
+		<style>
+		:host {
+			--degrees: calc([[degreesWithUnit]] - 90deg);
+			--degrees-negative: calc(var(--degrees) * -1);
+			--distance: [[distanceWithUnit]];
+			--orbit-out-delay: [[orbitOutDelayWithUnit]];
+		}
+		@keyframes orbit-out {
+			to {
+				transform: translate(-50%, -50%) rotate(var(--degrees)) translate(var(--distance)) rotate(var(--degrees-negative));
+				opacity: 1;
+			}
+		}
+		:host {
+			animation: orbit-out 1s ease-out var(--orbit-out-delay) forwards;
+			display: block;
+			left: 50%;
+			opacity: 0;
+			overflow: hidden;
+			position: absolute;
+			top: 50%;
+			transform: translate(-50%, -50%);
+		}
+		</style>
+		<slot></slot>
+	</template>
+	<script>
+		class OrbitElement extends Polymer.Element {
+			static get is() { return 'orbit-element'; }
+			static get properties() {
+				return {
+					degrees: String,
+					distance: String,
+					orbitOutDelay: {
+						type: Number,
+						value: 0
+					},
+					orbitOutDelayWithUnit: {
+						type: String,
+						computed: "computedOrbitOutDelayWithUnit(orbitOutDelay)"
+					},
+					degreesWithUnit: {
+						type: String,
+						computed: "computedDegreesWithUnit(degrees)"
+					},
+					distanceWithUnit: {
+						type: String,
+						computed: "computedDistanceWithUnit(distance)"
+					}
+				};
+			}
+			computedDegreesWithUnit(degrees) {
+				return (isNaN(parseFloat(degrees))) ? degrees : degrees + "deg";
+			}
+			computedDistanceWithUnit(distance) {
+				return (isNaN(parseFloat(distance))) ? distance : distance + "vmin";
+			}
+			computedOrbitOutDelayWithUnit(orbitOutDelay) {
+				return `${orbitOutDelay}s`;
+			}
+		}
+		window.customElements.define(OrbitElement.is, OrbitElement);
+	</script>
+</dom-module>

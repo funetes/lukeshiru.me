@@ -11,7 +11,7 @@ export const CORS: string = [
 	"img-src 'self'",
 	"media-src 'self'",
 	"object-src 'self'",
-	"script-src 'self' 'unsafe-inline'",
+	"script-src 'self' 'unsafe-inline' data:",
 	"style-src 'self' 'unsafe-inline' *.googleapis.com"
 ].join("; ");
 /**
@@ -31,4 +31,4 @@ export const HOST: string = process.env.OPENSHIFT_NODEJS_IP || "localhost";
  *
  * @exports
  */
-export const STATIC_DIR: string = "static/build/es5-bundled";
+export const STATIC_DIR: string = `${__dirname}/../static/build/es5-bundled`;

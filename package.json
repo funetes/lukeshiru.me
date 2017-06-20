@@ -2,11 +2,11 @@
   "name": "lukeshiru.me",
   "version": "1.2.0",
   "description": "https://lukeshiru.me",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
-    "test": "ts-node ./index.ts",
+    "test": "ts-node ./src/index.ts",
     "build": "tsc",
-    "start": "node ./index.js",
+    "start": "node ./src/index.js",
     "bower-install": "cd static && export HOME=$HOME/app-root/runtime/repo; bower i",
     "polymer-build": "cd static && export HOME=$HOME/app-root/runtime/repo; polymer build",
     "postinstall": "npm run build && npm run bower-install && npm run polymer-build"

@@ -1,29 +1,41 @@
+<!--
+@license
+Copyright (c) 2017 Vangware. All rights reserved.
+https://vangware.com
+-->
 <link rel="import" href="../bower_components/polymer/polymer-element.html">
 <link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout.html">
 
-<dom-module id="rotating-element">
+<!--
+Spinning element
+
+`rpm` Revolutions per minute of rotation
+`inverted` Rotate in the other direction
+-->
+<dom-module id="spin-element">
 	<template>
 		<style>
-		@keyframes rotate {
-			from { transform: rotate(0deg); }
+		@keyframes spin {
 			to { transform: rotate(360deg); }
 		}
-		@keyframes rotate-inverted {
-			from { transform: rotate(360deg); }
-			to { transform: rotate(0deg); }
+		@keyframes inverted {
+			to { transform: rotate(-360deg); }
 		}
 		:host {
-			--rpm: [[rpm]];
 			--animation: [[animation]];
+			--rpm: [[rpm]];
 			animation: var(--animation) calc(60s / var(--rpm)) linear infinite;
-			display: block;
+			display: flex;
+			font-size: 0;
+			transform: rotate(0deg);
+			will-change: transform;
 		}
 		</style>
 		<slot></slot>
 	</template>
 	<script>
-		class RotatingElement extends Polymer.Element {
-			static get is() { return 'rotating-element'; }
+		class SpinElement extends Polymer.Element {
+			static get is() { return 'spin-element'; }
 			static get properties() {
 				return {
 					rpm: {
@@ -41,9 +53,9 @@
 				};
 			}
 			_computeAnimation(inverted) {
-				return `rotate${inverted ? "-inverted" : ""}`;
+				return inverted ? "inverted" : "spin";
 			}
 		}
-		window.customElements.define(RotatingElement.is, RotatingElement);
+		window.customElements.define(SpinElement.is, SpinElement);
 	</script>
 </dom-module>

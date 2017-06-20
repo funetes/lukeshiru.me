@@ -1,0 +1,73 @@
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="./icon-link.html">
+<link rel="import" href="./orbit-element.html">
+<link rel="import" href="./spin-element.html">
+
+<dom-module id="orbit-links">
+	<template>
+		<style>
+			:host {
+				position: relative;
+			}
+			:host > spin-element {
+				height: 100%;
+			}
+		</style>
+		<spin-element rpm=[[rpm]]>
+			<template is="dom-repeat" items=[[orbitLinks]]>
+				<orbit-element degrees=[[item.degrees]] distance=[[orbitSize]] orbit-out-delay=[[item.orbitOutDelay]]>
+					<spin-element rpm=[[rpm]] inverted>
+						<icon-link href=[[item.href]] icon=[[item.icon]] size=[[linksSizeWithUnit]] title=[[item.title]]></icon-link>
+					</spin-element>
+				</orbit-element>
+			</template>
+		</spin-element>
+	</template>
+	<script>
+		class OrbitLinks extends Polymer.Element {
+			static get is() { return 'orbit-links'; }
+			static get properties() {
+				return {
+					links: {
+						type: Array,
+						value: []
+					},
+					linksSize: {
+						type: String,
+						value: "15"
+					},
+					orbitSize: {
+						type: Number,
+						computed: "computedOrbitSize(linksSize,links)"
+					},
+					orbitLinks: {
+						type: Array,
+						computed: "computedOrbitLinks(links)"
+					},
+					linksSizeWithUnit: {
+						type: String,
+						computed: "computedLinksSizeWithUnit(linksSize)"
+					},
+					rpm: {
+						type: Number,
+						value: .25
+					}
+				};
+			}
+			computedLinksSizeWithUnit(linksSize) {
+				return (isNaN(parseFloat(linksSize))) ? linksSize : linksSize + "vmin";
+			}
+			computedOrbitLinks(links) {
+				const angle = 360 / links.length;
+				return links.map((link, index) => Object.assign({}, link, {
+					degrees: angle * index,
+					orbitOutDelay: index * .1 + .25
+				}));
+			}
+			computedOrbitSize(linksSize, links) {
+				return parseFloat(linksSize) * links.length / 5;
+			}
+		}
+		window.customElements.define(OrbitLinks.is, OrbitLinks);
+	</script>
+</dom-module>
