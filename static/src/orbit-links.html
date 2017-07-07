@@ -13,10 +13,10 @@
 				height: 100%;
 			}
 		</style>
-		<spin-element rpm=[[rpm]]>
+		<spin-element rpm=[[_rpm]]>
 			<template is="dom-repeat" items=[[orbitLinks]]>
 				<orbit-element degrees=[[item.degrees]] distance=[[orbitSize]] orbit-out-delay=[[item.orbitOutDelay]]>
-					<spin-element rpm=[[rpm]] inverted>
+					<spin-element rpm=[[_rpm]] inverted>
 						<icon-link href=[[item.href]] icon=[[item.icon]] size=[[linksSizeWithUnit]] title=[[item.title]]></icon-link>
 					</spin-element>
 				</orbit-element>
@@ -30,7 +30,8 @@
 				return {
 					links: {
 						type: Array,
-						value: []
+						value: [],
+						observer: "_linksChanged"
 					},
 					linksSize: {
 						type: String,
@@ -51,6 +52,10 @@
 					rpm: {
 						type: Number,
 						value: .25
+					},
+					_rpm: {
+						type: Number,
+						value: 0
 					}
 				};
 			}
@@ -68,6 +73,10 @@
 			computedOrbitSize(linksSize, links) {
 				const length = Array.isArray(links) ? links.length : 0;
 				return parseFloat(linksSize) * length / 5;
+			}
+			_linksChanged(links) {
+				// Quick and dirty fix to avoid the element spinning without elements on it
+				this._rpm = (links.length > 0) ? this.rpm : 0;
 			}
 		}
 		window.customElements.define(OrbitLinks.is, OrbitLinks);

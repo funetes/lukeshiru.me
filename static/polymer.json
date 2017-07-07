@@ -1,7 +1,9 @@
 {
   "entrypoint": "index.html",
   "shell": "src/profile-app.html",
-  "fragments": [],
+  "fragments": [
+    "src/social-icons.html"
+  ],
   "sources": [
     "src/**/*",
     "images/**/*",
