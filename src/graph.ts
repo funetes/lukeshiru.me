@@ -6,7 +6,7 @@ import {
 	GraphQLObjectType,
 	GraphQLSchema,
 	GraphQLString
-} from 'graphql';
+} from "graphql";
 import { DATA_FILE } from "./settings";
 
 const readFileAsync = promisify(readFile);
@@ -33,8 +33,10 @@ const linkListGraph = new GraphQLObjectType({
 	fields: () => ({
 		links: {
 			type: new GraphQLList(linkGraph),
-			resolve: () => readFileAsync(DATA_FILE, { encoding: "utf8" })
-				.then(textFile => JSON.parse(textFile))
+			resolve: () =>
+				readFileAsync(DATA_FILE, { encoding: "utf8" }).then(textFile =>
+					JSON.parse(textFile)
+				)
 		}
 	})
 });

@@ -19,7 +19,10 @@ export const CORS: string = [
  *
  * @exports
  */
-export const PORT: number = parseInt(process.env.OPENSHIFT_NODEJS_PORT || "8080", 10);
+export const PORT: number = parseInt(
+	process.env.OPENSHIFT_NODEJS_PORT || "8080",
+	10
+);
 /**
  * Server host.
  *
