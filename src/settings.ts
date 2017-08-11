@@ -13,28 +13,28 @@ export const CORS: string = [
 	"object-src 'self'",
 	"script-src 'self' 'unsafe-inline' data:",
 	"style-src 'self' 'unsafe-inline' *.googleapis.com"
-].join("; ");
+].join('; ');
 /**
  * Server port.
  *
  * @exports
  */
-export const PORT: number = parseInt(
-	process.env.OPENSHIFT_NODEJS_PORT || "8080",
-	10
-);
+export const PORT: number = parseInt(process.env.OPENSHIFT_NODEJS_PORT || '8080', 10);
 /**
  * Server host.
  *
  * @exports
  */
-export const HOST: string = process.env.OPENSHIFT_NODEJS_IP || "localhost";
+export const HOST: string = process.env.OPENSHIFT_NODEJS_IP || 'localhost';
+
+// Get current enviroment
+const isDev = process && process.env && process.env.isDev || false;
 /**
  * Static directory.
  *
  * @exports
  */
-export const STATIC_DIR: string = `${__dirname}/../static/build/es5-bundled`;
+export const STATIC_DIR: string = isDev ? `${__dirname}/../static` : `${__dirname}/../static/build/es5-bundled`;
 /**
  * File with data for GraphQL.
  *

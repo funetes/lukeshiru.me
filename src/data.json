@@ -1,14 +1,63 @@
 [
-	{ "title": "Facebook", "href": "https://www.facebook.com/lukeshiru", "icon": "facebook" },
-	{ "title": "GitHub", "href": "https://github.com/lukeshiru", "icon": "github" },
-	{ "title": "Instagram", "href": "https://www.instagram.com/lukeshiru/", "icon": "instagram" },
-	{ "title": "LinkedIn", "href": "https://www.linkedin.com/in/lukeshiru", "icon": "linkedin" },
-	{ "title": "Mail", "href": "mailto:hello@lukeshiru.me", "icon": "mail" },
-	{ "title": "npm", "href": "https://www.npmjs.com/~lukeshiru", "icon": "npm" },
-	{ "title": "Overwatch", "href": "https://playoverwatch.com/career/pc/us/lukeshiru-1629", "icon": "overwatch" },
-	{ "title": "Steam Community", "href": "http://steamcommunity.com/id/lukeshiru", "icon": "steam" },
-	{ "title": "Telegram", "href": "https://t.me/lukeshiru", "icon": "telegram" },
-	{ "title": "Twitch", "href": "https://www.twitch.tv/lukeshiru", "icon": "twitch" },
-	{ "title": "Twitter", "href": "https://twitter.com/lukeshiru", "icon": "twitter" },
-	{ "title": "Xbox", "href": "https://account.xbox.com/Profile?gamertag=lukeshiru", "icon": "xbox" }
+	{
+		"title": "Facebook",
+		"href": "https://www.facebook.com/lukeshiru",
+		"icon": "facebook",
+		"color": "#3949AB"
+	}, {
+		"title": "GitHub",
+		"href": "https://github.com/lukeshiru",
+		"icon": "github",
+		"color": "#424242"
+	}, {
+		"title": "Instagram",
+		"href": "https://www.instagram.com/lukeshiru/",
+		"icon": "instagram",
+		"color": "#303F9F"
+	}, {
+		"title": "LinkedIn",
+		"href": "https://www.linkedin.com/in/lukeshiru",
+		"icon": "linkedin",
+		"color": "#0277BD"
+	}, {
+		"title": "Mail",
+		"href": "mailto:hello@lukeshiru.me",
+		"icon": "mail",
+		"color": "#757575"
+	}, {
+		"title": "npm",
+		"href": "https://www.npmjs.com/~lukeshiru",
+		"icon": "npm",
+		"color": "#D32F2F"
+	}, {
+		"title": "Overwatch",
+		"href": "https://playoverwatch.com/career/pc/us/lukeshiru-1629",
+		"icon": "overwatch",
+		"color": "#FFA000"
+	}, {
+		"title": "Steam Community",
+		"href": "http://steamcommunity.com/id/lukeshiru",
+		"icon": "steam",
+		"color": "#607D8B"
+	}, {
+		"title": "Telegram",
+		"href": "https://t.me/lukeshiru",
+		"icon": "telegram",
+		"color": "#2196F3"
+	}, {
+		"title": "Twitch",
+		"href": "https://www.twitch.tv/lukeshiru",
+		"icon": "twitch",
+		"color": "#5E35B1"
+	}, {
+		"title": "Twitter",
+		"href": "https://twitter.com/lukeshiru",
+		"icon": "twitter",
+		"color": "#29B6F6"
+	}, {
+		"title": "Xbox",
+		"href": "https://account.xbox.com/Profile?gamertag=lukeshiru",
+		"icon": "xbox",
+		"color": "#1B5E20"
+	}
 ]

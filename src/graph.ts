@@ -25,6 +25,10 @@ const linkGraph = new GraphQLObjectType({
 		icon: {
 			description: "Icon name of the link",
 			type: new GraphQLNonNull(GraphQLString)
+		},
+		color: {
+			description: "Icon color",
+			type: new GraphQLNonNull(GraphQLString)
 		}
 	})
 });

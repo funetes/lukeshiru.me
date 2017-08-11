@@ -1,7 +1,6 @@
 <link rel="import" href="../bower_components/polymer/polymer-element.html">
 <link rel="import" href="./icon-link.html">
 <link rel="import" href="./orbit-element.html">
-<link rel="import" href="./spin-element.html">
 
 <dom-module id="orbit-links">
 	<template>
@@ -13,15 +12,17 @@
 				height: 100%;
 			}
 		</style>
-		<spin-element rpm=[[_rpm]]>
-			<template is="dom-repeat" items=[[orbitLinks]]>
-				<orbit-element degrees=[[item.degrees]] distance=[[orbitSize]] orbit-out-delay=[[item.orbitOutDelay]]>
-					<spin-element rpm=[[_rpm]] inverted>
-						<icon-link href=[[item.href]] icon=[[item.icon]] size=[[linksSizeWithUnit]] title=[[item.title]]></icon-link>
-					</spin-element>
-				</orbit-element>
-			</template>
-		</spin-element>
+		<template is="dom-repeat" items=[[orbitLinks]]>
+			<orbit-element degrees=[[item.degrees]] distance=[[orbitSize]] orbit-out-delay=[[item.orbitOutDelay]]>
+				<icon-link
+					color=[[item.color]]
+					href=[[item.href]]
+					icon=[[item.icon]]
+					size=[[linksSizeWithUnit]]
+					title=[[item.title]]
+				></icon-link>
+			</orbit-element>
+		</template>
 	</template>
 	<script>
 		class OrbitLinks extends Polymer.Element {
@@ -30,8 +31,7 @@
 				return {
 					links: {
 						type: Array,
-						value: [],
-						observer: "_linksChanged"
+						value: []
 					},
 					linksSize: {
 						type: String,
@@ -48,14 +48,6 @@
 					linksSizeWithUnit: {
 						type: String,
 						computed: "computedLinksSizeWithUnit(linksSize)"
-					},
-					rpm: {
-						type: Number,
-						value: .25
-					},
-					_rpm: {
-						type: Number,
-						value: 0
 					}
 				};
 			}
@@ -73,10 +65,6 @@
 			computedOrbitSize(linksSize, links) {
 				const length = Array.isArray(links) ? links.length : 0;
 				return parseFloat(linksSize) * length / 5;
-			}
-			_linksChanged(links) {
-				// Quick and dirty fix to avoid the element spinning without elements on it
-				this._rpm = (links.length > 0) ? this.rpm : 0;
 			}
 		}
 		window.customElements.define(OrbitLinks.is, OrbitLinks);

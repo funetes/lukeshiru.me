@@ -1,24 +1,36 @@
 {
-	"compilerOptions": {
-		"allowJs": true,
-		"allowSyntheticDefaultImports": true,
-		"charset": "utf-8",
-		"importHelpers": true,
-		"inlineSourceMap": true,
-		"module": "commonjs",
-		"moduleResolution": "node",
-		"newLine": "LF",
-		"noEmitOnError": true,
-		"noImplicitThis": true,
-		"noUnusedLocals": true,
-		"preserveConstEnums": true,
-		"pretty": true,
-		"strictNullChecks": true,
-		"suppressImplicitAnyIndexErrors": true,
-		"target": "es3"
-	},
-	"exclude": [
-		"node_modules",
-		"static"
-	]
+    "compilerOptions": {
+        "allowJs": true,
+        "allowSyntheticDefaultImports": true,
+        "charset": "utf-8",
+        "importHelpers": true,
+        "inlineSourceMap": true,
+        "lib": [
+            "es5",
+            "es6",
+            "dom",
+            "es2015.core",
+            "es2015.collection",
+            "es2015.generator",
+            "es2015.iterable",
+            "es2015.promise",
+            "es2015.proxy",
+            "es2015.reflect",
+            "es2015.symbol",
+            "es2015.symbol.wellknown",
+            "esnext.asynciterable"
+        ],
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "newLine": "LF",
+        "noEmitOnError": true,
+        "noImplicitThis": true,
+        "noUnusedLocals": true,
+        "preserveConstEnums": true,
+        "pretty": true,
+        "strict": true,
+        "suppressImplicitAnyIndexErrors": true,
+        "target": "es3"
+    },
+    "exclude": ["node_modules", "static"]
 }

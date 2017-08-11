@@ -18,28 +18,28 @@ Link represented by an icon with aria label for a11y.
 <dom-module id="icon-link">
 	<template>
 		<style>
-		:host {
-			--size: [[size]];
-			border-radius: 50%;
-			box-sizing: border-box;
-			display: inline-block;
-			height: var(--size);
-			overflow: hidden;
-			width: var(--size);
-		}
-		paper-icon-button {
-			box-sizing: border-box;
-			height: 100%;
-			overflow: hidden;
-			padding: calc(var(--size) * .25);
-			width: 100%;
-		}
+			:host {
+				--size: [[size]];
+				--iron-icon-fill-color: [[color]];
+				border-radius: 50%;
+				box-sizing: border-box;
+				display: inline-block;
+				height: var(--size);
+				overflow: hidden;
+				width: var(--size);
+			}
+
+			paper-icon-button {
+				box-sizing: border-box;
+				height: 100%;
+				overflow: hidden;
+				padding: calc(var(--size) * .25);
+				width: 100%;
+			}
 		</style>
 		<paper-icon-button
 			aria-label=[[title]]
 			icon=[[computedIcon]]
-			on-click="tapHandler"
-			on-touch="tapHandler"
 			title=[[title]]
 		>[[title]]</paper-icon-button>
 	</template>
@@ -52,17 +52,34 @@ Link represented by an icon with aria label for a11y.
 					href: String,
 					icon: String,
 					size: String,
+					color: String,
 					computedIcon: {
 						type: String,
 						computed: "computeIcon(icon)"
 					}
 				};
 			}
+			ready() {
+				super.ready();
+				const clickHandler = this.clickHandler.bind(this);
+				[
+					"auxclick",
+					"click",
+					"contextmenu"
+				].forEach(event => this.addEventListener(event, clickHandler));
+			}
 			computeIcon(icon) {
 				return `social-icons:${icon}`;
 			}
-			tapHandler() {
+			/**
+			 * Click event handler.
+			 * @param {ClickEvent} event
+			 */
+			clickHandler(event) {
+				event.preventDefault();
+				event.stopPropagation();
 				window.open(this.href);
+				return this;
 			}
 		}
 		window.customElements.define(IconLink.is, IconLink);
