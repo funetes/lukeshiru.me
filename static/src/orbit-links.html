@@ -7,26 +7,18 @@
 		<style>
 			:host {
 				position: relative;
-			}
-			:host > spin-element {
-				height: 100%;
+				--icon-link-size: 15vmin;
 			}
 		</style>
 		<template is="dom-repeat" items=[[orbitLinks]]>
-			<orbit-element degrees=[[item.degrees]] distance=[[orbitSize]] orbit-out-delay=[[item.orbitOutDelay]]>
-				<icon-link
-					color=[[item.color]]
-					href=[[item.href]]
-					icon=[[item.icon]]
-					size=[[linksSizeWithUnit]]
-					title=[[item.title]]
-				></icon-link>
+			<orbit-element degrees=[[item.degrees]] distance=[[orbitSize]]>
+				<icon-link color=[[item.color]] href=[[item.href]] icon=[[item.icon]] size=[[linksSizeWithUnit]] title=[[item.title]]></icon-link>
 			</orbit-element>
 		</template>
 	</template>
 	<script>
 		class OrbitLinks extends Polymer.Element {
-			static get is() { return 'orbit-links'; }
+			static get is() { return "orbit-links"; }
 			static get properties() {
 				return {
 					links: {

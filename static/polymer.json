@@ -1,9 +1,7 @@
 {
   "entrypoint": "index.html",
   "shell": "src/profile-app.html",
-  "fragments": [
-    "src/social-icons.html"
-  ],
+  "fragments": [],
   "sources": [
     "src/**/*",
     "images/**/*",
@@ -15,10 +13,6 @@
     "robots.txt"
   ],
   "builds": [{
-    "preset": "es5-bundled",
-    "addServiceWorker": true
-  }, {
-    "preset": "es6-bundled",
-    "addServiceWorker": true
+    "preset": "es6-bundled"
   }]
 }

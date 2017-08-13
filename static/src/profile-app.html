@@ -6,40 +6,26 @@
 <dom-module id="profile-app">
 	<template>
 		<style>
-		@keyframes grow-logo {
-			to {
-				transform: scale(1, 1);
+			:host {
+				--paper-icon-button-ink-color: gray;
 			}
-		}
-		:host {
-			--paper-icon-button-ink-color: #FFF;
-		}
-		new-logo, orbit-links {
-			height: 50vmin;
-			left: calc(50% - 25vmin);
-			position: absolute;
-			top: calc(50% - 25vmin);
-			width: 50vmin;
-		}
-		new-logo {
-			animation: grow-logo .5s ease-in-out 0s forwards;
-			transform: scale(0, 0);
-			will-change: transform;
-		}
+
+			new-logo,
+			orbit-links {
+				height: 50vmin;
+				left: calc(50% - 25vmin);
+				position: absolute;
+				top: calc(50% - 25vmin);
+				width: 50vmin;
+			}
 		</style>
 		<orbit-links links=[[ajaxResponse.data.links]]></orbit-links>
-		<new-logo animation-delay=".5" animation-duration="1.5"></new-logo>
-		<iron-ajax
-			auto
-			handle-as="json"
-			last-response={{ajaxResponse}}
-			params='{"query":"{links{title,href,icon,color}}"}'
-			url="/graphql"
-		></iron-ajax>
+		<new-logo></new-logo>
+		<iron-ajax auto handle-as="json" last-response={{ajaxResponse}} params='{"query":"{links{title,href,icon,color}}"}' url="/graphql"></iron-ajax>
 	</template>
 	<script>
 		class ProfileApp extends Polymer.Element {
-			static get is() { return 'profile-app'; }
+			static get is() { return "profile-app"; }
 		}
 		window.customElements.define(ProfileApp.is, ProfileApp);
 	</script>

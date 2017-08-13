@@ -34,7 +34,7 @@ const isDev = process && process.env && process.env.isDev || false;
  *
  * @exports
  */
-export const STATIC_DIR: string = isDev ? `${__dirname}/../static` : `${__dirname}/../static/build/es5-bundled`;
+export const STATIC_DIR: string = isDev ? `${__dirname}/../static` : `${__dirname}/../static/build/es6-bundled`;
 /**
  * File with data for GraphQL.
  *
