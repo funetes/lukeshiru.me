@@ -20,7 +20,10 @@ Link represented by an icon with aria label for a11y.
 		<style>
 			:host {
 				--default-icon-link-size: 15vmin;
+				--iron-icon-fill-color: #FFF;
+				background-color: var(--icon-link-color);
 				border-radius: 50%;
+				border: .5vmin solid #FFF;
 				box-sizing: border-box;
 				display: inline-block;
 				height: var(--icon-link-size, var(--default-icon-link-size));
@@ -66,7 +69,7 @@ Link represented by an icon with aria label for a11y.
 					"contextmenu"
 				].forEach(event => this.addEventListener(event, this.clickHandler));
 				this.updateStyles({
-					"--iron-icon-fill-color": this.color
+					"--icon-link-color": this.color
 				});
 			}
 			detached() {
