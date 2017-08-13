@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="author" content="Lucas Ciruzzi">
@@ -14,16 +15,16 @@
 	<link rel="shortcut icon" href="images/favicon.ico">
 	<link rel="manifest" href="manifest.json">
 	<meta name="theme-color" content="#000">
-	
+
 	<!-- Add to homescreen for Chrome on Android. Fallback for manifest.json -->
 	<meta name="mobile-web-app-capable" content="yes">
 	<meta name="application-name" content="Lucas Ciruzzi">
-	
+
 	<!-- Add to homescreen for Safari on iOS -->
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 	<meta name="apple-mobile-web-app-title" content="Lucas Ciruzzi">
-	
+
 	<!-- Homescreen icons -->
 	<link rel="apple-touch-icon" href="images/manifest/icon-48x48.png">
 	<link rel="apple-touch-icon" sizes="72x72" href="images/manifest/icon-72x72.png">
@@ -40,7 +41,7 @@
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:creator:id" content="214515121">
 	<meta name="twitter:site:id" content="214515121">
-	
+
 	<!-- Open Graph (Facebook) stuff -->
 	<meta property="fb:admins" content="100001842783444">
 	<meta property="og:description" content="Developer, DJ and gamer.">
@@ -52,7 +53,7 @@
 	<link rel="image_src" href="https://lukeshiru.me/images/thumb.png">
 
 	<!-- Pinterest -->
-	<meta name="p:domain_verify" content="190efc094fda499f82d3100619b02cf1"/>
+	<meta name="p:domain_verify" content="190efc094fda499f82d3100619b02cf1" />
 
 	<script>
 		// Register the base URL
@@ -60,7 +61,7 @@
 
 		// Load and register pre-caching Service Worker
 		if ("serviceWorker" in navigator) {
-			window.addEventListener("load", function() {
+			window.addEventListener("load", function () {
 				navigator.serviceWorker.register(baseUrl + "service-worker.js");
 			});
 		}
@@ -70,13 +71,18 @@
 	<script src="bower_components/webcomponentsjs/webcomponents-loader.js"></script>
 
 	<link rel="import" href="./src/profile-app.html">
-	<style>body {
-		background-color: #000;
-		height: 100vh;
-		margin: 0;
-		overflow: hidden;
-	}</style>
+	<style>
+		body {
+			background-color: #000;
+			height: 100vh;
+			margin: 0;
+			overflow: hidden;
+			transition: opacity 10s;
+			opacity: 1;
+		}
+	</style>
 </head>
+
 <body fullbleed>
 	<profile-app></profile-app>
 	<noscript>
@@ -86,6 +92,7 @@
 				display: flex;
 				justify-content: center;
 			}
+
 			noscript {
 				border-radius: 5vmin;
 				border: 1px solid #FFF;
@@ -102,4 +109,5 @@
 		<p>Sorry, but this site isn't made for paranoids.</p>
 	</noscript>
 </body>
+
 </html>
