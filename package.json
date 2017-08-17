@@ -2,12 +2,12 @@
   "name": "lukeshiru.me",
   "version": "1.3.2",
   "description": "https://lukeshiru.me",
-  "main": "src/index.js",
+  "main": "dist",
   "scripts": {
     "clean": "rimraf src/*.js && rimraf static/build",
-    "dev": "tsc --watch & isDev=true nodemon ./src/index.js",
+    "dev": "tsc --watch & isDev=true nodemon ./dist",
     "build": "tsc",
-    "start": "node ./src/index.js",
+    "start": "node dist",
     "bower-install": "cd static && export HOME=$HOME/app-root/runtime/repo; bower i",
     "polymer-build": "cd static && export HOME=$HOME/app-root/runtime/repo; polymer build",
     "postinstall": "npm run build && npm run bower-install && npm run polymer-build"

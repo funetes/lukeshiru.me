@@ -30,7 +30,11 @@
         "pretty": true,
         "strict": true,
         "suppressImplicitAnyIndexErrors": true,
-        "target": "es3"
+        "target": "es3",
+        "outDir": "dist"
     },
-    "exclude": ["node_modules", "static"]
+    "include": [
+        "src/**/*.ts"
+    ],
+    "exclude": ["node_modules", "static", "dist"]
 }

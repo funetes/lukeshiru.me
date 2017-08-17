@@ -40,4 +40,4 @@ export const STATIC_DIR: string = isDev ? `${__dirname}/../static` : `${__dirnam
  *
  * @exports
  */
-export const DATA_FILE: string = `${__dirname}/data.json`;
+export const DATA_FILE: string = `${__dirname}/../data.json`;
