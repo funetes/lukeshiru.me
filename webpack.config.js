@@ -17,7 +17,7 @@ module.exports = {
 		historyApiFallback: true,
 		noInfo: true
 	},
-	devtool: IS_PRODUCTION ? "nosources-source-map" : "eval-source-map",
+	devtool: IS_PRODUCTION ? "" : "cheap-module-eval-source-map",
 	entry: {
 		app: resolve(__dirname, "./static/src/index.ts"),
 		vendor: ["vue", "vuex", "vue-class-component"]
@@ -75,7 +75,7 @@ module.exports = {
 					new DefinePlugin({ "process.env": { NODE_ENV: `"production"` } }),
 					new UglifyJsPlugin({
 						comments: false,
-						sourceMap: true,
+						sourceMap: false,
 						compress: {
 							warnings: false
 						}
