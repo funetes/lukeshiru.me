@@ -27,14 +27,12 @@ export const PORT: number = parseInt(process.env.OPENSHIFT_NODEJS_PORT || '8080'
  */
 export const HOST: string = process.env.OPENSHIFT_NODEJS_IP || 'localhost';
 
-// Get current enviroment
-const isDev = process && process.env && process.env.isDev || false;
 /**
  * Static directory.
  *
  * @exports
  */
-export const STATIC_DIR: string = isDev ? `${__dirname}/../static` : `${__dirname}/../static/build/es6-bundled`;
+export const STATIC_DIR: string = `${__dirname}/../static`;
 /**
  * File with data for GraphQL.
  *

@@ -55,36 +55,22 @@
 	<!-- Pinterest -->
 	<meta name="p:domain_verify" content="190efc094fda499f82d3100619b02cf1" />
 
-	<script>
-		// Register the base URL
-		const baseUrl = document.querySelector('base').href;
-
-		// Load and register pre-caching Service Worker
-		if ("serviceWorker" in navigator) {
-			window.addEventListener("load", function () {
-				navigator.serviceWorker.register(baseUrl + "service-worker.js");
-			});
-		}
-	</script>
-
-	<!-- Load webcomponents-loader.js to check and load any polyfills your browser needs -->
-	<script src="bower_components/webcomponentsjs/webcomponents-loader.js"></script>
-
-	<link rel="import" href="./src/profile-app.html">
 	<style>
 		body {
 			background-color: #000;
 			height: 100vh;
 			margin: 0;
 			overflow: hidden;
-			transition: opacity 10s;
-			opacity: 1;
 		}
 	</style>
+
+	<link rel="stylesheet" href="./assets/app.css">
 </head>
 
-<body fullbleed>
-	<profile-app></profile-app>
+<body>
+	<div id="app"></div>
+	<script src="./assets/vendor.js"></script>
+	<script src="./assets/app.js"></script>
 	<noscript>
 		<style>
 			body {
