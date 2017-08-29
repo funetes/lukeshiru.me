@@ -14,9 +14,9 @@ main {
 </style>
 
 <template>
-	<main>
-		<Logo/>
-		<OrbitLinks/>
+	<main v-bind:style="{ backgroundColor: inverted ? '#fff' : '#000'}">
+		<OrbitLinks v-bind:links="links" v-bind:inverted="inverted"/>
+		<Logo v-bind:inverted="inverted"/>
 	</main>
 </template>
 
@@ -29,7 +29,13 @@ import Logo from "./Logo.vue";
 	components: { Logo, OrbitLinks }
 })
 export default class App extends Vue {
-	mounted() {
+	public get links() {
+		return this.$store.state.links;
+	}
+	public get inverted() {
+		return this.$store.state.inverted;
+	}
+	public mounted() {
 		this.$store.dispatch("loadLinks");
 	}
 }

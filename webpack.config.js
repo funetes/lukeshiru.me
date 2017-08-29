@@ -19,7 +19,7 @@ module.exports = {
 	},
 	devtool: IS_PRODUCTION ? "" : "cheap-module-eval-source-map",
 	entry: {
-		app: resolve(__dirname, "./static/src/index.ts"),
+		app: resolve(__dirname, "./assets/index.ts"),
 		vendor: ["vue", "vuex", "vue-class-component"]
 	},
 	module: {
@@ -57,7 +57,7 @@ module.exports = {
 	output: {
 		filename: "app.js",
 		path: resolve(__dirname, "./static/assets"),
-		publicPath: "/src/"
+		publicPath: "/assets/"
 	},
 	performance: {
 		hints: false

@@ -169,7 +169,7 @@
     "no-inferred-empty-object-type": true,
     "no-internal-module": true,
     "no-invalid-template-strings": true,
-    "no-invalid-this": true,
+    "no-invalid-this": false,
     "no-magic-numbers": false,
     "no-mergeable-namespace": true,
     "no-misused-new": true,

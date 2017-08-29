@@ -8,4 +8,5 @@ import { Link } from "./Link";
  */
 export interface AppState {
 	links?: Link[];
+	inverted?: boolean;
 }
