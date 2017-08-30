@@ -1,13 +1,6 @@
-<style lang="less" scoped>
-svg {
-	height: 100%;
-	width: 100%;
-}
-</style>
-
 <template>
-	<svg viewBox="0 0 256 256">
-		<g v-bind:stroke="inverted ? background : color" fill="none" stroke-linecap="round" stroke-linejoin="round" transform="translate(64, 64)">
+	<svg viewBox="0 0 128 128">
+		<g v-bind:stroke="inverted ? background : color" fill="none" stroke-linecap="round" stroke-linejoin="round">
 			<circle v-bind:fill="inverted ? color : background" id="big-circle" cx="64" cy="64" r="63.5" />
 			<g id="mirror">
 				<rect id="rectangle" x="36.55" y="48.1" height="47.6" width="27.5" />

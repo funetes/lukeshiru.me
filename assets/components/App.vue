@@ -5,18 +5,25 @@ main {
 	height: 100vh;
 	justify-content: center;
 	width: 100vw;
-	&>* {
+	.links, .logo {
+		border-radius: 50%;
 		position: absolute;
-		width: 100vw;
-		height: 100vh;
+	}
+	.links {
+		height: 100vmin;
+		width: 100vmin;
+	}
+	.logo {
+		height: 50vmin;
+		width: 50vmin;
 	}
 }
 </style>
 
 <template>
 	<main v-bind:style="{ backgroundColor: inverted ? '#fff' : '#000'}">
-		<OrbitLinks v-bind:links="links" v-bind:inverted="inverted"/>
-		<Logo v-bind:inverted="inverted"/>
+		<OrbitLinks class="links" v-bind:links="links" v-bind:inverted="inverted"/>
+		<Logo class="logo" v-bind:inverted="inverted"/>
 	</main>
 </template>
 

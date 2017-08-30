@@ -4,6 +4,7 @@ a {
 	border-style: solid;
 	border-width: .5vmin;
 	box-sizing: border-box;
+	cursor: pointer;
 	display: inline-block;
 	outline: none;
 	overflow: hidden;
