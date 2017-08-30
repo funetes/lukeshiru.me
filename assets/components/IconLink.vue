@@ -1,19 +1,11 @@
 <style lang="less" scoped>
 a {
-	border-radius: 50%;
-	border-style: solid;
-	border-width: .5vmin;
-	box-sizing: border-box;
-	cursor: pointer;
 	display: inline-block;
 	outline: none;
-	overflow: hidden;
-	padding: 25%;
-	transition: opacity .2s, transform .2s;
-	will-change: opacity, transform;
+	transition: transform .2s ease-in-out;
+	will-change: transform;
 	&:focus, &:hover {
-		transform: scale(0.9);
-		opacity: .8;
+		transform: scale(1.25);
 	}
 	svg {
 		height: 100%;
@@ -26,16 +18,22 @@ a {
 	<a
 		v-bind:aria-label="title"
 		v-bind:href="href"
-		v-bind:style="{
-			backgroundColor: inverted ? color : background,
-			borderColor: inverted ? background : color
-		}"
 		v-bind:title="title"
-		v-on:contextmenu="blockEvent"
 		rel="noopener noreferrer"
-	><svg viewBox="0 0 128 128"><path
+	><svg viewBox="0 0 256 256"><circle
+		v-bind:fill="inverted ? background : color"
+		cx="128"
+		cy="128"
+		r="128"
+	/><circle
+		v-bind:fill="inverted ? color : background"
+		cx="128"
+		cy="128"
+		r="120"
+	/><path
 		v-bind:d="icon"
 		v-bind:fill="inverted ? background : color"
+		transform="translate(64 64)"
 	/></svg></a>
 </template>
 
@@ -52,10 +50,5 @@ import { VueClassComponent, Vue } from "../shared";
 		title: String
 	}
 })
-export default class IconLink extends Vue {
-	public blockEvent(event: Event) {
-		event.preventDefault();
-		event.stopPropagation();
-	}
-}
+export default class IconLink extends Vue { }
 </script>

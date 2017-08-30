@@ -2,7 +2,6 @@
 span {
 	display: block;
 	left: 50%;
-	overflow: hidden;
 	position: absolute;
 	top: 50%;
 }
