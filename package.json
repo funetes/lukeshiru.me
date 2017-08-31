@@ -68,6 +68,7 @@
     "vue": "^2.4.2",
     "vue-class-component": "^5.0.2",
     "vue-loader": "^13.0.4",
+    "vue-server-renderer": "^2.4.2",
     "vue-style-loader": "^3.0.1",
     "vue-template-compiler": "^2.4.2",
     "vue-ts-loader": "^0.0.3",

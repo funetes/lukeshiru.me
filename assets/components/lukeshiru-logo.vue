@@ -20,6 +20,7 @@
 import { VueClassComponent, Vue } from "../shared";
 
 @VueClassComponent({
+	name: "lukeshiru-logo",
 	props: {
 		color: {
 			type: String,

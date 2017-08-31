@@ -7,28 +7,34 @@ const state: AppState = {
 	links: []
 };
 
+const commits = {
+	SET_INVERT: "Set invert value",
+	SET_LINKS: "Set links list"
+};
+
 const mutations = {
-	setLinks(currentState: AppState, links: Link[]) {
+	[commits.SET_INVERT]: (currentState: AppState, inverted: boolean) => {
+		currentState.inverted = inverted;
+	},
+	[commits.SET_LINKS]: (currentState: AppState, links: Link[]) => {
 		currentState.links = links;
 		localStorage.setItem("links", JSON.stringify(links));
-	},
-	setInvert(currentState: AppState, inverted: boolean) {
-		currentState.inverted = inverted;
 	}
 };
 
 const actions = {
 	loadLinks({ commit }: Vuex.ActionContext<AppState, AppState>) {
-		return fetch("/graphql?query={links{title,href,icon,color}}")
-			.then(response => response.json(), () => {
-				console.log("Fetch rejected");
+		const localData = { data: { links: JSON.parse(localStorage.getItem("links") || "[]") } };
 
-				return ({ data: { links: JSON.parse(localStorage.getItem("links") || "[]") } });
-			})
-			.then(response => commit("setLinks", response.data.links));
+		return fetch("/graphql?query={links{title,href,icon,color}}")
+			.then(
+				response => (response.headers.get("content-type") === "application/json" ? response.json() : localData),
+				() => localData
+			)
+			.then(response => commit(commits.SET_LINKS, response.data.links));
 	},
 	invert({ commit, state: appState }: Vuex.ActionContext<AppState, AppState>) {
-		return commit("setInvert", !appState.inverted);
+		return commit(commits.SET_INVERT, !appState.inverted);
 	}
 };
 

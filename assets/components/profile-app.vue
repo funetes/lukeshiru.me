@@ -22,20 +22,21 @@ main {
 
 <template>
 	<main v-bind:style="{ backgroundColor: inverted ? '#fff' : '#000'}">
-		<OrbitLinks class="links" v-bind:links="links" v-bind:inverted="inverted"/>
-		<Logo class="logo" v-bind:inverted="inverted"/>
+		<orbit-links class="links" v-bind:links="links" v-bind:inverted="inverted"/>
+		<lukeshiru-logo class="logo" v-bind:inverted="inverted"/>
 	</main>
 </template>
 
 <script lang="ts">
 import { VueClassComponent, Vue } from "../shared";
-import OrbitLinks from "./OrbitLinks.vue";
-import Logo from "./Logo.vue";
+import OrbitLinks from "./orbit-links.vue";
+import LukeshiruLogo from "./lukeshiru-logo.vue";
 
 @VueClassComponent({
-	components: { Logo, OrbitLinks }
+	components: { LukeshiruLogo, OrbitLinks },
+	name: "profile-app"
 })
-export default class App extends Vue {
+export default class ProfileApp extends Vue {
 	public get links() {
 		return this.$store.state.links;
 	}

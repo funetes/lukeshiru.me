@@ -1,13 +1,12 @@
 import * as OfflinePluginRuntime from "offline-plugin/runtime";
-import App from "./components/App.vue";
+import ProfileApp from "./components/profile-app.vue";
 import { Vue } from "./shared";
 import { store } from "./store";
 
 OfflinePluginRuntime.install();
 
-// tslint:disable-next-line:no-unused-expression
-new Vue({
-	el: "#app",
+export const vueInstance = new Vue({
+	el: "main",
 	render(vue) {
 		window.addEventListener("keydown", event => {
 			if (event.keyCode === 112) {
@@ -17,7 +16,7 @@ new Vue({
 			}
 		});
 
-		return vue(App);
+		return vue(ProfileApp);
 	},
 	store
 });

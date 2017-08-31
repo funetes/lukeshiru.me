@@ -1,6 +1,6 @@
 import Vue from "vue";
-import Vuex from "vuex";
 import VueClassComponent from "vue-class-component";
+import Vuex from "vuex";
 
 Vue.use(Vuex);
 

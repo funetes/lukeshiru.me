@@ -7,13 +7,13 @@
 
 <template>
 	<aside>
-		<OrbitElement
+		<orbit-element
 			v-bind:degrees="link.degrees"
 			v-bind:size="90"
 			v-bind:delay="link.delay"
 			v-bind:key="link.title"
 			v-for="link in orbitLinks"
-		><IconLink
+		><icon-link
 			class="link"
 			v-bind:color="color"
 			v-bind:background="link.color"
@@ -21,18 +21,19 @@
 			v-bind:icon="link.icon"
 			v-bind:inverted="inverted"
 			v-bind:title="link.title"
-		/></OrbitElement>
+		/></orbit-element>
 	</aside>
 </template>
 
 <script lang="ts">
 import { Link } from "../interfaces/Link";
 import { VueClassComponent, Vue } from "../shared";
-import IconLink from "./IconLink.vue";
-import OrbitElement from "./OrbitElement.vue";
+import IconLink from "./icon-link.vue";
+import OrbitElement from "./orbit-element.vue";
 
 @VueClassComponent({
 	components: { IconLink, OrbitElement },
+	name: "orbit-links",
 	props: {
 		inverted: Boolean,
 		links: Array,

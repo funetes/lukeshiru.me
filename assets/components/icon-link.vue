@@ -41,6 +41,7 @@ svg {
 import { VueClassComponent, Vue } from "../shared";
 
 @VueClassComponent({
+	name: "icon-link",
 	props: {
 		color: String,
 		background: String,

@@ -35,6 +35,7 @@
 import { VueClassComponent, Vue } from "../shared";
 
 @VueClassComponent({
+	name: "orbit-element",
 	props: {
 		degrees: Number,
 		delay: Number,
