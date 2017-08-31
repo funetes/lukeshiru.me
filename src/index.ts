@@ -1,10 +1,10 @@
 import * as compression from "compression";
 import * as express from "express";
-import * as helmet from "helmet";
 import * as expressGraphql from "express-graphql";
-import { CORS, PORT, HOST, STATIC_DIR } from "./settings";
-import { WEEK, YEAR } from "./time";
+import * as helmet from "helmet";
 import { schema } from "./graph";
+import { CORS, HOST, PORT, STATIC_DIR } from "./settings";
+import { WEEK, YEAR } from "./time";
 
 /**
  * Express App

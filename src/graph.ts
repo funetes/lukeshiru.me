@@ -1,5 +1,4 @@
 import { readFile } from "fs";
-import { promisify } from "util";
 import {
 	GraphQLList,
 	GraphQLNonNull,
@@ -7,15 +6,15 @@ import {
 	GraphQLSchema,
 	GraphQLString
 } from "graphql";
+import { promisify } from "util";
 import { DATA_FILE } from "./settings";
 
 const readFileAsync = promisify(readFile);
 
 const linkGraph = new GraphQLObjectType({
-	name: "Link",
 	fields: () => ({
-		title: {
-			description: "Title of the link",
+		color: {
+			description: "Icon color",
 			type: new GraphQLNonNull(GraphQLString)
 		},
 		href: {
@@ -26,23 +25,24 @@ const linkGraph = new GraphQLObjectType({
 			description: "Icon name of the link",
 			type: new GraphQLNonNull(GraphQLString)
 		},
-		color: {
-			description: "Icon color",
+		title: {
+			description: "Title of the link",
 			type: new GraphQLNonNull(GraphQLString)
 		}
-	})
+	}),
+	name: "Link"
 });
 const linkListGraph = new GraphQLObjectType({
-	name: "Links",
 	fields: () => ({
 		links: {
-			type: new GraphQLList(linkGraph),
 			resolve: () =>
-				readFileAsync(DATA_FILE, { encoding: "utf8" }).then(textFile =>
-					JSON.parse(textFile)
-				)
+			readFileAsync(DATA_FILE, { encoding: "utf8" }).then(textFile =>
+				JSON.parse(textFile)
+			),
+			type: new GraphQLList(linkGraph)
 		}
-	})
+	}),
+	name: "Links"
 });
 
 export const schema = new GraphQLSchema({ query: linkListGraph });

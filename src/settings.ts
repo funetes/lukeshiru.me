@@ -13,19 +13,19 @@ export const CORS: string = [
 	"object-src 'self'",
 	"script-src 'self' 'unsafe-inline' data:",
 	"style-src 'self' 'unsafe-inline' *.googleapis.com"
-].join('; ');
+].join("; ");
 /**
  * Server port.
  *
  * @exports
  */
-export const PORT: number = parseInt(process.env.OPENSHIFT_NODEJS_PORT || '8080', 10);
+export const PORT: number = parseInt(process.env.OPENSHIFT_NODEJS_PORT || "8080", 10);
 /**
  * Server host.
  *
  * @exports
  */
-export const HOST: string = process.env.OPENSHIFT_NODEJS_IP || 'localhost';
+export const HOST: string = process.env.OPENSHIFT_NODEJS_IP || "localhost";
 
 /**
  * Static directory.
