@@ -28,7 +28,10 @@ const actions = {
 
 		return fetch("/graphql?query={links{title,href,icon,color}}")
 			.then(
-				response => (response.headers.get("content-type") === "application/json" ? response.json() : localData),
+				response =>
+					(response.headers.get("content-type") || "").indexOf("application/json") < 0
+						? localData
+						: response.json(),
 				() => localData
 			)
 			.then(response => commit(commits.SET_LINKS, response.data.links));
