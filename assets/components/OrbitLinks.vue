@@ -9,7 +9,8 @@
 	<aside>
 		<OrbitElement
 			v-bind:degrees="link.degrees"
-			v-bind:distance="38"
+			v-bind:size="90"
+			v-bind:delay="link.delay"
 			v-bind:key="link.title"
 			v-for="link in orbitLinks"
 		><IconLink
@@ -46,7 +47,8 @@ export default class OrbitLinks extends Vue {
 		return (Array.isArray(this.$props.links) && this.$props.links.length > 0)
 			? (<Link[]>this.$props.links).map((link, index, array) => ({
 				...link,
-				degrees: (360 / array.length) * index
+				degrees: (360 / array.length) * index,
+				delay: index * .1
 			})) : [];
 	}
 }
