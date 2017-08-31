@@ -84,7 +84,12 @@ module.exports = {
 						}
 					}),
 					new LoaderOptionsPlugin({ minimize: true }),
-					new OfflinePlugin()
+					new OfflinePlugin({
+						externals: ["/index.html"],
+						ServiceWorker: {
+							output: "../sw.js"
+						}
+					})
 				]
 			: []
 	),

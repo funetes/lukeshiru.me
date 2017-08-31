@@ -20,8 +20,7 @@ const actions = {
 	loadLinks({ commit }: Vuex.ActionContext<AppState, AppState>) {
 		return fetch("/graphql?query={links{title,href,icon,color}}")
 			.then(data => data.json())
-			.then(data => commit("setLinks", data))
-			.catch(() => fetch("/data.json").then(data => data.json()).then(data => commit("setLinks", data)));
+			.then(data => commit("setLinks", data));
 	},
 	invert({ commit, state: appState }: Vuex.ActionContext<AppState, AppState>) {
 		return commit("setInvert", !appState.inverted);
