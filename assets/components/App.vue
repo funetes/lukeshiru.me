@@ -5,18 +5,18 @@ main {
 	height: 100vh;
 	justify-content: center;
 	width: 100vw;
-	.links, .logo {
-		border-radius: 50%;
-		position: absolute;
-	}
-	.links {
-		height: 100vmin;
-		width: 100vmin;
-	}
-	.logo {
-		height: 50vmin;
-		width: 50vmin;
-	}
+}
+.links, .logo {
+	border-radius: 50%;
+	position: absolute;
+}
+.links {
+	height: 100vmin;
+	width: 100vmin;
+}
+.logo {
+	height: 50vmin;
+	width: 50vmin;
 }
 </style>
 

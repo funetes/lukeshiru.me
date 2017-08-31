@@ -1,7 +1,7 @@
 <style lang="less" scoped>
 .link {
-	width: 15vmin;
 	height: 15vmin;
+	width: 15vmin;
 }
 </style>
 

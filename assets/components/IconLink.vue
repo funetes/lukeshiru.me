@@ -7,10 +7,10 @@ a {
 	&:focus, &:hover {
 		transform: scale(1.25);
 	}
-	svg {
-		height: 100%;
-		width: 100%;
-	}
+}
+svg {
+	height: 100%;
+	width: 100%;
 }
 </style>
 

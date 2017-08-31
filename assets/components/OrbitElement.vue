@@ -1,5 +1,5 @@
 <style lang="less" scoped>
-.main-container {
+.orbit {
 	animation: orbit .5s ease-in-out reverse backwards;
 	display: block;
 	left: 50%;
@@ -11,11 +11,9 @@
 	width: 50%;
 	will-change: width;
 }
-
-.sub-container {
+.rotation {
 	display: inline-block;
 }
-
 @keyframes orbit {
 	to { width: 0%; }
 }
@@ -26,8 +24,8 @@
 		animationDelay: `${delay}s`,
 		transform: transformMain,
 		width: `${size / 2}%`
-	}" class="main-container">
-		<span v-bind:style="{ transform: transformSub }" class="sub-container">
+	}" class="orbit">
+		<span v-bind:style="{ transform: transformSub }" class="rotation">
 			<slot/>
 		</span>
 	</span>
