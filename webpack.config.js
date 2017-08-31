@@ -1,6 +1,7 @@
 // @ts-check
 
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const OfflinePlugin = require("offline-plugin");
 const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const { resolve } = require("path");
 const {
@@ -77,10 +78,13 @@ module.exports = {
 						comments: false,
 						sourceMap: false,
 						compress: {
-							warnings: false
+							warnings: false,
+							drop_console: true,
+							drop_debugger: true
 						}
 					}),
-					new LoaderOptionsPlugin({ minimize: true })
+					new LoaderOptionsPlugin({ minimize: true }),
+					new OfflinePlugin()
 				]
 			: []
 	),

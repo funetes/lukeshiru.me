@@ -15,6 +15,7 @@
     "clean": "rimraf {./dist,./static/assets}",
     "postinstall": "npm run build-back && npm run build-front-prod",
     "serve-dev": "NODE_ENV=development webpack-dev-server",
+    "serve-prod": "NODE_ENV=production webpack-dev-server",
     "start": "node dist"
   },
   "repository": {
@@ -60,6 +61,7 @@
     "json-to-graphql": "^0.1.1",
     "less": "^2.7.2",
     "less-loader": "^4.0.5",
+    "offline-plugin": "^4.8.3",
     "optimize-css-assets-webpack-plugin": "^3.1.1",
     "ts-loader": "^2.0.3",
     "typescript": "^2.5.1",

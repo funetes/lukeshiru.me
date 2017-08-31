@@ -1,6 +1,9 @@
+import * as OfflinePluginRuntime from "offline-plugin/runtime";
 import App from "./components/App.vue";
 import { Vue } from "./shared";
 import { store } from "./store";
+
+OfflinePluginRuntime.install();
 
 // tslint:disable-next-line:no-unused-expression
 new Vue({
