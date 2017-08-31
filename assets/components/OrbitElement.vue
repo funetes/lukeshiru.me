@@ -1,5 +1,6 @@
 <style lang="less" scoped>
 .main-container {
+	animation: orbit .5s ease-in-out reverse backwards;
 	display: block;
 	left: 50%;
 	position: absolute;
@@ -8,7 +9,7 @@
 	transform-origin: 0 50%;
 	transform: translateY(-50%);
 	width: 50%;
-	animation: orbit .5s ease-in-out reverse backwards;
+	will-change: width;
 }
 
 .sub-container {
@@ -16,9 +17,7 @@
 }
 
 @keyframes orbit {
-	to {
-		width: 0%;
-	}
+	to { width: 0%; }
 }
 </style>
 
