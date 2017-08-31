@@ -30,7 +30,7 @@ svg {
 		v-bind:fill="inverted ? color : background"
 		cx="128"
 		cy="128"
-		r="120"
+		r="114"
 	/><path
 		v-bind:d="icon"
 		v-bind:fill="inverted ? background : color"
