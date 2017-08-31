@@ -3,19 +3,24 @@
 	animation: orbit .5s ease-in-out reverse backwards;
 	display: block;
 	left: 50%;
+	opacity: 1;
 	position: absolute;
 	text-align: right;
 	top: 50%;
 	transform-origin: 0 50%;
 	transform: translateY(-50%);
 	width: 50%;
-	will-change: width;
+	will-change: opacity, width;
 }
 .rotation {
 	display: inline-block;
+	height: 100%;
 }
 @keyframes orbit {
-	to { width: 0%; }
+	to {
+		opacity: 0;
+		width: 0%;
+	}
 }
 </style>
 

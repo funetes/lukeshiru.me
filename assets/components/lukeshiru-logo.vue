@@ -1,3 +1,13 @@
+<style lang="less" scoped>
+svg {
+	animation: zoom .5s ease-in-out forwards;
+	transform: scale(0);
+}
+@keyframes zoom {
+	to { transform: scale(1); }
+}
+</style>
+
 <template>
 	<svg viewBox="0 0 128 128">
 		<g v-bind:stroke="inverted ? background : color" fill="none" stroke-linecap="round" stroke-linejoin="round">

@@ -5,12 +5,13 @@ a {
 	transition: transform .2s ease-in-out;
 	will-change: transform;
 	&:focus, &:hover {
-		transform: scale(1.25);
+		transform: scale(1.1);
 	}
 }
+@size: 100%;
 svg {
-	height: 100%;
-	width: 100%;
+	height: @size;
+	width: @size;
 }
 </style>
 

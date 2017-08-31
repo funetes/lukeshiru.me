@@ -10,13 +10,15 @@ main {
 	border-radius: 50%;
 	position: absolute;
 }
+@size: 100vmin;
+@half-size: @size / 2;
 .links {
-	height: 100vmin;
-	width: 100vmin;
+	height: @size;
+	width: @size;
 }
 .logo {
-	height: 50vmin;
-	width: 50vmin;
+	height: @half-size;
+	width: @half-size;
 }
 </style>
 

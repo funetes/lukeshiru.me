@@ -1,7 +1,8 @@
 <style lang="less" scoped>
+@size: 15vmin;
 .link {
-	height: 15vmin;
-	width: 15vmin;
+	height: @size;
+	width: @size;
 }
 </style>
 
@@ -49,7 +50,7 @@ export default class OrbitLinks extends Vue {
 			? (<Link[]>this.$props.links).map((link, index, array) => ({
 				...link,
 				degrees: (360 / array.length) * index,
-				delay: index * .1
+				delay: index * .1 + .1
 			})) : [];
 	}
 }
