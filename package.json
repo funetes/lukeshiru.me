@@ -10,13 +10,15 @@
   },
   "scripts": {
     "build-back": "tsc",
+    "build-dev": "npm run build-back && npm run build-front-dev",
     "build-front-dev": "NODE_ENV=development webpack -d",
     "build-front-prod": "NODE_ENV=production webpack -p",
-    "clean": "rimraf {./dist,./static/assets}",
+    "build-prod": "npm run build-back && npm run build-front-prod",
+    "clean": "rimraf ./dist",
     "postinstall": "npm run build-back && npm run build-front-prod",
     "serve-dev": "NODE_ENV=development webpack-dev-server",
     "serve-prod": "NODE_ENV=production webpack-dev-server",
-    "start": "node dist"
+    "start": "node dist/back"
   },
   "repository": {
     "type": "git",

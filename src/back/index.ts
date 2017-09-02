@@ -2,8 +2,9 @@ import * as compression from "compression";
 import * as express from "express";
 import * as expressGraphql from "express-graphql";
 import * as helmet from "helmet";
+import { resolve } from "path";
 import { schema } from "./graph";
-import { CORS, HOST, PORT, STATIC_DIR } from "./settings";
+import { CORS, FRONT_DIR, HOST, PORT, STATIC_DIR } from "./settings";
 import { WEEK, YEAR } from "./time";
 
 /**
@@ -23,6 +24,8 @@ const setHeaders = (response: express.Response) => {
 
 	// Bettter caching
 	response.set("Vary", "Accept-Encoding");
+
+	return response;
 };
 
 // Use Helmet for general protection
@@ -45,6 +48,12 @@ app.set("Vary", "Accept-Encoding");
 
 // GraphQL data
 app.use("/graphql", expressGraphql({ schema }));
+
+// Service Worker
+app.use("/sw.js", (request, response) => setHeaders(response).sendFile(resolve(`${FRONT_DIR}/../sw.js`)));
+
+// Front code output
+app.use("/assets", express.static(FRONT_DIR, { setHeaders }));
 
 // Load everything from static folder
 app.use(express.static(STATIC_DIR, { setHeaders }));

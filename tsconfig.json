@@ -8,13 +8,13 @@
     "noEmitOnError": true,
     "noImplicitThis": true,
     "noUnusedLocals": true,
-    "outDir": "dist",
+    "outDir": "dist/back",
     "preserveConstEnums": true,
     "pretty": true,
     "strict": true,
     "suppressImplicitAnyIndexErrors": true,
     "target": "es2015"
   },
-  "include": ["src/**/*.ts"],
-  "exclude": ["assets", "dist", "node_modules", "static"]
+  "include": ["src/back/**/*.ts"],
+  "exclude": ["node_modules"]
 }

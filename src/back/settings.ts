@@ -1,3 +1,5 @@
+import { resolve } from "path";
+
 /**
  * CORS settings.
  *
@@ -14,12 +16,14 @@ export const CORS: string = [
 	"script-src 'self' 'unsafe-eval'",
 	"style-src 'self' 'unsafe-inline'"
 ].join("; ");
+
 /**
  * Server port.
  *
  * @exports
  */
 export const PORT: number = parseInt(process.env.OPENSHIFT_NODEJS_PORT || "8080", 10);
+
 /**
  * Server host.
  *
@@ -32,10 +36,11 @@ export const HOST: string = process.env.OPENSHIFT_NODEJS_IP || "localhost";
  *
  * @exports
  */
-export const STATIC_DIR: string = `${__dirname}/../static`;
+export const STATIC_DIR: string = resolve(`${__dirname}/../../static`);
+
 /**
- * File with data for GraphQL.
+ * Static directory.
  *
  * @exports
  */
-export const DATA_FILE: string = `${__dirname}/../data.json`;
+export const FRONT_DIR: string = resolve(`${__dirname}/../../dist/front`);

@@ -1,4 +1,3 @@
-import { readFile } from "fs";
 import {
 	GraphQLList,
 	GraphQLNonNull,
@@ -6,10 +5,7 @@ import {
 	GraphQLSchema,
 	GraphQLString
 } from "graphql";
-import { promisify } from "util";
-import { DATA_FILE } from "./settings";
-
-const readFileAsync = promisify(readFile);
+import { data } from "./data";
 
 const linkGraph = new GraphQLObjectType({
 	fields: () => ({
@@ -35,10 +31,7 @@ const linkGraph = new GraphQLObjectType({
 const linkListGraph = new GraphQLObjectType({
 	fields: () => ({
 		links: {
-			resolve: () =>
-			readFileAsync(DATA_FILE, { encoding: "utf8" }).then(textFile =>
-				JSON.parse(textFile)
-			),
+			resolve: () => data,
 			type: new GraphQLList(linkGraph)
 		}
 	}),

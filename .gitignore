@@ -87,6 +87,4 @@ node_modules
 # Dist #########################################################################
 
 # Dist directory
-/static/assets
-/static/sw.js
 /dist

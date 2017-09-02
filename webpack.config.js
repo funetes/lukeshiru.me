@@ -14,13 +14,13 @@ const IS_PRODUCTION = process.env.NODE_ENV === "production";
 module.exports = {
 	devServer: {
 		compress: true,
-		contentBase: resolve(__dirname, "./static"),
+		contentBase: resolve(__dirname, "./src/front"),
 		historyApiFallback: true,
 		noInfo: true
 	},
 	devtool: IS_PRODUCTION ? "" : "cheap-module-eval-source-map",
 	entry: {
-		app: resolve(__dirname, "./assets/index.ts"),
+		app: resolve(__dirname, "./src/front/index.ts"),
 		vendor: ["vue", "vuex", "vue-class-component"]
 	},
 	module: {
@@ -57,7 +57,7 @@ module.exports = {
 	},
 	output: {
 		filename: "app.js",
-		path: resolve(__dirname, "./static/assets"),
+		path: resolve(__dirname, "./dist/front"),
 		publicPath: "/assets/"
 	},
 	performance: {
