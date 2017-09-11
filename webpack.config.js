@@ -16,8 +16,7 @@ module.exports = {
 	},
 	devtool: IS_PRODUCTION ? "" : "cheap-module-eval-source-map",
 	entry: {
-		app: resolve(__dirname, "./src/front/index.ts"),
-		vendor: ["vue", "vuex", "vue-class-component"]
+		app: resolve(__dirname, "./src/front/index.ts")
 	},
 	module: {
 		rules: [
@@ -54,12 +53,7 @@ module.exports = {
 	performance: {
 		hints: false
 	},
-	plugins: [
-		new CommonsChunkPlugin({
-			filename: "vendor.js",
-			name: "vendor"
-		})
-	].concat(
+	plugins: [].concat(
 		IS_PRODUCTION
 			? [
 					new OptimizeCssAssetsPlugin(),
