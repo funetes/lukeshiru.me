@@ -1,7 +1,6 @@
 // @ts-check
 
 const cssNext = require("postcss-cssnext");
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const OfflinePlugin = require("offline-plugin");
 const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const { resolve } = require("path");
@@ -25,7 +24,7 @@ module.exports = {
 			{
 				loader: "vue-loader",
 				options: {
-					extractCSS: true,
+					extractCSS: false,
 					postcss: [cssNext()]
 				},
 				test: /\.vue$/
@@ -56,7 +55,6 @@ module.exports = {
 		hints: false
 	},
 	plugins: [
-		new ExtractTextPlugin("app.css"),
 		new CommonsChunkPlugin({
 			filename: "vendor.js",
 			name: "vendor"
