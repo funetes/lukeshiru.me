@@ -6,9 +6,7 @@ Source code for my [personal website](https://lukeshiru.me).
 
 - Source code [TypeScript](https://github.com/Microsoft/TypeScript).
 - Engine [Node.js 8](https://nodejs.org).
-- Routing [express](https://github.com/expressjs/express) (will replace in the future with [koa](https://github.com/koajs/koa)).
-- Compression: [compression](https://github.com/expressjs/compression).
-- Security [helmet](https://github.com/helmetjs/helmet).
+- Middleware [Koa](https://github.com/koajs/koa).
 - CDN [Cloudflare](https://www.cloudflare.com/).
 - Hosting [OpenShift](https://openshift.redhat.com).
 

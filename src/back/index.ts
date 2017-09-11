@@ -1,62 +1,59 @@
-import * as compression from "compression";
-import * as express from "express";
-import * as expressGraphql from "express-graphql";
-import * as helmet from "helmet";
+import * as Koa from "koa";
+import * as compress from "koa-compress";
+import * as graphql from "koa-graphql";
+import * as helmet from "koa-helmet";
+import * as mount from "koa-mount";
+import * as sendFile from "koa-sendfile";
+import * as staticFile from "koa-static";
 import { resolve } from "path";
 import { schema } from "./graph";
-import { CORS, FRONT_DIR, HOST, PORT, STATIC_DIR } from "./settings";
+import {
+	CORS,
+	FRONT_DIR,
+	HOST,
+	PORT,
+	STATIC_DIR
+} from "./settings";
 import { WEEK, YEAR } from "./time";
 
 /**
- * Express App
+ * Koa App
  */
-const app: express.Express = express();
-
-const setHeaders = (response: express.Response) => {
-	// Add CORS headers
-	response.set("Content-Security-Policy", CORS);
-	response.set("X-Content-Security-Policy", CORS);
-
-	// Cache
-	response.set("Expires", new Date(Date.now() + WEEK).toUTCString());
-	response.set("Cache-Control", `max-age=${YEAR}, private`);
-	response.set("Pragma", "public");
-
-	// Bettter caching
-	response.set("Vary", "Accept-Encoding");
-
-	return response;
-};
+const app = new Koa();
 
 // Use Helmet for general protection
 app.use(helmet());
 
 // Compress data in the highest level
-app.use(compression({ level: 9 }));
+app.use(compress({ level: 9 }));
 
-// Add CORS headers
-app.set("Content-Security-Policy", CORS);
-app.set("X-Content-Security-Policy", CORS);
+app.use(async (context, next) => {
+	// Add CORS headers
+	context.set("Content-Security-Policy", CORS);
+	context.set("X-Content-Security-Policy", CORS);
 
-// Cache
-app.set("Expires", new Date(Date.now() + WEEK).toUTCString());
-app.set("Cache-Control", `max-age=${YEAR}, private`);
-app.set("Pragma", "public");
+	// Cache
+	context.set("Expires", new Date(Date.now() + WEEK).toUTCString());
+	context.set("Cache-Control", `max-age=${YEAR}, private`);
+	context.set("Pragma", "public");
 
-// Bettter caching
-app.set("Vary", "Accept-Encoding");
+	// Bettter caching
+	context.set("Vary", "Accept-Encoding");
+
+	return next();
+});
 
 // GraphQL data
-app.use("/graphql", expressGraphql({ schema }));
+app.use(mount("/graphql", graphql({ schema })));
 
 // Service Worker
-app.use("/sw.js", (request, response) => setHeaders(response).sendFile(resolve(`${FRONT_DIR}/../sw.js`)));
+app.use(mount("/sw.js", async context => sendFile(context, resolve(`${FRONT_DIR}/../sw.js`))));
 
 // Front code output
-app.use("/assets", express.static(FRONT_DIR, { setHeaders }));
+app.use(mount("/assets", staticFile(FRONT_DIR)));
 
 // Load everything from static folder
-app.use(express.static(STATIC_DIR, { setHeaders }));
+app.use(staticFile(STATIC_DIR));
 
 // Start server on configured port
 app.listen(PORT, HOST, () =>
