@@ -9,18 +9,20 @@ svg {
 </style>
 
 <template>
-	<svg viewBox="0 0 128 128">
-		<g v-bind:stroke="inverted ? background : color" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-			<circle v-bind:fill="inverted ? color : background" cx="64" cy="64" r="63"/>
-			<g id="m">
-				<path d="m64 1v94.5h54.5zM64 95.5h28v-46z"/>
-				<path id="t" d="m64 51v22h27.3z"/>
-				<use href="#t" y="-146" transform="scale(1 -1)"/>
-				<use href="#t" x="-155.3" y="-146" transform="scale(-1 -1)"/>
+	<span>
+		<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 128 128">
+			<g v-bind:stroke="inverted ? background : color" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+				<circle v-bind:fill="inverted ? color : background" cx="64" cy="64" r="63"/>
+				<g id="m">
+					<path d="m64 1v94.5h54.5zM64 95.4h28v-45.7z"/>
+					<path id="t" d="m64 51v22h27.3z"/>
+					<use xlink:href="#t" y="-146" transform="scale(1 -1)"/>
+					<use xlink:href="#t" x="-155.9" y="-146" transform="scale(-1 -1)"/>
+				</g>
+				<use xlink:href="#m" transform="scale(-1 1)" x="-128"/>
 			</g>
-			<use href="#m" transform="scale(-1 1)" x="-128"/>
-		</g>
-	</svg>
+		</svg>
+	</span>
 </template>
 
 <script lang="ts">

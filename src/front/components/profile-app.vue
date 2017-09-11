@@ -1,14 +1,14 @@
 <style lang="less" scoped>
 main {
-	align-items: center;
-	display: flex;
 	height: 100vh;
-	justify-content: center;
 	width: 100vw;
 }
 .links, .logo {
 	border-radius: 50%;
 	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }
 @size: 100vmin;
 @half-size: @size / 2;
