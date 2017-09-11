@@ -5,7 +5,11 @@ import {
 	GraphQLSchema,
 	GraphQLString
 } from "graphql";
-import { data } from "./data";
+
+/**
+ * Content of data.json file.
+ */
+const data = require("../../data.json");
 
 const linkGraph = new GraphQLObjectType({
 	fields: () => ({
