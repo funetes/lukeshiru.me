@@ -1,14 +1,11 @@
 // @ts-check
 
+const cssNext = require("postcss-cssnext");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const OfflinePlugin = require("offline-plugin");
 const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const { resolve } = require("path");
-const {
-	DefinePlugin,
-	LoaderOptionsPlugin,
-	optimize: { CommonsChunkPlugin, UglifyJsPlugin }
-} = require("webpack");
+const { DefinePlugin, LoaderOptionsPlugin, optimize: { CommonsChunkPlugin, UglifyJsPlugin } } = require("webpack");
 const IS_PRODUCTION = process.env.NODE_ENV === "production";
 
 module.exports = {
@@ -29,12 +26,7 @@ module.exports = {
 				loader: "vue-loader",
 				options: {
 					extractCSS: true,
-					loaders: {
-						less: ExtractTextPlugin.extract({
-							fallback: "vue-style-loader",
-							use: ["css-loader", "less-loader"]
-						})
-					}
+					postcss: [cssNext()]
 				},
 				test: /\.vue$/
 			},

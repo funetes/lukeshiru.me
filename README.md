@@ -18,4 +18,4 @@ Source code for my [personal website](https://lukeshiru.me).
 - Engine [Vue.js](https://vuejs.org/).
 - Packing [Webpack](https://webpack.github.io/).
 - State Management [Vuex](https://vuex.vuejs.org/en/).
-- Styles [Less.js](http://lesscss.org/).
+- Styles [CSSNext](http://cssnext.io/).

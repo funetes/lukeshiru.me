@@ -1,4 +1,8 @@
-<style lang="less" scoped>
+<style scoped>
+:root {
+	--size-big: 100vmin;
+	--size-small: 50vmin;
+}
 main {
 	height: 100vh;
 	width: 100vw;
@@ -10,15 +14,13 @@ main {
 	left: 50%;
 	transform: translate(-50%, -50%);
 }
-@size: 100vmin;
-@half-size: @size / 2;
 .links {
-	height: @size;
-	width: @size;
+	height: var(--size-big);
+	width: var(--size-big);
 }
 .logo {
-	height: @half-size;
-	width: @half-size;
+	height: var(--size-small);
+	width: var(--size-small);
 }
 </style>
 

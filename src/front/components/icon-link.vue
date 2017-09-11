@@ -1,17 +1,19 @@
-<style lang="less" scoped>
+<style scoped>
+:root {
+	--size: 100%;
+}
 a {
 	display: inline-block;
 	outline: none;
 	transition: transform .2s ease-in-out;
 	will-change: transform;
-	&:focus, &:hover {
-		transform: scale(1.1);
-	}
 }
-@size: 100%;
+a:focus, a:hover {
+	transform: scale(1.1);
+}
 svg {
-	height: @size;
-	width: @size;
+	height: var(--size);
+	width: var(--size);
 }
 </style>
 

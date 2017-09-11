@@ -1,8 +1,10 @@
-<style lang="less" scoped>
-@size: 15vmin;
+<style scoped>
+:root {
+	--size: 15vmin;
+}
 .link {
-	height: @size;
-	width: @size;
+	height: var(--size);
+	width: var(--size);
 }
 </style>
 

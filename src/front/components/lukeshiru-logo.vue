@@ -1,4 +1,4 @@
-<style lang="less" scoped>
+<style scoped>
 svg {
 	animation: zoom .5s ease-in-out forwards;
 	transform: scale(0);

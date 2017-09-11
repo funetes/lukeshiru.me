@@ -1,4 +1,4 @@
-<style lang="less" scoped>
+<style scoped>
 .orbit {
 	animation: orbit .5s ease-in-out reverse backwards;
 	display: block;
