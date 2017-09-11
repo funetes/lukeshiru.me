@@ -9,8 +9,7 @@ const IS_PRODUCTION = process.env.NODE_ENV === "production";
 
 module.exports = {
 	devServer: {
-		compress: true,
-		contentBase: resolve(__dirname, "./src/front"),
+		contentBase: resolve(__dirname, "./static"),
 		historyApiFallback: true,
 		noInfo: true
 	},
