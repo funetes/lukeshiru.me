@@ -1,5 +1,5 @@
 import * as OfflinePluginRuntime from "offline-plugin/runtime";
-import ProfileApp from "./components/profile-app.vue";
+import AppMain from "./components/AppMain.vue";
 import { Vue } from "./shared";
 import { store } from "./store";
 
@@ -16,7 +16,7 @@ export const vueInstance = new Vue({
 			}
 		});
 
-		return vue(ProfileApp);
+		return vue(AppMain);
 	},
 	store
 });

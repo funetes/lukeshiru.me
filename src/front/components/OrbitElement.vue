@@ -1,5 +1,5 @@
-<style scoped>
-.orbit {
+<style module>
+.OrbitElement {
 	animation: orbit .5s ease-in-out reverse backwards;
 	display: block;
 	left: 50%;
@@ -12,10 +12,12 @@
 	width: 50%;
 	will-change: opacity, width;
 }
+
 .rotation {
 	display: inline-block;
 	height: 100%;
 }
+
 @keyframes orbit {
 	to {
 		opacity: 0;
@@ -25,22 +27,17 @@
 </style>
 
 <template>
-	<span v-bind:style="{
-		animationDelay: `${delay}s`,
-		transform: transformMain,
-		width: `${size / 2}%`
-	}" class="orbit">
-		<span v-bind:style="{ transform: transformSub }" class="rotation">
+	<aside :class="$style.OrbitElement" :style="orbitStyle">
+		<span :class="$style.rotation" :style="rotationStyle">
 			<slot/>
 		</span>
-	</span>
+	</aside>
 </template>
 
 <script lang="ts">
 import { VueClassComponent, Vue } from "../shared";
 
 @VueClassComponent({
-	name: "orbit-element",
 	props: {
 		degrees: Number,
 		delay: Number,
@@ -51,13 +48,19 @@ export default class OrbitElement extends Vue {
 	public get degreesTop() {
 		return this.$props.degrees - 90;
 	}
-	public get transformMain() {
-		const { degreesTop } = this;
-		return `translateY(-50%) rotate(${degreesTop}deg)`;
+	public get orbitStyle() {
+		const { degreesTop, $props: { delay, size } } = this;
+		return {
+			animationDelay: `${delay}s`,
+			transform: `translateY(-50%) rotate(${degreesTop}deg)`,
+			width: `${size / 2}%`
+		};
 	}
-	public get transformSub() {
+	public get rotationStyle() {
 		const { degreesTop } = this;
-		return `rotate(${degreesTop * -1}deg)`;
+		return {
+			transform: `rotate(${degreesTop * -1}deg)`
+		};
 	}
 }
 </script>

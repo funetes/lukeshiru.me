@@ -1,18 +1,21 @@
-<style scoped>
-svg {
+<style module>
+.AppLogo {
 	animation: zoom .5s ease-in-out forwards;
 	transform: scale(0);
 }
+
 @keyframes zoom {
-	to { transform: scale(1); }
+	to {
+		transform: scale(1);
+	}
 }
 </style>
 
 <template>
 	<span>
-		<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 128 128">
-			<g v-bind:stroke="inverted ? background : color" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-				<circle v-bind:fill="inverted ? color : background" cx="64" cy="64" r="63"/>
+		<svg :class="$style.AppLogo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 128 128">
+			<g :stroke="inverted ? background : color" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+				<circle :fill="inverted ? color : background" cx="64" cy="64" r="63"/>
 				<g id="m">
 					<path d="m64 1v94.5h54.5zM64 95.4h28v-45.7z"/>
 					<path id="t" d="m64 51v22h27.3z"/>
@@ -29,7 +32,6 @@ svg {
 import { VueClassComponent, Vue } from "../shared";
 
 @VueClassComponent({
-	name: "lukeshiru-logo",
 	props: {
 		color: {
 			type: String,
@@ -42,5 +44,5 @@ import { VueClassComponent, Vue } from "../shared";
 		inverted: Boolean
 	}
 })
-export default class Logo extends Vue { }
+export default class AppLogo extends Vue { }
 </script>

@@ -3,16 +3,22 @@ import { Link } from "./interfaces/Link";
 import { Vuex } from "./shared";
 
 const state: AppState = {
+	cv: {},
 	inverted: false,
 	links: []
 };
 
 const commits = {
+	SET_CV: "Set CV",
 	SET_INVERT: "Set invert value",
 	SET_LINKS: "Set links list"
 };
 
 const mutations = {
+	[commits.SET_CV]: (currentState: AppState, cv: {}) => {
+		currentState.cv = cv;
+		localStorage.setItem("cv", JSON.stringify(cv));
+	},
 	[commits.SET_INVERT]: (currentState: AppState, inverted: boolean) => {
 		currentState.inverted = inverted;
 	},
@@ -23,6 +29,26 @@ const mutations = {
 };
 
 const actions = {
+	loadCV({ commit }: Vuex.ActionContext<AppState, AppState>) {
+		const localData = { data: { cv: JSON.parse(localStorage.getItem("cv") || "{}") } };
+
+		return fetch(
+			[
+				"/graphql?query={cv{",
+				"header{birthday,email,fullname,location,name,position,website},",
+				"sidebar{list,title},",
+				"main{list{dateEnd,dateStart,place,position},title}}}"
+			].join("")
+		)
+			.then(
+				response =>
+					(response.headers.get("content-type") || "").indexOf("application/json") < 0
+						? localData
+						: response.json(),
+				() => localData
+			)
+			.then(response => commit(commits.SET_CV, response.data.cv));
+	},
 	loadLinks({ commit }: Vuex.ActionContext<AppState, AppState>) {
 		const localData = { data: { links: JSON.parse(localStorage.getItem("links") || "[]") } };
 

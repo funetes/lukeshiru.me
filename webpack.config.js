@@ -36,11 +36,8 @@ module.exports = {
 				test: /\.tsx?$/
 			},
 			{
-				loader: "file-loader",
-				options: {
-					name: "[name].[ext]?[hash]"
-				},
-				test: /\.(png|jpg|gif|svg)$/
+				loader: "vue-svg-symbol-loader",
+				test: /\.svg$/,
 			}
 		]
 	},

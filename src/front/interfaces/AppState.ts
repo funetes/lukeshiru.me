@@ -8,5 +8,6 @@ import { Link } from "./Link";
  */
 export interface AppState {
 	links?: Link[];
+	cv?: {}; // TODO: Add interface for CV data.
 	inverted?: boolean;
 }
