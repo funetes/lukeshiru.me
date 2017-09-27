@@ -1,3 +1,4 @@
+import { hostname } from "os";
 import { resolve } from "path";
 
 /**
@@ -22,14 +23,14 @@ export const CORS: string = [
  *
  * @exports
  */
-export const PORT: number = parseInt(process.env.OPENSHIFT_NODEJS_PORT || "8080", 10);
+export const PORT: number = parseInt(process.env.PORT || "8080", 10);
 
 /**
  * Server host.
  *
  * @exports
  */
-export const HOST: string = process.env.OPENSHIFT_NODEJS_IP || "localhost";
+export const HOST: string = hostname() || "localhost";
 
 /**
  * Static directory.
