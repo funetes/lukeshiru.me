@@ -8,7 +8,7 @@ Source code for my [personal website](https://lukeshiru.me).
 - Engine [Node.js 8](https://nodejs.org).
 - Middleware [Koa](https://github.com/koajs/koa).
 - CDN [Cloudflare](https://www.cloudflare.com/).
-- Hosting [OpenShift](https://openshift.redhat.com).
+- Hosting [Heroku](https://heroku.com).
 
 ## Front-end
 
