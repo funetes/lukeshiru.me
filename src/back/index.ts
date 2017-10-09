@@ -12,6 +12,7 @@ import {
 	FRONT_DIR,
 	HOST,
 	PORT,
+	SHORTLINK,
 	STATIC_DIR
 } from "./settings";
 import { WEEK, YEAR } from "./time";
@@ -39,6 +40,9 @@ app.use(async (context, next) => {
 
 	// Bettter caching
 	context.set("Vary", "Accept-Encoding");
+
+	// Short Link
+	context.set("Link", `<${SHORTLINK}>; rel="shortlink"`);
 
 	return next();
 });
