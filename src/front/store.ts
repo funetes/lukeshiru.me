@@ -1,6 +1,6 @@
 import { AppState } from "./interfaces/AppState";
 import { Link } from "./interfaces/Link";
-import { Vuex } from "./shared";
+import { ActionContext, Vuex } from "./shared";
 
 const state: AppState = {
 	cv: {},
@@ -29,7 +29,7 @@ const mutations = {
 };
 
 const actions = {
-	loadCV({ commit }: Vuex.ActionContext<AppState, AppState>) {
+	loadCV({ commit }: ActionContext<AppState, AppState>) {
 		const localData = { data: { cv: JSON.parse(localStorage.getItem("cv") || "{}") } };
 
 		return fetch(
@@ -49,7 +49,7 @@ const actions = {
 			)
 			.then(response => commit(commits.SET_CV, response.data.cv));
 	},
-	loadLinks({ commit }: Vuex.ActionContext<AppState, AppState>) {
+	loadLinks({ commit }: ActionContext<AppState, AppState>) {
 		const localData = { data: { links: JSON.parse(localStorage.getItem("links") || "[]") } };
 
 		return fetch("/graphql?query={links{title,href,icon,color}}")
@@ -62,7 +62,7 @@ const actions = {
 			)
 			.then(response => commit(commits.SET_LINKS, response.data.links));
 	},
-	invert({ commit, state: appState }: Vuex.ActionContext<AppState, AppState>) {
+	invert({ commit, state: appState }: ActionContext<AppState, AppState>) {
 		return commit(commits.SET_INVERT, !appState.inverted);
 	}
 };

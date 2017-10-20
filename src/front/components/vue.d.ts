@@ -1,17 +1,9 @@
 declare module "*.vue" {
 	import Vue from "vue";
-	/**
-	 * Vue module type.
-	 */
-	const VueModule: typeof Vue;
-	export default VueModule;
+	export default Vue;
 }
 
 declare module "*.svg" {
 	import Vue from "vue";
-	/**
-	 * Vue module type.
-	 */
-	const VueModule: typeof Vue;
-	export default VueModule;
+	export default Vue;
 }
