@@ -27,6 +27,7 @@
 import { VueClassComponent, Vue } from "../shared";
 
 @VueClassComponent({
+	delimiters: ["\${", "}"],
 	props: {
 		title: String
 	}

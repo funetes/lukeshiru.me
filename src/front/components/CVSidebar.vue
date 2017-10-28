@@ -46,6 +46,7 @@ const IconArrow = require("material-design-icons/sprites/svg-sprite/svg-sprite-n
 		CVBlock,
 		IconArrow
 	},
+	delimiters: ["\${", "}"],
 	props: {
 		data: {
 			required: true,

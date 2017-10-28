@@ -134,6 +134,7 @@ const IconToday = require("material-design-icons/sprites/svg-sprite/svg-sprite-a
 		IconPlace,
 		IconToday
 	},
+	delimiters: ["\${", "}"],
 	props: {
 		data: {
 			required: true,

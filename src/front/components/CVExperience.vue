@@ -60,6 +60,7 @@
 import { VueClassComponent, Vue } from "../shared";
 
 @VueClassComponent({
+	delimiters: ["\${", "}"],
 	props: {
 		dateEnd: String,
 		dateStart: String,
