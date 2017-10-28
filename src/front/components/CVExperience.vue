@@ -46,12 +46,12 @@
 <template>
 	<section :class="$style.CVExperience">
 		<aside :class="$style.date">
-			<span>{{dateStart}}</span>
-			<span v-if="dateEnd">{{dateEnd}}</span>
+			<span>${dateStart}</span>
+			<span v-if="dateEnd">${dateEnd}</span>
 		</aside>
 		<main :class="$style.description">
-			<h1 :class="$style.position">{{position}}</h1>
-			<h2 :class="$style.place">{{place}}</h2>
+			<h1 :class="$style.position">${position}</h1>
+			<h2 :class="$style.place">${place}</h2>
 		</main>
 	</section>
 </template>

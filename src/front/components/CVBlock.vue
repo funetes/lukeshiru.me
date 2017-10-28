@@ -18,7 +18,7 @@
 
 <template>
 	<section :class="$style.CVBlock">
-		<h1 :class="$style.title">{{title}}</h1>
+		<h1 :class="$style.title">${title}</h1>
 		<slot/>
 	</section>
 </template>

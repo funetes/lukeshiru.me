@@ -6,6 +6,7 @@ import { store } from "./store";
 OfflinePluginRuntime.install();
 
 export const vueInstance = new Vue({
+	delimiters: ["\${", "}"],
 	el: "main",
 	render(vue) {
 		window.addEventListener("keydown", event => {

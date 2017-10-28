@@ -28,7 +28,7 @@
 			<ul :class="$style.list">
 				<li v-for="item in block.list" :class="$style.item" :key="item">
 					<IconArrow :class="$style.IconArrow"/>
-					<span>{{item}}</span>
+					<span>${item}</span>
 				</li>
 			</ul>
 		</CVBlock>
