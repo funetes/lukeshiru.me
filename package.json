@@ -1,8 +1,8 @@
 {
   "name": "lukeshiru-website",
-  "version": "4.1.1",
+  "version": "4.2.0",
   "description": "https://lukeshiru.me",
-  "main": "./dist",
+  "main": "./build",
   "author": {
     "email": "hello@lukeshiru.me",
     "name": "Lucas Ciruzzi",
@@ -14,11 +14,11 @@
     "build-front-dev": "NODE_ENV=development webpack -d",
     "build-front-prod": "NODE_ENV=production webpack -p",
     "build-prod": "npm run build-back && npm run build-front-prod",
-    "clean": "rimraf ./dist",
+    "clean": "rimraf ./build",
     "postinstall": "npm run build-back && npm run build-front-prod",
     "serve-dev": "NODE_ENV=development webpack-dev-server",
     "serve-prod": "NODE_ENV=production webpack-dev-server",
-    "start": "node dist/back"
+    "start": "node build/back"
   },
   "repository": {
     "type": "git",
@@ -48,10 +48,11 @@
     "@types/koa-helmet": "^3.1.1",
     "@types/koa-mount": "^2.0.18",
     "@types/koa-static": "^3.0.1",
-    "@types/node": "^8.0.46",
+    "@types/node": "^8.0.47",
     "@types/optimize-css-assets-webpack-plugin": "^1.3.1",
-    "@types/webpack": "^3.0.13",
+    "@types/webpack": "^3.0.14",
     "css-loader": "^0.28.7",
+    "es6-promise": "^4.1.1",
     "graphql": "^0.11.7",
     "json-to-graphql": "^0.1.1",
     "koa": "^2.3.0",
@@ -65,7 +66,7 @@
     "offline-plugin": "^4.8.4",
     "optimize-css-assets-webpack-plugin": "^3.2.0",
     "postcss-cssnext": "^3.0.2",
-    "ts-loader": "^3.0.5",
+    "ts-loader": "^3.1.0",
     "typescript": "^2.5.3",
     "vue": "^2.5.2",
     "vue-class-component": "^6.0.0",
@@ -79,7 +80,7 @@
   },
   "devDependencies": {
     "rimraf": "^2.6.2",
-    "tslint": "^5.6.0",
+    "tslint": "^5.8.0",
     "webpack-dev-server": "^2.9.3"
   },
   "engines": {

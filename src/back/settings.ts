@@ -39,7 +39,7 @@ export const STATIC_DIR: string = resolve(`${__dirname}/../../static`);
  * Static directory.
  * @exports
  */
-export const FRONT_DIR: string = resolve(`${__dirname}/../../dist/front`);
+export const FRONT_DIR: string = resolve(`${__dirname}/../../build/front`);
 
 /**
  * Short link.

@@ -7,7 +7,7 @@
     "noEmitOnError": true,
     "noImplicitThis": true,
     "noUnusedLocals": true,
-    "outDir": "dist/back",
+    "outDir": "build/back",
     "preserveConstEnums": true,
     "pretty": true,
     "strict": true,

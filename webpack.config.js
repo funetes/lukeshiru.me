@@ -43,7 +43,7 @@ module.exports = {
 	},
 	output: {
 		filename: "app.js",
-		path: resolve(__dirname, "./dist/front"),
+		path: resolve(__dirname, "./build/front"),
 		publicPath: "/assets/"
 	},
 	performance: {

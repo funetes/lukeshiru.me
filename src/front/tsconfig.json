@@ -12,6 +12,6 @@
     "pretty": true,
     "strict": true,
     "suppressImplicitAnyIndexErrors": true,
-    "target": "es2015"
+    "target": "es5"
   }
 }

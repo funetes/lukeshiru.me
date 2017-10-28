@@ -1,3 +1,4 @@
+import { Promise } from "es6-promise";
 import { AppState } from "./interfaces/AppState";
 import { Link } from "./interfaces/Link";
 import { QUERY_CV, QUERY_LINKS } from "./queries";

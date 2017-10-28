@@ -1,4 +1,4 @@
-import Vue from "vue";
+import { default as Vue } from "vue";
 import VueClassComponent from "vue-class-component";
 import { ActionContext, default as Vuex } from "vuex";
 
