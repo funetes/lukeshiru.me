@@ -28,7 +28,7 @@
 			<ul :class="$style.list">
 				<li v-for="item in block.list" :class="$style.item" :key="item">
 					<IconArrow :class="$style.IconArrow"/>
-					<span>${item}</span>
+					<span>{{item}}</span>
 				</li>
 			</ul>
 		</CVBlock>
@@ -46,7 +46,6 @@ const IconArrow = require("material-design-icons/sprites/svg-sprite/svg-sprite-n
 		CVBlock,
 		IconArrow
 	},
-	delimiters: ["\${", "}"],
 	props: {
 		data: {
 			required: true,

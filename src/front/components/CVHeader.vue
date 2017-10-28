@@ -83,34 +83,34 @@
 		<img :src="photo"/>
 		<aside>
 			<hgroup :class="$style.title">
-				<h1>${data.name}</h1>
-				<h2>${data.position}</h2>
+				<h1>{{data.name}}</h1>
+				<h2>{{data.position}}</h2>
 			</hgroup>
 			<ul :class="$style.data">
 				<li>
 					<IconPerson :class="$style.icon"/>
 					<strong>Full Name:</strong>
-					<span>${data.fullname}</span>
+					<span>{{data.fullname}}</span>
 				</li>
 				<li>
 					<IconPlace :class="$style.icon"/>
 					<strong>Location:</strong>
-					<span>${data.location}</span>
+					<span>{{data.location}}</span>
 				</li>
 				<li>
 					<IconToday :class="$style.icon"/>
 					<strong>Birthday:</strong>
-					<span>${data.birthday}</span>
+					<span>{{data.birthday}}</span>
 				</li>
 				<li>
 					<IconEmail :class="$style.icon"/>
 					<strong>EMail:</strong>
-					<span>${data.email}</span>
+					<span>{{data.email}}</span>
 				</li>
 				<li>
 					<IconLink :class="$style.icon"/>
 					<strong>Website:</strong>
-					<span>${data.website}</span>
+					<span>{{data.website}}</span>
 				</li>
 			</ul>
 		</aside>
@@ -134,7 +134,6 @@ const IconToday = require("material-design-icons/sprites/svg-sprite/svg-sprite-a
 		IconPlace,
 		IconToday
 	},
-	delimiters: ["\${", "}"],
 	props: {
 		data: {
 			required: true,
