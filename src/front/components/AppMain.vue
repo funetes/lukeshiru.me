@@ -5,7 +5,7 @@
 }
 
 .OnlyScreen {
-	background-color: #000;
+	background-color: #263238;
 	height: 100vh;
 	width: 100vw;
 }
@@ -25,6 +25,7 @@
 }
 
 .AppLogo {
+	overflow: hidden;
 	height: var(--size-small);
 	width: var(--size-small);
 }
@@ -32,7 +33,12 @@
 
 <template>
 	<main>
-		<OnlyScreen :class="$style.OnlyScreen" :style="{ backgroundColor: inverted ? '#fff' : '#000'}">
+		<OnlyScreen :class="$style.OnlyScreen" :style="{
+			backgroundColor: inverted ? '#fff' : '#000',
+			background: inverted
+				? 'linear-gradient(120deg, #FFF 0%, #FFF 25%, #BDBDBD 100%)'
+				: 'linear-gradient(120deg, #263238 0%, #263238 25%, #212121 100%)'
+		}">
 			<OrbitMain :class="$style.OrbitMain" :links="links" :inverted="inverted"/>
 			<AppLogo :class="$style.AppLogo" :inverted="inverted"/>
 		</OnlyScreen>

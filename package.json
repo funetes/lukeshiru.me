@@ -1,6 +1,6 @@
 {
   "name": "lukeshiru-website",
-  "version": "4.2.0",
+  "version": "4.3.0",
   "description": "https://lukeshiru.me",
   "main": "./build",
   "author": {
@@ -9,16 +9,17 @@
     "url": "https://lukeshiru.me"
   },
   "scripts": {
+    "build-all-dev": "npm run -s build-back && npm run -s build-front-dev",
+    "build-all-prod": "npm run -s build-back && npm run -s build-front-prod",
     "build-back": "tsc",
-    "build-dev": "npm run build-back && npm run build-front-dev",
     "build-front-dev": "NODE_ENV=development webpack -d",
     "build-front-prod": "NODE_ENV=production webpack -p",
-    "build-prod": "npm run build-back && npm run build-front-prod",
     "clean": "rimraf ./build",
-    "postinstall": "npm run build-back && npm run build-front-prod",
-    "serve-dev": "NODE_ENV=development webpack-dev-server",
-    "serve-prod": "NODE_ENV=production webpack-dev-server",
-    "start": "node build/back"
+    "postinstall": "npm run -s build-all-prod",
+    "start": "node build/back",
+    "watch-front-dev": "NODE_ENV=development webpack -d --watch",
+    "watch-front-prod": "NODE_ENV=production webpack -p --watch",
+    "watch-back": "tsc --watch"
   },
   "repository": {
     "type": "git",
@@ -48,14 +49,14 @@
     "@types/koa-helmet": "^3.1.1",
     "@types/koa-mount": "^2.0.18",
     "@types/koa-static": "^3.0.1",
-    "@types/node": "^8.0.47",
+    "@types/node": "^8.0.49",
     "@types/optimize-css-assets-webpack-plugin": "^1.3.1",
-    "@types/webpack": "^3.0.14",
+    "@types/webpack": "^3.8.0",
     "css-loader": "^0.28.7",
     "es6-promise": "^4.1.1",
     "graphql": "^0.11.7",
     "json-to-graphql": "^0.1.1",
-    "koa": "^2.3.0",
+    "koa": "^2.4.1",
     "koa-compress": "^2.0.0",
     "koa-graphql": "^0.7.3",
     "koa-helmet": "^3.2.0",
@@ -66,22 +67,21 @@
     "offline-plugin": "^4.8.4",
     "optimize-css-assets-webpack-plugin": "^3.2.0",
     "postcss-cssnext": "^3.0.2",
-    "ts-loader": "^3.1.0",
-    "typescript": "^2.5.3",
-    "vue": "^2.5.2",
-    "vue-class-component": "^6.0.0",
-    "vue-loader": "^13.3.0",
+    "ts-loader": "^3.1.1",
+    "typescript": "^2.6.1",
+    "vue": "^2.5.3",
+    "vue-class-component": "^6.1.0",
+    "vue-loader": "^13.4.0",
     "vue-style-loader": "^3.0.3",
     "vue-svg-symbol-loader": "^1.0.1",
-    "vue-template-compiler": "^2.5.2",
+    "vue-template-compiler": "^2.5.3",
     "vue-ts-loader": "^0.0.3",
-    "vuex": "^3.0.0",
+    "vuex": "^3.0.1",
     "webpack": "^3.8.1"
   },
   "devDependencies": {
     "rimraf": "^2.6.2",
-    "tslint": "^5.8.0",
-    "webpack-dev-server": "^2.9.3"
+    "tslint": "^5.8.0"
   },
   "engines": {
     "node": "8.5.x",

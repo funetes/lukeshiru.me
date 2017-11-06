@@ -61,5 +61,5 @@ app.use(staticFile(STATIC_DIR));
 
 // Start server on configured port
 app.listen(PORT, HOST, () =>
-	console.log(`Listening to port ${HOST}:${PORT} (${STATIC_DIR})`)
+	console.log(`Listening to http://${HOST}:${PORT} (${STATIC_DIR})`)
 );

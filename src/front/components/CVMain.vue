@@ -7,6 +7,7 @@
 }
 
 .CVMain {
+	font-display: auto;
 	font-family: Roboto, sans-serif;
 }
 

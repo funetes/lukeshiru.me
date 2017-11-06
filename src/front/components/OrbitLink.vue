@@ -23,10 +23,18 @@
 
 <template>
 	<a :aria-label="title" :class="$style.OrbitLink" :href="href" :title="title" rel="noopener noreferrer">
-		<svg :class="$style.icon" viewBox="0 0 256 256">
-			<circle :fill="inverted ? background : color" cx="128" cy="128" r="128"/>
-			<circle :fill="inverted ? color : background" cx="128" cy="128" r="114"/>
-			<path :d="icon" :fill="inverted ? background : color" transform="translate(64 64)"/>
+		<svg :class="$style.icon" viewBox="0 0 192 192">
+			<defs>
+				<linearGradient :id="id + '-back'" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="100%" y2="88.88%">
+					<stop offset="0" stop-color="#FFF"/>
+					<stop offset="1" stop-color="#BDBDBD"/>
+				</linearGradient>
+				<linearGradient :id="id + '-front'" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="100%" y2="88.88%">
+					<stop offset="0" :stop-color="background"/>
+					<stop offset="1" stop-color="#212121"/>
+				</linearGradient>
+			</defs>
+			<path :stroke-width="0" :d="icon" :fill="inverted ? `url(#${id}-front)` : `url(#${id}-back)`" transform="translate(32 32)"/>
 		</svg>
 	</a>
 </template>
@@ -44,5 +52,9 @@ import { VueClassComponent, Vue } from "../shared";
 		title: String
 	}
 })
-export default class OrbitLink extends Vue { }
+export default class OrbitLink extends Vue {
+	public get id () {
+		return this.$props.title.toLowerCase().replace(/ /, "-");
+	}
+}
 </script>

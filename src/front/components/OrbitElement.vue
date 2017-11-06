@@ -19,7 +19,11 @@
 }
 
 @keyframes orbit {
-	to {
+	75% {
+		opacity: 0;
+		width: 25%;
+	}
+	100% {
 		opacity: 0;
 		width: 0%;
 	}

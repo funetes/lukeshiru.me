@@ -1,6 +1,6 @@
 <style module>
 :root {
-	--backgrond-color: #607D8B;
+	--backgrond-color: #263238;
 	--text-color: #424242;
 }
 .CVBlock {

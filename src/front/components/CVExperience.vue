@@ -1,7 +1,7 @@
 <style module>
 @import url("https://fonts.googleapis.com/icon?family=Roboto+Mono");
 :root {
-	--backgrond-color: #607D8B;
+	--backgrond-color: #263238;
 	--foreground-color: #fff;
 }
 .CVExperience {
