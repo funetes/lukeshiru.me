@@ -172,6 +172,11 @@
         "title": "Given Courses",
         "list": [
           {
+            "place": "Barcamp, Mar del Plata, Argentina",
+            "position": "Talk: D&D - Developers & Designers",
+            "dateStart": "2017"
+          },
+          {
             "place": "SparkDigital, Mar del Plata, Argentina",
             "position": "Live Session: TypeScript Introduction",
             "dateStart": "2017"
