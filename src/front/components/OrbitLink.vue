@@ -34,7 +34,7 @@
 					<stop offset="1" stop-color="#212121"/>
 				</linearGradient>
 			</defs>
-			<path :stroke-width="0" :d="icon" :fill="inverted ? `url(#${id}-front)` : `url(#${id}-back)`" transform="translate(32 32)"/>
+			<path :stroke-width="0" :d="icon" :fill="inverted ? background : `#FFF`" transform="translate(32 32)"/>
 		</svg>
 	</a>
 </template>

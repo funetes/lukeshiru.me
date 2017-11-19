@@ -9,19 +9,39 @@
 		transform: scale(1);
 	}
 }
+.logoContainer,
+.logoContainerInverted {
+	transform: translate(0px, 0px) rotate(-60deg);
+	fill: #FFF;
+	transform-origin: 4px 8px;
+	position: absolute;
+}
+.logoContainerInverted {
+	fill: #263238;
+}
+.logoBack,
+.logoShadow {
+	transform: translate(4px, 8px) rotate(60deg) skewX(30deg);
+}
+.logoFront {
+	transform: translate(4px, 8px) skewX(-30deg);
+}
+.logoShadow {
+	fill: rgba(0,0,0,.2);
+}
 </style>
 
 <template>
 	<span>
-		<svg :class="$style.AppLogo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-			<defs>
-				<linearGradient id="back" gradientUnits="userSpaceOnUse" x1="16" y1="16" x2="23.4" y2="22.4">
-					<stop offset="0" :stop-color="inverted ? '#212121' : '#BDBDBD'"/>
-					<stop offset="1" :stop-color="inverted ? '#263238' : '#FFF'"/>
-				</linearGradient>
-			</defs>
-			<path d="m23.4 16h-11.1v6.4h14.8z" fill="url(#back)" />
-			<path d="m16 3.2l3.7 6.4-7.4 12.8-3.7-6.4z" :fill="inverted ? '#263238' : '#FFF'" />
+		<svg :class="$style.AppLogo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+			<g :class="{
+				[$style.logoContainer]: !inverted,
+				[$style.logoContainerInverted]: inverted
+			}">
+				<rect :class="$style.logoBack" width="8" height="3"/>
+				<rect :class="$style.logoShadow" width="8" height="3"/>
+				<rect :class="$style.logoFront" width="8" height="3"/>
+			</g>
 		</svg>
 	</span>
 </template>
