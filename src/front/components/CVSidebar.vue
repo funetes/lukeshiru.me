@@ -17,7 +17,7 @@
 	height: 2.5vw;
 	left: 0;
 	position: absolute;
-	top: .25vw;
+	top: 0.25vw;
 	vertical-align: middle;
 }
 </style>
@@ -54,5 +54,5 @@ const IconArrow = require("material-design-icons/sprites/svg-sprite/svg-sprite-n
 		}
 	}
 })
-export default class CVSidebar extends Vue { }
+export default class CVSidebar extends Vue {}
 </script>

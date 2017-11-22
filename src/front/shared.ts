@@ -1,11 +1,24 @@
 import { default as Vue } from "vue";
 import VueClassComponent from "vue-class-component";
-import { ActionContext, default as Vuex } from "vuex";
+import {
+	ActionTree,
+	default as Vuex,
+	GetterTree,
+	mapActions,
+	mapGetters,
+	mapState,
+	MutationTree
+} from "vuex";
 
 Vue.use(Vuex);
 
 export {
-	ActionContext,
+	ActionTree,
+	GetterTree,
+	mapActions,
+	mapGetters,
+	mapState,
+	MutationTree,
 	VueClassComponent,
 	Vue,
 	Vuex

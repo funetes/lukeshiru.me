@@ -1,6 +1,6 @@
 <style module>
 .AppLogo {
-	animation: zoom .5s ease-in-out forwards;
+	animation: zoom 0.5s ease-in-out forwards;
 	transform: scale(0);
 }
 
@@ -9,10 +9,9 @@
 		transform: scale(1);
 	}
 }
-.logoContainer,
-.logoContainerInverted {
+.logoContainer {
 	transform: translate(0px, 0px) rotate(-60deg);
-	fill: #FFF;
+	fill: #fff;
 	transform-origin: 4px 8px;
 	position: absolute;
 }
@@ -27,17 +26,14 @@
 	transform: translate(4px, 8px) skewX(-30deg);
 }
 .logoShadow {
-	fill: rgba(0,0,0,.2);
+	fill: rgba(0, 0, 0, 0.2);
 }
 </style>
 
 <template>
 	<span>
 		<svg :class="$style.AppLogo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
-			<g :class="{
-				[$style.logoContainer]: !inverted,
-				[$style.logoContainerInverted]: inverted
-			}">
+			<g :class="[ $style.logoContainer, { [$style.logoContainerInverted]: inverted } ]">
 				<rect :class="$style.logoBack" width="8" height="3"/>
 				<rect :class="$style.logoShadow" width="8" height="3"/>
 				<rect :class="$style.logoFront" width="8" height="3"/>
@@ -54,5 +50,5 @@ import { VueClassComponent, Vue } from "../shared";
 		inverted: Boolean
 	}
 })
-export default class AppLogo extends Vue { }
+export default class AppLogo extends Vue {}
 </script>

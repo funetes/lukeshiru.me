@@ -31,5 +31,5 @@ import { VueClassComponent, Vue } from "../shared";
 		title: String
 	}
 })
-export default class CvBlock extends Vue { }
+export default class CvBlock extends Vue {}
 </script>

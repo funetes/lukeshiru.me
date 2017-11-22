@@ -1,6 +1,6 @@
 <style module>
 .OrbitElement {
-	animation: orbit .5s ease-in-out reverse backwards;
+	animation: orbit 0.5s ease-in-out reverse backwards;
 	display: block;
 	left: 50%;
 	opacity: 1;

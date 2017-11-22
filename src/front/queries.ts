@@ -1,12 +1,17 @@
 /**
+ * Clean White spaces on queries
+ */
+const cleanWhiteSpace = (str: TemplateStringsArray) => str[0].replace(/\s/g, "");
+
+/**
  * CV GraphQL query.
  */
-export const QUERY_CV = `{
+export const QUERY_CV = cleanWhiteSpace`{
 	cv {
 		header {
 			birthday,
 			email,
-			fullname,
+			fullName,
 			location,
 			name,
 			position,
@@ -31,7 +36,7 @@ export const QUERY_CV = `{
 /**
  * Links GraphQL query.
  */
-export const QUERY_LINKS = `{
+export const QUERY_LINKS = cleanWhiteSpace`{
 	links {
 		title,
 		href,

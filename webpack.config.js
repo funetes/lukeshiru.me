@@ -4,7 +4,11 @@ const cssNext = require("postcss-cssnext");
 const OfflinePlugin = require("offline-plugin");
 const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const { resolve } = require("path");
-const { DefinePlugin, LoaderOptionsPlugin, optimize: { CommonsChunkPlugin, UglifyJsPlugin } } = require("webpack");
+const {
+	DefinePlugin,
+	LoaderOptionsPlugin,
+	optimize: { CommonsChunkPlugin, UglifyJsPlugin }
+} = require("webpack");
 const IS_PRODUCTION = process.env.NODE_ENV === "production";
 
 module.exports = {
@@ -37,7 +41,7 @@ module.exports = {
 			},
 			{
 				loader: "vue-svg-symbol-loader",
-				test: /\.svg$/,
+				test: /\.svg$/
 			}
 		]
 	},
@@ -53,7 +57,9 @@ module.exports = {
 		IS_PRODUCTION
 			? [
 					new OptimizeCssAssetsPlugin(),
-					new DefinePlugin({ "process.env": { NODE_ENV: `"production"` } }),
+					new DefinePlugin({
+						"process.env": { NODE_ENV: `"production"` }
+					}),
 					new UglifyJsPlugin({
 						comments: false,
 						sourceMap: false,

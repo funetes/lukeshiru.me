@@ -1,14 +1,8 @@
 <style module>
-@import url("https://fonts.googleapis.com/css?family=Roboto");
 :root {
 	--columns: 3;
 	--column: calc(100vw / var(--columns));
-	--cv-color: #607D8B;
-}
-
-.CVMain {
-	font-display: auto;
-	font-family: Roboto, sans-serif;
+	--cv-color: #607d8b;
 }
 
 .main {
@@ -26,7 +20,7 @@
 </style>
 
 <template>
-	<section :class="$style.CVMain">
+	<section>
 		<CVHeader :data="cv.header" photo="/images/cv.jpg"/>
 		<main :class="$style.main">
 			<CVSidebar :class="$style.sidebar" :data="cv.sidebar"/>
@@ -51,5 +45,5 @@ import CVSidebar from "./CVSidebar.vue";
 		CVSidebar
 	}
 })
-export default class CVMain extends Vue { }
+export default class CVMain extends Vue {}
 </script>

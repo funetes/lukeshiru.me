@@ -1,8 +1,9 @@
-import { Promise } from "es6-promise";
+import createPersistedState from "vuex-persistedstate";
 import { AppState } from "./interfaces/AppState";
+import { CV } from "./interfaces/CV";
 import { Link } from "./interfaces/Link";
 import { QUERY_CV, QUERY_LINKS } from "./queries";
-import { ActionContext, Vuex } from "./shared";
+import { ActionTree, GetterTree, MutationTree, Vuex } from "./shared";
 
 const state: AppState = {
 	cv: {},
@@ -16,74 +17,54 @@ const commits = {
 	SET_LINKS: "Set links list"
 };
 
-const mutations = {
-	[commits.SET_CV]: (currentState: AppState, cv: {}) => {
+const mutations: MutationTree<AppState> = {
+	[commits.SET_CV]: (currentState, cv: CV) => {
 		currentState.cv = cv;
-		localStorage.setItem("cv", JSON.stringify(cv));
 	},
-	[commits.SET_INVERT]: (currentState: AppState, inverted: boolean) => {
-		currentState.inverted = inverted;
+	[commits.SET_INVERT]: currentState => {
+		currentState.inverted = !currentState.inverted;
 	},
-	[commits.SET_LINKS]: (currentState: AppState, links: Link[]) => {
+	[commits.SET_LINKS]: (currentState, links: Link[]) => {
 		currentState.links = links;
-		localStorage.setItem("links", JSON.stringify(links));
 	}
 };
 
-const actions = {
-	loadCV({ commit }: ActionContext<AppState, AppState>) {
-		const localData = {
-			data: { cv: JSON.parse(localStorage.getItem("cv") || "{}") }
-		};
-
-		return new Promise((resolve, reject) => {
-			if (localStorage.getItem("cv") !== null) {
-				setTimeout(() => resolve(localData), 2000);
-			}
-			fetch(`/graphql?query=${QUERY_CV}`)
-				.then(
-					response =>
-						(response.headers.get("content-type") || "").indexOf(
-							"application/json"
-						) < 0
-							? localData
-							: response.json(),
-					() => localData
-				)
-				.then(resolve);
-		}).then(response =>
-			commit(commits.SET_CV, (<typeof localData>response).data.cv)
-		);
+const actions: ActionTree<AppState, AppState> = {
+	loadCV({ commit }) {
+		return fetch(`/graphql?query=${QUERY_CV}`)
+			.then(response => response.json())
+			.then(response => commit(commits.SET_CV, response.data.cv))
+			.catch(error => console.error(error));
 	},
-	loadLinks({ commit }: ActionContext<AppState, AppState>) {
-		const localData = {
-			data: { links: JSON.parse(localStorage.getItem("links") || "[]") }
-		};
-
-		return new Promise((resolve, reject) => {
-			if (localStorage.getItem("cv") !== null) {
-				setTimeout(() => resolve(localData), 2000);
-			}
-			fetch(`/graphql?query=${QUERY_LINKS}`)
-				.then(
-					response =>
-						(response.headers.get("content-type") || "").indexOf(
-							"application/json"
-						) < 0
-							? localData
-							: response.json(),
-					() => localData
-				)
-				.then(resolve);
-		}).then(response => commit(commits.SET_LINKS, (<typeof localData>response).data.links));
+	loadLinks({ commit }) {
+		return fetch(`/graphql?query=${QUERY_LINKS}`)
+			.then(response => response.json())
+			.then(response => commit(commits.SET_LINKS, response.data.links))
+			.catch(error => console.error(error));
 	},
-	invert({ commit, state: appState }: ActionContext<AppState, AppState>) {
-		return commit(commits.SET_INVERT, !appState.inverted);
+	invert({ commit, state: appState }) {
+		return commit(commits.SET_INVERT);
+	}
+};
+
+const getters: GetterTree<AppState, AppState> = {
+	orbitLinks(currentState) {
+		const links: Link[] = currentState.links;
+
+		return Array.isArray(links) && links.length > 0
+			? links.map((link, index) => ({
+					...link,
+					degrees: 360 / links.length * index,
+					delay: index * 0.1 + 0.1
+				}))
+			: [];
 	}
 };
 
 export const store = new Vuex.Store({
 	actions,
+	getters,
 	mutations,
+	plugins: [createPersistedState()],
 	state
 });

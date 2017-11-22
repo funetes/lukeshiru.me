@@ -15,7 +15,7 @@ export const cvHeaderGraph = new GraphQLObjectType({
 			description: "CV Header EMail",
 			type: GraphQLString
 		},
-		fullname: {
+		fullName: {
 			description: "CV Header full name",
 			type: GraphQLString
 		},

@@ -16,7 +16,7 @@
 	color: var(--foreground-color);
 	display: flex;
 	flex-direction: column;
-	font-family: 'Roboto Mono', monospace;
+	font-family: "Roboto Mono", monospace;
 	font-size: 2vw;
 	margin-right: 2vw;
 	padding: 2vw;
@@ -29,7 +29,7 @@
 	justify-content: center;
 }
 
-.description>* {
+.description > * {
 	font-size: 2vw;
 	margin: 0;
 }

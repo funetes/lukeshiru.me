@@ -1,6 +1,6 @@
 {
   "name": "lukeshiru-website",
-  "version": "4.3.0",
+  "version": "4.3.1",
   "description": "https://lukeshiru.me",
   "main": "./build",
   "author": {
@@ -77,6 +77,7 @@
     "vue-template-compiler": "^2.5.3",
     "vue-ts-loader": "^0.0.3",
     "vuex": "^3.0.1",
+    "vuex-persistedstate": "^2.3.2",
     "webpack": "^3.8.1"
   },
   "devDependencies": {

@@ -16,5 +16,5 @@
 import { VueClassComponent, Vue } from "../shared";
 
 @VueClassComponent
-export default class OnlyScreen extends Vue { }
+export default class OnlyScreen extends Vue {}
 </script>

@@ -1,13 +1,31 @@
 <style module>
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+
 :root {
 	--size-big: 100vmin;
 	--size-small: 50vmin;
 }
 
+.AppMain {
+	font-display: auto;
+	font-family: Roboto, sans-serif;
+}
+
 .OnlyScreen {
 	background-color: #263238;
+	background-image: linear-gradient(
+		120deg,
+		#263238 0%,
+		#263238 25%,
+		#212121 100%
+	);
 	height: 100vh;
 	width: 100vw;
+}
+
+.OnlyScreenInverted {
+	background-color: #fff;
+	background-image: linear-gradient(120deg, #fff 0%, #fff 25%, #bdbdbd 100%);
 }
 
 .AppLogo,
@@ -32,14 +50,9 @@
 </style>
 
 <template>
-	<main>
-		<OnlyScreen :class="$style.OnlyScreen" :style="{
-			backgroundColor: inverted ? '#fff' : '#000',
-			background: inverted
-				? 'linear-gradient(120deg, #FFF 0%, #FFF 25%, #BDBDBD 100%)'
-				: 'linear-gradient(120deg, #263238 0%, #263238 25%, #212121 100%)'
-		}">
-			<OrbitMain :class="$style.OrbitMain" :links="links" :inverted="inverted"/>
+	<main :class="$style.AppMain">
+		<OnlyScreen :class="[$style.OnlyScreen, { [$style.OnlyScreenInverted]: inverted }]">
+			<OrbitMain :class="$style.OrbitMain" :links="orbitLinks" :inverted="inverted"/>
 			<AppLogo :class="$style.AppLogo" :inverted="inverted"/>
 		</OnlyScreen>
 		<OnlyPrint>
@@ -49,7 +62,7 @@
 </template>
 
 <script lang="ts">
-import { VueClassComponent, Vue } from "../shared";
+import { mapGetters, mapState, VueClassComponent, Vue } from "../shared";
 import AppLogo from "./AppLogo.vue";
 import CVMain from "./CVMain.vue";
 import OnlyPrint from "./OnlyPrint.vue";
@@ -63,19 +76,19 @@ import OrbitMain from "./OrbitMain.vue";
 		OnlyPrint,
 		OnlyScreen,
 		OrbitMain
+	},
+	computed: {
+		...mapGetters([
+			"orbitLinks"
+		]),
+		...mapState({
+			cv: "cv",
+			inverted: "inverted"
+		})
 	}
 })
 export default class AppMain extends Vue {
-	public get links() {
-		return this.$store.state.links;
-	}
-	public get inverted() {
-		return this.$store.state.inverted;
-	}
-	public get cv() {
-		return this.$store.state.cv;
-	}
-	public mounted() {
+	public created() {
 		this.$store.dispatch("loadLinks");
 		this.$store.dispatch("loadCV");
 	}

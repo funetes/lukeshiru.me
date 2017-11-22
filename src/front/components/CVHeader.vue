@@ -35,7 +35,7 @@
 
 .title h1 {
 	font-size: 5vw;
-	letter-spacing: .05em;
+	letter-spacing: 0.05em;
 }
 
 .title h2 {
@@ -59,7 +59,7 @@
 
 .data li strong {
 	font-weight: 600;
-	margin-right: .25em;
+	margin-right: 0.25em;
 }
 
 .data li span {
@@ -73,7 +73,7 @@
 	height: 2.5vw;
 	left: 0;
 	position: absolute;
-	top: .25vw;
+	top: 0.25vw;
 	vertical-align: middle;
 }
 </style>
@@ -90,7 +90,7 @@
 				<li>
 					<IconPerson :class="$style.icon"/>
 					<strong>Full Name:</strong>
-					<span>{{data.fullname}}</span>
+					<span>{{data.fullName}}</span>
 				</li>
 				<li>
 					<IconPlace :class="$style.icon"/>
@@ -142,5 +142,5 @@ const IconToday = require("material-design-icons/sprites/svg-sprite/svg-sprite-a
 		photo: String
 	}
 })
-export default class CVHeader extends Vue { }
+export default class CVHeader extends Vue {}
 </script>

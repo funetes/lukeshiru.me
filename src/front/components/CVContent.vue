@@ -24,5 +24,5 @@ import CVExperience from "./CVExperience.vue";
 		}
 	}
 })
-export default class CVContent extends Vue { }
+export default class CVContent extends Vue {}
 </script>
