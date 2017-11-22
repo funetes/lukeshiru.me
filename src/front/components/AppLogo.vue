@@ -34,9 +34,9 @@
 	<span>
 		<svg :class="$style.AppLogo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
 			<g :class="[ $style.logoContainer, { [$style.logoContainerInverted]: inverted } ]">
-				<rect :class="$style.logoBack" width="8" height="3"/>
-				<rect :class="$style.logoShadow" width="8" height="3"/>
-				<rect :class="$style.logoFront" width="8" height="3"/>
+				<rect :class="$style.logoBack" :width="length" :height="thickness"/>
+				<rect :class="$style.logoShadow" :width="length" :height="thickness"/>
+				<rect :class="$style.logoFront" :width="length" :height="thickness"/>
 			</g>
 		</svg>
 	</span>
@@ -47,7 +47,15 @@ import { VueClassComponent, Vue } from "../shared";
 
 @VueClassComponent({
 	props: {
-		inverted: Boolean
+		inverted: Boolean,
+		length: {
+			default: 8,
+			type: Number
+		},
+		thickness: {
+			default: 3.5,
+			type: Number
+		}
 	}
 })
 export default class AppLogo extends Vue {}
