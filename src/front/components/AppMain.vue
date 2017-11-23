@@ -1,5 +1,5 @@
 <style module>
-@import url("https://fonts.googleapis.com/css?family=Roboto");
+@import url("../../../node_modules/roboto-fontface/css/roboto/roboto-fontface.css");
 
 :root {
 	--size-big: 100vmin;

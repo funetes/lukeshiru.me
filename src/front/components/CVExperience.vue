@@ -1,5 +1,4 @@
 <style module>
-@import url("https://fonts.googleapis.com/icon?family=Roboto+Mono");
 :root {
 	--backgrond-color: #263238;
 	--foreground-color: #fff;

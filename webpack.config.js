@@ -42,6 +42,14 @@ module.exports = {
 			{
 				loader: "vue-svg-symbol-loader",
 				test: /\.svg$/
+			},
+			{
+				test: /\.(eot|ttf|woff|woff2)$/,
+				loader: "url-loader?limit=1024"
+			},
+			{
+				test: /\.(png|jpg|gif)$/,
+				loader: "file-loader"
 			}
 		]
 	},
@@ -71,7 +79,10 @@ module.exports = {
 					}),
 					new LoaderOptionsPlugin({ minimize: true }),
 					new OfflinePlugin({
-						externals: ["/index.html"],
+						externals: [
+							"/index.html",
+							"/images/cv.jpg"
+						],
 						ServiceWorker: {
 							output: "../sw.js"
 						}

@@ -9,12 +9,12 @@ export const CORS: string = [
 	"default-src 'self'",
 	"child-src 'self'",
 	"connect-src 'self'",
-	"font-src 'self' fonts.gstatic.com",
+	"font-src 'self'",
 	"img-src 'self'",
 	"media-src 'self'",
 	"object-src 'self'",
 	"script-src 'self' 'unsafe-eval'",
-	"style-src 'self' 'unsafe-inline' fonts.googleapis.com"
+	"style-src 'self' 'unsafe-inline'"
 ].join("; ");
 
 /**
