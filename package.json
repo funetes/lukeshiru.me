@@ -43,7 +43,7 @@
   },
   "homepage": "https://lukeshiru.me",
   "dependencies": {
-    "@types/graphql": "^0.11.6",
+    "@types/graphql": "0.9.4",
     "@types/koa": "^2.0.41",
     "@types/koa-compress": "^2.0.8",
     "@types/koa-helmet": "^3.1.2",
