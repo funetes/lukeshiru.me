@@ -1,6 +1,6 @@
 {
   "name": "lukeshiru-website",
-  "version": "4.3.2",
+  "version": "4.3.3",
   "description": "https://lukeshiru.me",
   "main": "./build",
   "author": {
@@ -69,26 +69,26 @@
     "optimize-css-assets-webpack-plugin": "^3.2.0",
     "postcss-cssnext": "^3.0.2",
     "roboto-fontface": "^0.8.0",
-    "ts-loader": "^3.1.1",
-    "typescript": "^2.6.1",
+    "ts-loader": "^3.2.0",
+    "typescript": "^2.6.2",
     "url-loader": "^0.6.2",
-    "vue": "^2.5.8",
+    "vue": "^2.5.9",
     "vue-class-component": "^6.1.0",
     "vue-loader": "^13.5.0",
     "vue-style-loader": "^3.0.3",
     "vue-svg-symbol-loader": "^1.0.2",
-    "vue-template-compiler": "^2.5.8",
+    "vue-template-compiler": "^2.5.9",
     "vue-ts-loader": "^0.0.3",
     "vuex": "^3.0.1",
     "vuex-persistedstate": "^2.4.2",
-    "webpack": "^3.8.1"
+    "webpack": "^3.9.1"
   },
   "devDependencies": {
     "rimraf": "^2.6.2",
     "tslint": "^5.8.0"
   },
   "engines": {
-    "node": "8.9.x",
-    "npm": "5.5.x"
+    "node": "9.2.x",
+    "npm": "5.6.x"
   }
 }
