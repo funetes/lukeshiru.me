@@ -12,7 +12,7 @@ import {
 	FRONT_DIR,
 	HOST,
 	PORT,
-	SHORTLINK,
+	SHORT_LINK,
 	STATIC_DIR
 } from "./settings";
 import { WEEK, YEAR } from "./time";
@@ -42,7 +42,7 @@ app.use(async (context, next) => {
 	context.set("Vary", "Accept-Encoding");
 
 	// Short Link
-	context.set("Link", `<${SHORTLINK}>; rel="shortlink"`);
+	context.set("Link", `<${SHORT_LINK}>; rel="shortlink"`);
 
 	return next();
 });

@@ -45,4 +45,4 @@ export const FRONT_DIR: string = resolve(`${__dirname}/../../build/front`);
  * Short link.
  * @exports
  */
-export const SHORTLINK: string = "https://lshi.ru";
+export const SHORT_LINK: string = "https://lshi.ru";
