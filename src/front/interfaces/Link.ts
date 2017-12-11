@@ -5,17 +5,17 @@ export interface Link {
 	/**
 	 * Link color.
 	 */
-	color: string;
+	readonly color: string;
 	/**
 	 * Link location.
 	 */
-	href: string;
+	readonly href: string;
 	/**
 	 * Link icon.
 	 */
-	icon: string;
+	readonly icon: string;
 	/**
 	 * Link name.
 	 */
-	name: string;
+	readonly name: string;
 }
