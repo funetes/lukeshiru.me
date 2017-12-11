@@ -21,7 +21,7 @@
 
 <template>
 	<section>
-		<CVHeader :data="cv.header" photo="/images/cv.jpg"/>
+		<CVHeader :data="cv.header" photo="/images/photo.jpeg"/>
 		<main :class="$style.main">
 			<CVSidebar :class="$style.sidebar" :data="cv.sidebar"/>
 			<CVContent :class="$style.content" :data="cv.main"/>

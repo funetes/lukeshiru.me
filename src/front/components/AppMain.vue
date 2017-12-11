@@ -7,7 +7,7 @@
 }
 
 .AppMain {
-	font-display: auto;
+	font-display: swap;
 	font-family: Roboto, sans-serif;
 }
 

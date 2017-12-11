@@ -81,7 +81,7 @@ module.exports = {
 					new OfflinePlugin({
 						externals: [
 							"/index.html",
-							"/images/cv.jpg"
+							"/images/photo.jpeg"
 						],
 						ServiceWorker: {
 							output: "../sw.js"
