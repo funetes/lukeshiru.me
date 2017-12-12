@@ -26,7 +26,14 @@ export const QUERY_CV = cleanWhiteSpace`{
 				dateEnd,
 				dateStart,
 				place,
-				position
+				position,
+				projects {
+					description,
+					teamSize,
+					technologies,
+					title,
+					vertical
+				}
 			},
 			title
 		}

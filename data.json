@@ -38,7 +38,8 @@
     {
       "title": "npm",
       "href": "https://lshi.ru/2g6ZHFR",
-      "icon": "M0 0v128h128V0H0zm21.322 21.322h85.321v85.321H85.321V42.678H64v64.035H21.322V21.322z",
+      "icon":
+        "M0 0v128h128V0H0zm21.322 21.322h85.321v85.321H85.321V42.678H64v64.035H21.322V21.322z",
       "color": "#D32F2F"
     },
     {
@@ -117,43 +118,242 @@
     ],
     "main": [
       {
-        "title": "5 years of experience",
+        "title": "5+ years of experience",
         "list": [
           {
             "place": "SparkDigital, Mar del Plata, Argentina",
             "position": "Senior Full-Stack JavaScript Developer",
             "dateStart": "jan 2017",
-            "dateEnd": "Today"
+            "dateEnd": "Today",
+            "projects": [
+              {
+                "title": "MLBAM/Bamtech - NHL/Riot/MLB/MILB",
+                "description": "Video Player and front-end update",
+                "teamSize": 20,
+                "weeks": 50,
+                "technologies": [
+                  "Babel",
+                  "Backbone",
+                  "bower",
+                  "GraphQL",
+                  "HTML5",
+                  "JavaScript",
+                  "LESS",
+                  "Node.js",
+                  "nodemon",
+                  "NPM",
+                  "WebPack"
+                ],
+                "vertical": "Sports and eSports streaming"
+              }
+            ]
           },
           {
             "place": "TrueLogic, Buenos Aires, Argentina",
             "position": "Front-End Developer",
             "dateStart": "jul 2016",
-            "dateEnd": "jan 2017"
+            "dateEnd": "jan 2017",
+            "projects": [
+              {
+                "title": "Cucu Sports - Cucu Sports browser and mobile apps",
+                "description": "Material design website and mobile app",
+                "teamSize": 8,
+                "weeks": 4,
+                "technologies": [
+                  "Babel",
+                  "HTML5",
+                  "JavaScript",
+                  "Material UI",
+                  "PHP",
+                  "ReactJS",
+                  "Redux",
+                  "SASS",
+                  "Webpack"
+                ],
+                "vertical": "Web Services"
+              },
+              {
+                "title": "RV Trip Wizard - Trip Planner and Manager for RVs",
+                "description": " Front-End Update",
+                "teamSize": 4,
+                "weeks": 20,
+                "technologies": [
+                  "CSS",
+                  "HTML5",
+                  "JavaScript",
+                  "PHP",
+                  "Twitter Bootstrap"
+                ],
+                "vertical": "Trip Planner"
+              }
+            ]
           },
           {
             "place": "SingleHop, Chicago, USA",
             "position": "Front-End Developer",
             "dateStart": "oct 2015",
-            "dateEnd": "jul 2016"
+            "dateEnd": "jul 2016",
+            "projects": [
+              {
+                "title": "SingleHop - Internal Server Managment UI",
+                "description": "ReactJS Front-End UI",
+                "teamSize": 6,
+                "weeks": 36,
+                "technologies": [
+                  "LESS",
+                  "Node.js",
+                  "NPM",
+                  "ReactJS",
+                  "Twitter Bootstrap",
+                  "WebPack"
+                ],
+                "vertical": "Web Services"
+              }
+            ]
           },
           {
             "place": "Globant, Mar del Plata, Argentina",
             "position": "Semi-Senior Advanced Web UI Developer",
             "dateStart": "oct 2013",
-            "dateEnd": "oct 2015"
+            "dateEnd": "oct 2015",
+            "projects": [
+              {
+                "title": "Sears - Shop Your Way – Health & Wellness",
+                "description": "Front-End for articles, guides, and shopping",
+                "teamSize": 9,
+                "weeks": 80,
+                "technologies": [
+                  "AngularJS",
+                  "Grunt",
+                  "LESS",
+                  "Node.js",
+                  "REST",
+                  "Twitter Bootstrap"
+                ],
+                "vertical": "Retail"
+              },
+              {
+                "title": "Bally Games - Slot Machines",
+                "description":
+                  "Flash games porting for devices with HTML5 (CSS + JavaScript)",
+                "teamSize": 9,
+                "weeks": 8,
+                "technologies": [
+                  "Backbone",
+                  "Compass",
+                  "Node.js",
+                  "RequireJS",
+                  "SASS"
+                ],
+                "vertical": "Gambling"
+              },
+              {
+                "title": "Syngenta - Elatus",
+                "description":
+                  "Tablet catalog and promotional web app for fungicides",
+                "teamSize": 7,
+                "weeks": 8,
+                "technologies": [
+                  "AngularJS",
+                  "Bower",
+                  "Grunt",
+                  "Node.js",
+                  "PureCSS",
+                  "SASS",
+                  "Yeoman"
+                ],
+                "vertical": "Agrochemical & Seeds"
+              }
+            ]
           },
           {
             "place": "Moka-Moka, Mar del Plata, Argentina",
             "position": "Freelance Web Designer & Developer",
             "dateStart": "aug 2013",
-            "dateEnd": "oct 2013"
+            "dateEnd": "oct 2013",
+            "projects": [
+              {
+                "title": "Best Latam - Wordpress Theme",
+                "description":
+                  "Wordpress Theme adaptation and voting system styling based on Photoshop Mockup",
+                "teamSize": 1,
+                "weeks": 2,
+                "technologies": ["Wordpress", "PHP", "CSS3", "JavaScript"],
+                "vertical": "Music News"
+              },
+              {
+                "title":
+                  "IDES (Instituto de Estudios Superiores) - Landing Page",
+                "description":
+                  "Suscription form with responsive design based on Photoshop Mockup",
+                "teamSize": 1,
+                "weeks": 2,
+                "technologies": ["HTML5", "PHP", "CSS3", "JavaScript"],
+                "vertical": "Education"
+              }
+            ]
           },
           {
             "place": "1O24 - Productora Digital, Mar del Plata, Argentina",
             "position": "Freelance Web Designer & Developer",
             "dateStart": "dec 2012",
-            "dateEnd": "oct 2013"
+            "dateEnd": "oct 2013",
+            "projects": [
+              {
+                "title": "Aquarium Mar del Plata - Games",
+                "description":
+                  "Catch game and “Simon say” clone with social sharing",
+                "teamSize": 2,
+                "weeks": 2,
+                "technologies": ["HTML5 (Canvas)", "JavaScript", "KineticJS"],
+                "vertical": "Entertainment Park"
+              },
+              {
+                "title": "1O24 - Facebook Contest Maker",
+                "description": "Facebook contests maker with Control Panel",
+                "teamSize": 1,
+                "weeks": 4,
+                "technologies": ["PHP", "Twitter Bootstrap", "Facebook API"],
+                "vertical": "Web Services"
+              },
+              {
+                "title": "Rossi Deportes - Web Cart",
+                "description": "Cloud based shopping cart",
+                "teamSize": 2,
+                "weeks": 4,
+                "technologies": ["PHP", "Twitter Bootstrap", "JavaScript"],
+                "vertical": "Sportswear"
+              },
+              {
+                "title": "1O24 - Apolix",
+                "description":
+                  "HTML5 canvas responsive interface for security IP cameras",
+                "teamSize": 1,
+                "weeks": 4,
+                "technologies": [
+                  "PHP",
+                  "HTML5",
+                  "Twitter Bootstrap",
+                  "MooTools"
+                ],
+                "vertical": "Web Services"
+              },
+              {
+                "title":
+                  "Claro Argentina & Aquarium Mar del Plata - Dynamic Poll",
+                "description":
+                  "Responsive poll with steps and ajax for promotional use in tablets",
+                "teamSize": 1,
+                "weeks": 2,
+                "technologies": [
+                  "CSS3",
+                  "Twitter Bootstrap",
+                  "JavaScript",
+                  "PHP"
+                ],
+                "vertical": "Mobile Phone provider/Entertainment Park"
+              }
+            ]
           }
         ]
       },

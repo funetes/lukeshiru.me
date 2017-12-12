@@ -5,7 +5,6 @@ import { cvSidebarGraph } from "./cv.sidebar.graph";
 
 /**
  * CV graph.
- * @exports
  */
 export const cvGraph = new GraphQLObjectType({
 	description: "CV graph",

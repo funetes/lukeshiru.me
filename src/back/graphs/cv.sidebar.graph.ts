@@ -6,7 +6,6 @@ import {
 
 /**
  * CV Sidebar Graph.
- * @exports
  */
 export const cvSidebarGraph = new GraphQLObjectType({
 	description: "CV Sidebar graph",

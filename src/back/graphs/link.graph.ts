@@ -2,7 +2,6 @@ import { GraphQLObjectType, GraphQLString } from "graphql";
 
 /**
  * Links Graph.
- * @exports
  */
 export const linkGraph = new GraphQLObjectType({
 	description: "Link graph",

@@ -2,7 +2,6 @@ import { GraphQLObjectType, GraphQLString } from "graphql";
 
 /**
  * CV Header graph.
- * @exports
  */
 export const cvHeaderGraph = new GraphQLObjectType({
 	description: "CV Header graph",
