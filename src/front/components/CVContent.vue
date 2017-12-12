@@ -1,7 +1,15 @@
 <template>
 	<main>
 		<CVBlock v-for="block in data" :key="block.title" :title="block.title">
-			<CVExperience v-for="item in block.list" :dateEnd="item.dateEnd" :dateStart="item.dateStart" :key="item.dateStart" :place="item.place" :position="item.position"/>
+			<CVExperience
+				v-for="item in block.list"
+				:dateEnd="item.dateEnd"
+				:dateStart="item.dateStart"
+				:key="item.dateStart"
+				:place="item.place"
+				:position="item.position"
+				:projects="item.projects"
+			/>
 		</CVBlock>
 	</main>
 </template>

@@ -52,18 +52,35 @@
 			<h1 :class="$style.position">{{position}}</h1>
 			<h2 :class="$style.place">{{place}}</h2>
 		</main>
+		<aside v-if="projects">
+			<CVProject
+				v-for="project in projects"
+				:key="project.title"
+				:description="project.description"
+				:teamSize="project.teamSize"
+				:technologies="project.technologies"
+				:title="project.title"
+				:vertical="project.vertical"
+				:weeks="project.weeks"
+			/>
+		</aside>
 	</section>
 </template>
 
 <script lang="ts">
 import { VueClassComponent, Vue } from "../shared";
+import CVProject from "./CVProject.vue";
 
 @VueClassComponent({
+	components: {
+		CVProject
+	},
 	props: {
 		dateEnd: String,
 		dateStart: String,
 		place: String,
-		position: String
+		position: String,
+		projects: Array
 	}
 })
 export default class CVExperience extends Vue {
