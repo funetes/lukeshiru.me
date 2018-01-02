@@ -1,6 +1,6 @@
 {
   "name": "lukeshiru-website",
-  "version": "4.3.3",
+  "version": "4.5.0",
   "description": "https://lukeshiru.me",
   "main": "./build",
   "author": {
@@ -73,6 +73,7 @@
     "offline-plugin": "^4.8.4",
     "optimize-css-assets-webpack-plugin": "^3.2.0",
     "postcss-cssnext": "^3.0.2",
+    "rimraf": "^2.6.2",
     "roboto-fontface": "^0.8.0",
     "ts-loader": "^3.2.0",
     "typescript": "^2.6.2",
@@ -89,7 +90,6 @@
     "webpack": "^3.9.1"
   },
   "devDependencies": {
-    "rimraf": "^2.6.2",
     "tslint": "^5.8.0"
   },
   "engines": {
