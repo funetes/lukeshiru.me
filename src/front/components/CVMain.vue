@@ -1,31 +1,41 @@
 <style module>
 :root {
 	--columns: 3;
-	--column: calc(100vw / var(--columns));
+	--column: calc(100rem / var(--columns));
 	--cv-color: #607d8b;
 }
 
-.main {
-	display: flex;
-	padding-top: 4vw;
+.CVMain {
+	display: grid;
+	grid-column-gap: 2rem;
+	grid-row-gap: 1em;
+	grid-template-areas:
+		"photo header"
+		"sidebar content";
+	grid-template-columns: 4fr 9fr;
 }
 
-.sidebar {
-	width: var(--column);
+.photo {
+	border-radius: 1rem;
+	grid-area: photo;
+	width: 100%;
 }
 
-.content {
-	flex-grow: 1;
+.CVSidebar {
+	grid-area: sidebar;
+}
+
+.CVContent {
+	grid-area: content;
 }
 </style>
 
 <template>
-	<section>
-		<CVHeader :data="cv.header" photo="/images/photo.jpeg"/>
-		<main :class="$style.main">
-			<CVSidebar :class="$style.sidebar" :data="cv.sidebar"/>
-			<CVContent :class="$style.content" :data="cv.main"/>
-		</main>
+	<section :class="$style.CVMain">
+		<img :class="$style.photo" src="/images/photo.jpeg"/>
+		<CVHeader :class="$style.CVHeader" :data="cv.header"/>
+		<CVSidebar :class="$style.CVSidebar" :data="cv.sidebar"/>
+		<CVContent :class="$style.CVContent" :data="cv.main"/>
 	</section>
 </template>
 

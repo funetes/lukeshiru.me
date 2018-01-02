@@ -32,7 +32,8 @@ export const QUERY_CV = cleanWhiteSpace`{
 					teamSize,
 					technologies,
 					title,
-					vertical
+					vertical,
+					weeks
 				}
 			},
 			title

@@ -1,24 +1,23 @@
 <style module>
 .list {
-	font-size: 2vw;
+	font-size: 2rem;
 	padding-left: 0;
 	list-style: none;
-	margin-bottom: 2vw;
+	margin-bottom: 2rem;
 }
 
 .item {
 	position: relative;
-	line-height: 3vw;
-	padding-left: 1.5em;
+	line-height: 3rem;
 }
 
 .IconArrow {
+	display: inline-block;
 	fill: #424242;
-	height: 2.5vw;
-	left: 0;
-	position: absolute;
-	top: 0.25vw;
+	height: 3rem;
+	margin-right: 1rem;
 	vertical-align: middle;
+	width: 3rem;
 }
 </style>
 

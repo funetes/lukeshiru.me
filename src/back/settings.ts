@@ -1,6 +1,8 @@
 import { hostname } from "os";
 import { resolve } from "path";
 
+const IS_PRODUCTION = process.env.NODE_ENV === "production";
+
 /**
  * CORS settings.
  * @exports
@@ -27,7 +29,7 @@ export const PORT: number = parseInt(process.env.PORT || "8080", 10);
  * Server host.
  * @exports
  */
-export const HOST: string = hostname() || "localhost";
+export const HOST: string = IS_PRODUCTION ? hostname() : "localhost";
 
 /**
  * Static directory.

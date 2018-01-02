@@ -9,8 +9,8 @@
 
 .title {
 	color: var(--backgrond-color);
-	font-size: 3vw;
-	margin-bottom: 2vw;
+	font-size: 3rem;
+	margin-bottom: 2rem;
 	margin-top: 0;
 	text-transform: uppercase;
 }

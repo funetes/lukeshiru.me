@@ -4,37 +4,45 @@
 	--foreground-color: #fff;
 }
 .CVExperience {
-	display: flex;
-	margin-bottom: 2vw;
+	display: grid;
+	grid-template-areas:
+		"date description"
+		"projects projects";
+	grid-template-columns: 14rem auto;
+	grid-column-gap: 2rem;
+	margin-bottom: 2rem;
 }
 
 .date {
-	align-items: flex-start;
+	align-items: center;
 	background-color: var(--backgrond-color);
-	border-radius: 1vw;
+	border-radius: 1rem;
+	box-sizing: border-box;
 	color: var(--foreground-color);
 	display: flex;
 	flex-direction: column;
-	font-family: "Roboto Mono", monospace;
-	font-size: 2vw;
-	margin-right: 2vw;
-	padding: 2vw;
+	font-family: "Roboto Monospace", monospace;
+	font-size: 2rem;
+	grid-area: date;
+	justify-content: center;
+	padding: 1rem;
 	text-transform: uppercase;
 }
 
 .description {
+	align-self: center;
 	display: flex;
+	grid-area: description;
 	flex-direction: column;
-	justify-content: center;
+}
+
+.projects {
+	grid-area: projects;
 }
 
 .description > * {
-	font-size: 2vw;
+	font-size: 2rem;
 	margin: 0;
-}
-
-.place {
-	font-weight: 100;
 }
 
 .position {
@@ -52,18 +60,20 @@
 			<h1 :class="$style.position">{{position}}</h1>
 			<h2 :class="$style.place">{{place}}</h2>
 		</main>
-		<aside v-if="projects">
+		<section :class="$style.projects">
 			<CVProject
-				v-for="project in projects"
-				:key="project.title"
+				:class="$style.CVProject"
 				:description="project.description"
+				:key="project.title"
 				:teamSize="project.teamSize"
 				:technologies="project.technologies"
 				:title="project.title"
 				:vertical="project.vertical"
 				:weeks="project.weeks"
+				v-for="project in projects"
+				v-if="projects"
 			/>
-		</aside>
+		</section>
 	</section>
 </template>
 

@@ -4,24 +4,20 @@
 	--foreground-color: #fff;
 }
 .CVHeader {
-	align-items: center;
 	background-color: var(--backgrond-color);
-	border-radius: 1vw;
+	border-radius: 1rem;
+	box-sizing: border-box;
 	display: flex;
+	align-items: center;
 	font-weight: 100;
-	justify-content: flex-start;
 	overflow: hidden;
-	width: 100vw;
-}
-
-.CVHeader img {
-	width: calc(100vw / 3);
+	padding: 0 2rem;
 }
 
 .CVHeader aside {
 	color: var(--foreground-color);
-	padding: 0 4vw;
 	font-weight: 400;
+	width: 100%;
 }
 
 .title {
@@ -34,26 +30,25 @@
 }
 
 .title h1 {
-	font-size: 5vw;
+	font-size: 5rem;
 	letter-spacing: 0.05em;
 }
 
 .title h2 {
-	font-size: 2.5vw;
+	font-size: 2.5rem;
 }
 
 .data {
-	font-size: 2vw;
+	font-size: 2rem;
 	list-style: none;
 	margin-bottom: 0;
-	margin-top: 2vw;
+	margin-top: 2rem;
 	padding-left: 0;
 }
 
 .data li {
 	display: flex;
-	line-height: 3vw;
-	padding-left: 1.5em;
+	line-height: 3rem;
 	position: relative;
 }
 
@@ -69,18 +64,17 @@
 }
 
 .icon {
+	display: inline-block;
 	fill: var(--foreground-color);
-	height: 2.5vw;
-	left: 0;
-	position: absolute;
-	top: 0.25vw;
+	height: 3rem;
+	margin-right: 1rem;
 	vertical-align: middle;
+	width: 3rem;
 }
 </style>
 
 <template>
 	<header :class="$style.CVHeader">
-		<img :src="photo"/>
 		<aside>
 			<hgroup :class="$style.title">
 				<h1>{{data.name}}</h1>
@@ -138,8 +132,7 @@ const IconToday = require("material-design-icons/sprites/svg-sprite/svg-sprite-a
 		data: {
 			required: true,
 			type: Object
-		},
-		photo: String
+		}
 	}
 })
 export default class CVHeader extends Vue {}

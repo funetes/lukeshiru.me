@@ -20,7 +20,7 @@
 		#212121 100%
 	);
 	height: 100vh;
-	width: 100vw;
+	width: 100rem;
 }
 
 .OnlyScreenInverted {

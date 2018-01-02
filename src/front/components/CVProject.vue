@@ -3,54 +3,101 @@
 	--backgrond-color: #263238;
 	--foreground-color: #fff;
 }
+
 .CVProject {
 	display: flex;
-	margin-bottom: 2vw;
+	flex-direction: column;
+	margin-top: 2vw;
 }
 
-.date {
-	align-items: flex-start;
-	background-color: var(--backgrond-color);
-	border-radius: 1vw;
-	color: var(--foreground-color);
-	display: flex;
-	flex-direction: column;
-	font-family: "Roboto Mono", monospace;
-	font-size: 2vw;
-	margin-right: 2vw;
-	padding: 2vw;
+.CVProject:not(:first-child) {
+	border-top: 1px solid #263238;
+	padding-top: 2vw;
+}
+
+.title {
+	color: var(--backgrond-color);
 	text-transform: uppercase;
-}
-
-.description {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-}
-
-.description > * {
 	font-size: 2vw;
 	margin: 0;
 }
 
-.place {
-	font-weight: 100;
+.data {
+	font-size: 2vw;
+	list-style: none;
+	margin: 2vw 0 0;
+	padding-left: 0;
 }
 
-.position {
-	text-transform: uppercase;
+.data li {
+	display: flex;
+	line-height: 3vw;
+	overflow: auto;
+	padding-left: 0;
+	position: relative;
+	flex-wrap: wrap;
+}
+
+.data li strong {
+	color: var(--backgrond-color);
+	display: inline-block;
+	font-weight: 600;
+	margin-right: .25em;
+}
+
+.icon {
+	display: inline-block;
+	fill: var(--backgrond-color);
+	height: 3rem;
+	margin-right: 1rem;
+	vertical-align: middle;
+	width: 3rem;
+}
+
+.technology {
+	background-color: var(--backgrond-color);
+	border-radius: .5vw;
+	color: var(--foreground-color);
+	display: inline-block;
+	font-size: 1.5vw;
+	margin: 0 .5vw .5vw 0;
+	padding: .1vw 1vw;
 }
 </style>
 
 <template>
 	<section :class="$style.CVProject">
-		<h2>{{title}}</h2>
-		<ul>
-			<li>Description: {{description}}.</li>
-			<li>Team Size: {{teamSize}}.</li>
-			<li>Technologies: {{technologies.join(", ")}}.</li>
-			<li>Vertical: {{vertical}}.</li>
-			<li>Length: {{weeks}} weeks.</li>
+		<h2 :class="$style.title">{{title}}</h2>
+		<ul :class="$style.data">
+			<li>
+				<IconStar :class="$style.icon"/>
+				<strong>Description:</strong>
+				<span>{{description}}.</span>
+			</li>
+			<li>
+				<IconGroup :class="$style.icon"/>
+				<strong>Team Size:</strong>
+				<span>{{teamSize}}.</span>
+			</li>
+			<li>
+				<IconSettings :class="$style.icon"/>
+				<strong>Technologies:</strong>
+				<span
+					v-for="technology in technologies"
+					:class="$style.technology"
+					:key="technology"
+				>{{technology}}</span>
+			</li>
+			<li>
+				<IconTimeline :class="$style.icon"/>
+				<strong>Vertical:</strong>
+				<span>{{vertical}}.</span>
+			</li>
+			<li>
+				<IconTimer :class="$style.icon"/>
+				<strong>Length:</strong>
+				<span>{{weeks}} weeks.</span>
+			</li>
 		</ul>
 	</section>
 </template>
