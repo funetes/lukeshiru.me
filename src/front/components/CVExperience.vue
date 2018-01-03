@@ -3,22 +3,29 @@
 	--backgrond-color: #263238;
 	--foreground-color: #fff;
 }
+
 .CVExperience {
 	display: grid;
 	grid-template-areas:
-		"date description"
-		"projects projects";
-	grid-template-columns: 14rem auto;
+		"header"
+		"projects";
+	grid-template-columns: auto;
 	grid-column-gap: 2rem;
 	margin-bottom: 2rem;
 }
 
-.date {
-	align-items: center;
+.header {
 	background-color: var(--backgrond-color);
 	border-radius: 1rem;
-	box-sizing: border-box;
 	color: var(--foreground-color);
+	display: flex;
+	grid-area: header;
+	min-height: 8rem;
+}
+
+.date {
+	align-items: center;
+	box-sizing: border-box;
 	display: flex;
 	flex-direction: column;
 	font-family: "Roboto Monospace", monospace;
@@ -27,6 +34,7 @@
 	justify-content: center;
 	padding: 1rem;
 	text-transform: uppercase;
+	width: 14rem;
 }
 
 .description {
@@ -34,6 +42,8 @@
 	display: flex;
 	grid-area: description;
 	flex-direction: column;
+	padding-left: 2rem;
+	border-left: 1px solid var(--foreground-color);
 }
 
 .projects {
@@ -52,14 +62,16 @@
 
 <template>
 	<section :class="$style.CVExperience">
-		<aside :class="$style.date">
-			<span>{{dateStart}}</span>
-			<span v-if="dateEnd">{{dateEnd}}</span>
-		</aside>
-		<main :class="$style.description">
-			<h1 :class="$style.position">{{position}}</h1>
-			<h2 :class="$style.place">{{place}}</h2>
-		</main>
+		<header :class="$style.header">
+			<aside :class="$style.date">
+				<span>{{dateStart}}</span>
+				<span v-if="dateEnd">{{dateEnd}}</span>
+			</aside>
+			<aside :class="$style.description">
+				<h1 :class="$style.position">{{position}}</h1>
+				<h2 :class="$style.place">{{place}}</h2>
+			</aside>
+		</header>
 		<section :class="$style.projects">
 			<CVProject
 				:class="$style.CVProject"

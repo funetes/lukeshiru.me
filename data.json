@@ -234,8 +234,7 @@
               },
               {
                 "title": "Bally Games - Slot Machines",
-                "description":
-                  "Flash games porting for devices with HTML5 (CSS + JavaScript)",
+                "description": "Flash games porting for devices with HTML5",
                 "teamSize": 9,
                 "weeks": 8,
                 "technologies": [
@@ -249,8 +248,7 @@
               },
               {
                 "title": "Syngenta - Elatus",
-                "description":
-                  "Tablet catalog and promotional web app for fungicides",
+                "description": "Tablet catalog and promotional web app",
                 "teamSize": 7,
                 "weeks": 8,
                 "technologies": [
@@ -274,8 +272,7 @@
             "projects": [
               {
                 "title": "Best Latam - Wordpress Theme",
-                "description":
-                  "Wordpress Theme adaptation and voting system styling based on Photoshop Mockup",
+                "description": "Wordpress Theme adaptation from Mockup",
                 "teamSize": 1,
                 "weeks": 2,
                 "technologies": ["Wordpress", "PHP", "CSS3", "JavaScript"],
@@ -284,8 +281,7 @@
               {
                 "title":
                   "IDES (Instituto de Estudios Superiores) - Landing Page",
-                "description":
-                  "Suscription form with responsive design based on Photoshop Mockup",
+                "description": "Suscription form adaptation from Mockup",
                 "teamSize": 1,
                 "weeks": 2,
                 "technologies": ["HTML5", "PHP", "CSS3", "JavaScript"],
@@ -327,7 +323,7 @@
               {
                 "title": "1O24 - Apolix",
                 "description":
-                  "HTML5 canvas responsive interface for security IP cameras",
+                  "Canvas responsive interface for security IP cameras",
                 "teamSize": 1,
                 "weeks": 4,
                 "technologies": [
@@ -341,8 +337,7 @@
               {
                 "title":
                   "Claro Argentina & Aquarium Mar del Plata - Dynamic Poll",
-                "description":
-                  "Responsive poll with steps and ajax for promotional use in tablets",
+                "description": "Polls for promotional use in tablets",
                 "teamSize": 1,
                 "weeks": 2,
                 "technologies": [

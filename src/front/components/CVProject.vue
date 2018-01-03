@@ -2,66 +2,62 @@
 :root {
 	--backgrond-color: #263238;
 	--foreground-color: #fff;
+	--dimmed-color: #607D8B;
 }
 
 .CVProject {
 	display: flex;
 	flex-direction: column;
-	margin-top: 2vw;
+	margin-top: 2rem;
 }
 
 .CVProject:not(:first-child) {
 	border-top: 1px solid #263238;
-	padding-top: 2vw;
+	padding-top: 2rem;
 }
 
 .title {
 	color: var(--backgrond-color);
 	text-transform: uppercase;
-	font-size: 2vw;
+	font-size: 2rem;
 	margin: 0;
 }
 
 .data {
-	font-size: 2vw;
+	font-size: 2rem;
 	list-style: none;
-	margin: 2vw 0 0;
+	margin: 1rem 0 0;
 	padding-left: 0;
 }
 
 .data li {
-	display: flex;
-	line-height: 3vw;
-	overflow: auto;
+	line-height: 4rem;
 	padding-left: 0;
-	position: relative;
-	flex-wrap: wrap;
+}
+
+.data li > * {
+	vertical-align: top;
 }
 
 .data li strong {
 	color: var(--backgrond-color);
 	display: inline-block;
 	font-weight: 600;
-	margin-right: .25em;
+	min-width: 13rem;
+}
+
+.data li span {
+	color: var(--dimmed-color);
+	display: inline-block;
+	width: 50rem;
 }
 
 .icon {
 	display: inline-block;
-	fill: var(--backgrond-color);
-	height: 3rem;
-	margin-right: 1rem;
-	vertical-align: middle;
-	width: 3rem;
-}
-
-.technology {
-	background-color: var(--backgrond-color);
-	border-radius: .5vw;
-	color: var(--foreground-color);
-	display: inline-block;
-	font-size: 1.5vw;
-	margin: 0 .5vw .5vw 0;
-	padding: .1vw 1vw;
+	fill: var(--dimmed-color);
+	height: 1em;
+	margin-top: .45em;
+	width: 1em;
 }
 </style>
 
@@ -82,11 +78,7 @@
 			<li>
 				<IconSettings :class="$style.icon"/>
 				<strong>Technologies:</strong>
-				<span
-					v-for="technology in technologies"
-					:class="$style.technology"
-					:key="technology"
-				>{{technology}}</span>
+				<span>{{technologies.join(", ")}}</span>
 			</li>
 			<li>
 				<IconTimeline :class="$style.icon"/>
