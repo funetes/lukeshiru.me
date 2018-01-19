@@ -34,7 +34,7 @@ dependencies:
   vue-class-component: 6.1.2
   vue-loader: 13.7.0
   vue-style-loader: 3.0.3
-  vue-svg-symbol-loader: 1.0.2
+  vue-svg-symbol-loader: 1.0.3
   vue-template-compiler: 2.5.13
   vue-ts-loader: 0.0.3
   vuex: 3.0.1
@@ -168,10 +168,6 @@ packages:
     dev: false
     resolution:
       integrity: sha512-A2TAGbTFdBw9azHbpVd+/FkdW2T6msN1uct1O9bH3vTerEHKZhTXJUQXy+hNq1B0RagfU8U+KBdqiZpxjhOUQA==
-  /@types/node/8.5.9:
-    dev: false
-    resolution:
-      integrity: sha512-s+c3AjymyAccTI4hcgNFK4mToH8l+hyPDhu4LIkn71lRy56FLijGu00fyLgldjM/846Pmk9N4KFUs2P8GDs0pA==
   /@types/node/9.3.0:
     dev: false
     resolution:
@@ -4125,14 +4121,16 @@ packages:
     optional: true
     resolution:
       integrity: sha1-bgkk1r2mta/jSeOabWMoUKD4grc=
-  /uglifyjs-webpack-plugin/0.4.6:
+  /uglifyjs-webpack-plugin/0.4.6/webpack@3.10.0:
     dependencies:
       source-map: 0.5.7
       uglify-js: 2.8.29
+      webpack: 3.10.0
       webpack-sources: 1.1.0
     dev: false
     engines:
       node: '>=4.3.0 <5.0.0 || >=5.10'
+    id: registry.npmjs.org/uglifyjs-webpack-plugin/0.4.6
     peerDependencies:
       webpack: ^1.9 || ^2 || ^2.1.0-beta || ^2.2.0-rc || ^3.0.0
     resolution:
@@ -4255,9 +4253,9 @@ packages:
     dev: false
     resolution:
       integrity: sha512-P/ihpaZKU23T1kq3E0y4c+F8sbm1HQO69EFYoLoGMSGVAHroHsGir/WQ9qUavP8dyFYHmXenzHaJ/nqd8vfaxw==
-  /vue-svg-symbol-loader/1.0.2:
+  /vue-svg-symbol-loader/1.0.3:
     dependencies:
-      '@types/node': 8.5.9
+      '@types/node': 9.3.0
       '@types/webpack': 3.8.3
       '@types/xml2js': 0.4.2
       typescript: 2.6.2
@@ -4266,7 +4264,7 @@ packages:
       xml2js: 0.4.19
     dev: false
     resolution:
-      integrity: sha512-F+qigs9tJiz8n4qQT0Au0p4abQeRA/B4sR+/lBDB+5SjrNAHhnRC2TAIiO3v5/6CpbUonCSe9TQIcnqBdTC33Q==
+      integrity: sha512-Bxm+pZAN5FOqHtE9TKbS5E4rUwt+gELQ5/zfNUQV3l0MvSk29eHjOzaZC6DAQDB4DJtkvhWONbalXgpEqbcFJA==
   /vue-template-compiler/2.5.13:
     dependencies:
       de-indent: 1.0.2
@@ -4341,7 +4339,7 @@ packages:
       source-map: 0.5.7
       supports-color: 4.5.0
       tapable: 0.2.8
-      uglifyjs-webpack-plugin: 0.4.6
+      uglifyjs-webpack-plugin: /uglifyjs-webpack-plugin/0.4.6/webpack@3.10.0
       watchpack: 1.4.0
       webpack-sources: 1.1.0
       yargs: 8.0.2
@@ -4497,7 +4495,7 @@ specifiers:
   vue-hot-reload-api: ^2.2.4
   vue-loader: ^13.7.0
   vue-style-loader: ^3.0.3
-  vue-svg-symbol-loader: ^1.0.2
+  vue-svg-symbol-loader: ^1.0.3
   vue-template-compiler: ^2.5.13
   vue-ts-loader: ^0.0.3
   vuex: ^3.0.1

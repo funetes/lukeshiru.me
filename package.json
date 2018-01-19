@@ -82,7 +82,7 @@
     "vue-class-component": "^6.1.2",
     "vue-loader": "^13.7.0",
     "vue-style-loader": "^3.0.3",
-    "vue-svg-symbol-loader": "^1.0.2",
+    "vue-svg-symbol-loader": "^1.0.3",
     "vue-template-compiler": "^2.5.13",
     "vue-ts-loader": "^0.0.3",
     "vuex": "^3.0.1",
