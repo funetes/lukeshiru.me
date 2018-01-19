@@ -5,7 +5,7 @@
 				v-for="item in block.list"
 				:dateEnd="item.dateEnd"
 				:dateStart="item.dateStart"
-				:key="item.dateStart"
+				:key="item.id"
 				:place="item.place"
 				:position="item.position"
 				:projects="item.projects"

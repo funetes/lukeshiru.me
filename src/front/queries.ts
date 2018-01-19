@@ -25,6 +25,7 @@ export const QUERY_CV = cleanWhiteSpace`{
 			list {
 				dateEnd,
 				dateStart,
+				id,
 				place,
 				position,
 				projects {

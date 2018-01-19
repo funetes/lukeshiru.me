@@ -55,7 +55,7 @@ const getters: GetterTree<AppState, AppState> = {
 			? links.map((link, index) => ({
 					...link,
 					degrees: 360 / links.length * index,
-					delay: index * 0.1 + 0.1
+					delay: index * 0.1 + 1
 				}))
 			: [];
 	}

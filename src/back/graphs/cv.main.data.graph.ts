@@ -15,6 +15,15 @@ export const cvMainDataGraph = new GraphQLObjectType({
 			description: "CV Main data date start",
 			type: GraphQLString
 		},
+		id: {
+			description: "ID To avoid errors with vue",
+			resolve(data) {
+				return `${data.dateStart}${data.place}${data.position}`
+					.replace(/[^a-zA-Z0-9]/g, "")
+					.toLowerCase();
+			},
+			type: GraphQLString
+		},
 		place: {
 			description: "CV Main data place",
 			type: GraphQLString
