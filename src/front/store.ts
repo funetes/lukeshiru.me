@@ -29,16 +29,21 @@ const mutations: MutationTree<AppState> = {
 	}
 };
 
+const endpointFetch = (query: string) =>
+	fetch("/graphql", {
+		body: JSON.stringify({ query }),
+		headers: { "Content-Type": "application/json" },
+		method: "POST"
+	}).then(response => response.json());
+
 const actions: ActionTree<AppState, AppState> = {
 	loadCV({ commit }) {
-		return fetch(`/graphql?query=${QUERY_CV}`)
-			.then(response => response.json())
+		return endpointFetch(QUERY_CV)
 			.then(response => commit(commits.SET_CV, response.data.cv))
 			.catch(error => console.error(error));
 	},
 	loadLinks({ commit }) {
-		return fetch(`/graphql?query=${QUERY_LINKS}`)
-			.then(response => response.json())
+		return endpointFetch(QUERY_LINKS)
 			.then(response => commit(commits.SET_LINKS, response.data.links))
 			.catch(error => console.error(error));
 	},
