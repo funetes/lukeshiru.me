@@ -5,7 +5,7 @@ Source code for my [personal website](https://lukeshiru.me).
 ## Back-end
 
 - Source code [TypeScript](https://github.com/Microsoft/TypeScript).
-- Engine [Node.js 8](https://nodejs.org).
+- Engine [Node.js 9](https://nodejs.org).
 - Middleware [Koa](https://github.com/koajs/koa).
 - CDN [Cloudflare](https://www.cloudflare.com/).
 - Hosting [Heroku](https://heroku.com).
