@@ -59,7 +59,7 @@
     "css-loader": "^0.28.9",
     "env-cmd": "^7.0.0",
     "es6-promise": "^4.2.4",
-    "file-loader": "^1.1.6",
+    "file-loader": "^1.1.9",
     "graphql": "^0.13.1",
     "json-to-graphql": "^0.1.1",
     "koa": "^2.5.0",
@@ -92,7 +92,7 @@
   },
   "devDependencies": {
     "tslint": "^5.9.1",
-    "vue-hot-reload-api": "^2.2.4"
+    "vue-hot-reload-api": "^2.3.0"
   },
   "engines": {
     "node": "9.5.x",
