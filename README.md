@@ -2,18 +2,24 @@
 
 Source code for my [personal website](https://lukeshiru.me).
 
-## Back-end
+## Setup
+
+### Global
 
 - Source code [TypeScript](https://github.com/Microsoft/TypeScript).
-- Engine [Node.js 9](https://nodejs.org).
-- Middleware [Koa](https://github.com/koajs/koa).
+- Packages [pnpm](https://pnpm.js.org/).
+
+### Back-end
+
+- API [GraphQL](http://graphql.org/).
 - CDN [Cloudflare](https://www.cloudflare.com/).
+- Engine [Node.js 9](https://nodejs.org).
 - Hosting [Heroku](https://heroku.com).
+- Middleware [Koa](https://github.com/koajs/koa).
 
-## Front-end
+### Front-end
 
-- Source code [TypeScript](https://github.com/Microsoft/TypeScript).
+- Bundling [WebPack](https://webpack.js.org).
 - Engine [Vue.js](https://vuejs.org/).
-- Packing [Webpack](https://webpack.github.io/).
 - State Management [Vuex](https://vuex.vuejs.org/en/).
 - Styles [CSSNext](http://cssnext.io/).

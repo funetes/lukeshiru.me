@@ -1,6 +1,6 @@
 {
   "name": "lukeshiru.me",
-  "version": "4.6.1",
+  "version": "4.7.0",
   "description": "https://lukeshiru.me",
   "main": "./build",
   "author": {
@@ -56,7 +56,7 @@
     "@types/node": "^9.4.6",
     "@types/optimize-css-assets-webpack-plugin": "^1.3.2",
     "@types/webpack": "^3.8.8",
-    "css-loader": "^0.28.9",
+    "css-loader": "^0.28.10",
     "env-cmd": "^7.0.0",
     "es6-promise": "^4.2.4",
     "file-loader": "^1.1.9",
@@ -76,19 +76,21 @@
     "postcss-cssnext": "^3.1.0",
     "rimraf": "^2.6.2",
     "roboto-fontface": "^0.9.0",
-    "ts-loader": "^3.5.0",
+    "ts-loader": "^4.0.0",
+    "ts-node": "^5.0.0",
     "typescript": "^2.7.2",
     "url-loader": "^0.6.2",
     "vue": "^2.5.13",
     "vue-class-component": "^6.2.0",
     "vue-loader": "^14.1.1",
     "vue-style-loader": "^4.0.2",
-    "vue-svg-symbol-loader": "^1.0.3",
+    "vue-svg-symbol-loader": "^1.0.4",
     "vue-template-compiler": "^2.5.13",
     "vue-ts-loader": "^0.0.3",
     "vuex": "^3.0.1",
     "vuex-persistedstate": "^2.4.2",
-    "webpack": "^3.11.0"
+    "webpack": "^4.0.0",
+    "webpack-cli": "^2.0.9"
   },
   "devDependencies": {
     "tslint": "^5.9.1",
