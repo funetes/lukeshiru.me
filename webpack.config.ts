@@ -1,4 +1,4 @@
-// import * as OfflinePlugin from "offline-plugin";
+import * as OfflinePlugin from "offline-plugin";
 import * as OptimizeCssAssetsPlugin from "optimize-css-assets-webpack-plugin";
 import { resolve } from "path";
 import * as postCssCssNext from "postcss-cssnext";
@@ -65,10 +65,10 @@ const configuration: Configuration & { mode: string } = {
 				}),
 				new LoaderOptionsPlugin({
 					minimize: true
-				})
-				/*
+				}),
 				new OfflinePlugin({
 					ServiceWorker: {
+						minify: false,
 						output: "../sw.js"
 					},
 					externals: [
@@ -76,7 +76,6 @@ const configuration: Configuration & { mode: string } = {
 						"/images/photo.jpeg"
 					]
 				})
-				*/
 			]
 		: [],
 	resolve: {
