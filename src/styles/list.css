@@ -1,0 +1,4 @@
+.list-item::before {
+	content: "►";
+	margin-right: 0.5rem;
+}

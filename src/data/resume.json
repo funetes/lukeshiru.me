@@ -1,0 +1,551 @@
+{
+  "main": {
+    "birthday": "13/october/1989",
+    "email": "hi@lshi.ru",
+    "location": "Bellevue, Washington",
+    "name": "Lucas Ciruzzi",
+    "position": "Senior Software Engineer",
+    "website": "https://lshi.ru"
+  },
+  "experience": [
+    {
+      "place": "GlobalLogic",
+      "position": "Senior Software Engineer",
+      "dateStart": "Feb 2020",
+      "dateEnd": "Today",
+      "projects": [
+        {
+          "title": "VMWare - Tanzu Mission Control",
+          "description": "Centralized Kubernetes management",
+          "technologies": [
+            "HTML5",
+            "JavaScript",
+            "Modular CSS",
+            "Node.js",
+            "React",
+            "TypeScript",
+            "Webpack"
+          ],
+          "vertical": "Virtualization"
+        }
+      ]
+    },
+    {
+      "place": "GlobalLogic Argentina",
+      "position": "Senior Frontend",
+      "dateStart": "Sep 2018",
+      "dateEnd": "Feb 2020",
+      "projects": [
+        {
+          "title": "VMWare - Tanzu Mission Control",
+          "description": "Centralized Kubernetes management",
+          "technologies": [
+            "HTML5",
+            "JavaScript",
+            "Modular CSS",
+            "Node.js",
+            "React",
+            "TypeScript",
+            "Webpack"
+          ],
+          "vertical": "Virtualization"
+        }
+      ]
+    },
+    {
+      "place": "Globant Argentina",
+      "position": "Semi-Senior Web UI",
+      "dateStart": "Apr 2018",
+      "dateEnd": "Sep 2018",
+      "projects": [
+        {
+          "title": "Symphony Communication",
+          "description": "Instant messaging service aimed at financial firms",
+          "technologies": [
+            "Babel",
+            "Backbone",
+            "React",
+            "Redux",
+            "HTML5",
+            "JavaScript",
+            "SASS",
+            "Node.js",
+            "NPM",
+            "Gulp"
+          ],
+          "vertical": "Communications"
+        }
+      ]
+    },
+    {
+      "place": "Spark Digital Argentina",
+      "position": "Senior Full-Stack JS",
+      "dateStart": "Jan 2017",
+      "dateEnd": "Apr 2018",
+      "projects": [
+        {
+          "title": "MLBAM/Bamtech",
+          "description": "Video Player for NHL/Riot/MLB/MILB and tech migration",
+          "technologies": [
+            "Babel",
+            "Backbone",
+            "bower",
+            "GraphQL",
+            "HTML5",
+            "JavaScript",
+            "LESS",
+            "Node.js",
+            "nodemon",
+            "NPM",
+            "WebPack"
+          ],
+          "vertical": "Sports and eSports streaming"
+        }
+      ]
+    },
+    {
+      "place": "Truelogic Software",
+      "position": "Frontend",
+      "dateStart": "Jul 2016",
+      "dateEnd": "Jan 2017",
+      "projects": [
+        {
+          "title": "Cucu Sports",
+          "description": "Marketplace for Athletes and Celebrity Influencer Marketing",
+          "technologies": [
+            "Babel",
+            "HTML5",
+            "JavaScript",
+            "Material UI",
+            "PHP",
+            "ReactJS",
+            "Redux",
+            "SASS",
+            "Webpack"
+          ],
+          "vertical": "Marketing"
+        },
+        {
+          "title": "RV Trip Wizard",
+          "description": "RV Trip Planning",
+          "technologies": [
+            "CSS",
+            "HTML5",
+            "JavaScript",
+            "PHP",
+            "Twitter Bootstrap"
+          ],
+          "vertical": "Travel"
+        }
+      ]
+    },
+    {
+      "place": "Internap Corporation",
+      "position": "Frontend",
+      "dateStart": "Oct 2015",
+      "dateEnd": "Jul 2016",
+      "projects": [
+        {
+          "title": "SingleHop - Internal Server Managment UI",
+          "description": "ReactJS Frontend UI",
+          "technologies": [
+            "LESS",
+            "Node.js",
+            "NPM",
+            "ReactJS",
+            "Twitter Bootstrap",
+            "WebPack"
+          ],
+          "vertical": "Web Services"
+        }
+      ]
+    },
+    {
+      "place": "Globant Argentina",
+      "position": "Semi-Senior Web UI",
+      "dateStart": "Oct 2013",
+      "dateEnd": "Oct 2015",
+      "projects": [
+        {
+          "title": "Sears - Shop Your Way",
+          "description": "Articles, guides, and shopping for Health & Wellness",
+          "technologies": [
+            "AngularJS",
+            "Grunt",
+            "LESS",
+            "Node.js",
+            "REST",
+            "Twitter Bootstrap"
+          ],
+          "vertical": "Retail"
+        },
+        {
+          "title": "Bally Games - Slot Machines",
+          "description": "Flash games porting for devices with HTML5",
+          "technologies": [
+            "Backbone",
+            "Compass",
+            "Node.js",
+            "RequireJS",
+            "SASS"
+          ],
+          "vertical": "Gambling"
+        },
+        {
+          "title": "Syngenta - Elatus",
+          "description": "Tablet catalog and promotional web app",
+          "technologies": [
+            "AngularJS",
+            "Bower",
+            "Grunt",
+            "Node.js",
+            "PureCSS",
+            "SASS",
+            "Yeoman"
+          ],
+          "vertical": "Agrochemical & Seeds"
+        }
+      ]
+    },
+    {
+      "place": "Moka-Moka",
+      "position": "Frontend",
+      "dateStart": "Aug 2013",
+      "dateEnd": "Oct 2013",
+      "projects": [
+        {
+          "title": "Best Latam",
+          "description": "Wordpress Theme adaptation from Mockup",
+          "technologies": [
+            "Wordpress",
+            "PHP",
+            "CSS3",
+            "JavaScript"
+          ],
+          "vertical": "Music News"
+        },
+        {
+          "title": "IDES (Instituto de Estudios Superiores)",
+          "description": "Landing Page with suscription form ",
+          "technologies": [
+            "HTML5",
+            "PHP",
+            "CSS3",
+            "JavaScript"
+          ],
+          "vertical": "Education"
+        }
+      ]
+    },
+    {
+      "place": "1O24",
+      "position": "Frontend",
+      "dateStart": "Dec 2012",
+      "dateEnd": "Oct 2013",
+      "projects": [
+        {
+          "title": "Aquarium Mar del Plata",
+          "description": "Games with social sharing features",
+          "technologies": [
+            "HTML5 (Canvas)",
+            "JavaScript",
+            "KineticJS"
+          ],
+          "vertical": "Entertainment Park"
+        },
+        {
+          "title": "1O24 - Facebook Contest Maker",
+          "description": "Facebook contests maker with Control Panel",
+          "technologies": [
+            "PHP",
+            "Twitter Bootstrap",
+            "Facebook API"
+          ],
+          "vertical": "Web Services"
+        },
+        {
+          "title": "Rossi Deportes",
+          "description": "Cloud based shopping cart",
+          "technologies": [
+            "PHP",
+            "Twitter Bootstrap",
+            "JavaScript"
+          ],
+          "vertical": "Sportswear"
+        },
+        {
+          "title": "1O24 - Apolix",
+          "description": "HTML5 canvas player for security IP cameras",
+          "technologies": [
+            "PHP",
+            "HTML5",
+            "Twitter Bootstrap",
+            "MooTools"
+          ],
+          "vertical": "Web Services"
+        },
+        {
+          "title": "Claro Argentina",
+          "description": "Polls for promotional use in tablets",
+          "technologies": [
+            "CSS3",
+            "Twitter Bootstrap",
+            "JavaScript",
+            "PHP"
+          ],
+          "vertical": "Mobile Phone provider"
+        },
+        {
+          "title": "Aquarium Mar del Plata",
+          "description": "Polls for promotional use in tablets",
+          "technologies": [
+            "CSS3",
+            "Twitter Bootstrap",
+            "JavaScript",
+            "PHP"
+          ],
+          "vertical": "Entertainment Park"
+        }
+      ]
+    }
+  ],
+  "education": [
+    {
+      "place": "ISFT N°151, Mar del Plata, Argentina",
+      "title": "Advanced Computer Technician",
+      "dateStart": "Mar 2009",
+      "dateEnd": "Dec 2011"
+    },
+    {
+      "place": "E.E.T. N°5, Mar del Plata, Argentina",
+      "title": "Computer Technician",
+      "dateStart": "Mar 2005",
+      "dateEnd": "Dec 2007"
+    }
+  ],
+  "courses": [
+    {
+      "place": "Barcamp, Mar del Plata, Argentina",
+      "title": "Simple is Hard: A talk about UX and UI",
+      "type": "Talk",
+      "year": 2019
+    },
+    {
+      "place": "Barcamp, Mar del Plata, Argentina",
+      "title": "PWA - The web of the future",
+      "type": "Talk",
+      "year": 2018
+    },
+    {
+      "place": "Barcamp, Mar del Plata, Argentina",
+      "title": "D&D - Developers & Designers",
+      "type": "Talk",
+      "year": 2017
+    },
+    {
+      "place": "SparkDigital, Mar del Plata, Argentina",
+      "title": "TypeScript Introduction",
+      "type": "Live Session",
+      "year": 2017
+    },
+    {
+      "place": "Barcamp, Mar del Plata, Argentina",
+      "title": "Web Security tips for NERDS!",
+      "type": "Talk",
+      "year": 2016
+    },
+    {
+      "place": "Barcamp, Mar del Plata, Argentina",
+      "title": "Web Components: Polymer & ReactJS",
+      "type": "Talk",
+      "year": 2015
+    },
+    {
+      "place": "Globant, Mar del Plata, Argentina",
+      "title": "Typescript & Angular 2",
+      "type": "Course",
+      "year": 2015
+    },
+    {
+      "place": "Globant, Mar del Plata, Argentina",
+      "title": "Typescript Introduction",
+      "type": "Course",
+      "year": 2015
+    },
+    {
+      "place": "Barcamp, Mar del Plata, Argentina",
+      "title": "ECMAScript 6 or 'The new JavaScript'",
+      "type": "Talk",
+      "year": 2014
+    },
+    {
+      "place": "SUMA Conectivo, Mar del Plata, Argentina",
+      "title": "TypeScript",
+      "type": "Workshop",
+      "year": 2013
+    },
+    {
+      "place": "Barcamp, Mar del Plata, Argentina",
+      "title": "Quality Web Programming",
+      "type": "Talk",
+      "year": 2013
+    }
+  ],
+  "certifications": [
+    {
+      "provider": "Globant Academy (Acamica)",
+      "title": "Angular 2",
+      "year": 2018
+    },
+    {
+      "provider": "Globant Academy (Acamica)",
+      "title": "Animaciones en CSS",
+      "year": 2018
+    },
+    {
+      "provider": "Globant Academy (Acamica)",
+      "title": "Asincronismo en Javascript",
+      "year": 2018
+    },
+    {
+      "provider": "Globant Academy (Acamica)",
+      "title": "CSS Avanzado",
+      "year": 2018
+    },
+    {
+      "provider": "Globant Academy (Acamica)",
+      "title": "CSS Intermedio",
+      "year": 2018
+    },
+    {
+      "provider": "Globant Academy (Acamica)",
+      "title": "Comenzando con CSS",
+      "year": 2018
+    },
+    {
+      "provider": "Globant Academy (Acamica)",
+      "title": "Debugging",
+      "year": 2018
+    },
+    {
+      "provider": "Globant Academy (Acamica)",
+      "title": "Diseño de aplicaciones",
+      "year": 2018
+    },
+    {
+      "provider": "Globant Academy (Acamica)",
+      "title": "Dominando Sass",
+      "year": 2018
+    },
+    {
+      "provider": "Globant Academy (Acamica)",
+      "title": "Express",
+      "year": 2018
+    },
+    {
+      "provider": "Globant Academy (Acamica)",
+      "title": "Fundamentos de ECMAScript 6",
+      "year": 2018
+    },
+    {
+      "provider": "Globant Academy (Acamica)",
+      "title": "Fundamentos de la programación",
+      "year": 2018
+    },
+    {
+      "provider": "Globant Academy (Acamica)",
+      "title": "Fundamentos del Diseño",
+      "year": 2018
+    },
+    {
+      "provider": "Globant Academy (Acamica)",
+      "title": "Git",
+      "year": 2018
+    },
+    {
+      "provider": "Globant Academy (Acamica)",
+      "title": "Gulp.js, automatizando tareas",
+      "year": 2018
+    },
+    {
+      "provider": "Globant Academy (Acamica)",
+      "title": "HTML5",
+      "year": 2018
+    },
+    {
+      "provider": "Globant Academy (Acamica)",
+      "title": "HTML: el lenguaje popular",
+      "year": 2018
+    },
+    {
+      "provider": "Globant Academy (Acamica)",
+      "title": "Heroku",
+      "year": 2018
+    },
+    {
+      "provider": "Globant Academy (Acamica)",
+      "title": "IONIC",
+      "year": 2018
+    },
+    {
+      "provider": "Globant Academy (Acamica)",
+      "title": "Introducción a Docker",
+      "year": 2018
+    },
+    {
+      "provider": "Globant Academy (Acamica)",
+      "title": "Introducción a React",
+      "year": 2018
+    },
+    {
+      "provider": "Globant Academy (Acamica)",
+      "title": "Desarrollo de aplicaciones web",
+      "year": 2018
+    },
+    {
+      "provider": "Globant Academy (Acamica)",
+      "title": "MongoDB",
+      "year": 2018
+    },
+    {
+      "provider": "Globant Academy (Acamica)",
+      "title": "Node JS",
+      "year": 2018
+    },
+    {
+      "provider": "Globant Academy (Acamica)",
+      "title": "Node.js, el comienzo",
+      "year": 2018
+    },
+    {
+      "provider": "Globant Academy (Acamica)",
+      "title": "Programación Funcional",
+      "year": 2018
+    },
+    {
+      "provider": "Globant Academy (Acamica)",
+      "title": "Programación Orientada a Objetos",
+      "year": 2018
+    },
+    {
+      "provider": "Globant Academy (Acamica)",
+      "title": "Prototipos y clases en JavaScript",
+      "year": 2018
+    },
+    {
+      "provider": "Globant Academy (Acamica)",
+      "title": "React/Redux",
+      "year": 2018
+    },
+    {
+      "provider": "Globant Academy (Acamica)",
+      "title": "Responsive Design",
+      "year": 2018
+    },
+    {
+      "provider": "Globant Academy (Acamica)",
+      "title": "jQuery",
+      "year": 2018
+    }
+  ]
+}
