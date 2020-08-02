@@ -134,7 +134,11 @@
 }
 
 @keyframes rotating {
+	from {
+		opacity: 1;
+	}
 	to {
+		opacity: 1;
 		transform: translateX(var(--transform-translate-x, 0))
 			translateY(var(--transform-translate-y, 0))
 			rotate(calc(var(--transform-rotate, 0deg) + 360deg))

@@ -19,7 +19,7 @@ export const OrbitItemContent: WrapperComponent<
 	<span
 		class={classnames(
 			// eslint-disable-next-line max-len
-			"inline-block h-full transform animation animation-rotating animation-infinite animation-linear animation-reverse",
+			"inline-block h-full transform animation animation-rotating animation-infinite animation-linear animation-reverse opacity-0",
 			className
 		)}
 		style={{
