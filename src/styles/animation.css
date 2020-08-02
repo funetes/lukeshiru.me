@@ -111,17 +111,25 @@
 @keyframes fade-in {
 	from {
 		fill: transparent;
+		opacity: 1;
+	}
+	to {
+		opacity: 1;
 	}
 }
 
 @keyframes shrink-rotate {
 	from {
+		opacity: 1;
 		transform: translateX(var(--transform-translate-x, 0))
 			translateY(var(--transform-translate-y, 0))
 			rotate(calc(var(--transform-rotate, 0deg) * 1deg - 90deg))
 			skewX(var(--transform-skew-x, 0)) skewY(var(--transform-skew-y, 0))
 			scaleX(calc(var(--transform-scale-x, 0) + 10))
 			scaleY(calc(var(--transform-scale-y, 0) + 10));
+	}
+	to {
+		opacity: 1;
 	}
 }
 
