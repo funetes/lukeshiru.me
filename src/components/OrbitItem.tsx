@@ -16,7 +16,7 @@ export const OrbitItem: WrapperComponent<"li", OrbitItemProperties> = ({
 	<li
 		class={classnames(
 			// eslint-disable-next-line max-len
-			"block left-1/2 opacity-100 absolute text-right top-1/2 origin-left-center w-180 transform -translate-y-1/2 animation animation-rotating animation-infinite animation-linear opacity-0",
+			"block left-1/2 opacity-100 absolute text-right top-1/2 origin-left-center w-180 transform -translate-y-1/2 animation animation-rotating animation-infinite animation-linear",
 			className
 		)}
 		style={{

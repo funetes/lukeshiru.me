@@ -11,12 +11,16 @@
 		var(--animation-timing-function) var(--animation-delay)
 		var(--animation-iteration-count) var(--animation-direction)
 		var(--animation-fill-mode) var(--animation-play-state);
+	/** FOUC hack */
+	opacity: 0;
 }
 
 @media (prefers-reduced-motion: reduce) {
 	/* Disable animations if the users prefers reduced motion */
 	.animation {
 		animation: none;
+		/** FOUC hack */
+		opacity: 1;
 	}
 	/* Set all transition durations to 0 */
 	[class*="duration-"] {
