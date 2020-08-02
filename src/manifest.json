@@ -1,10 +1,15 @@
 {
+  "$schema": "https://json.schemastore.org/web-manifest",
   "background_color": "#000",
   "description": "Quick access to some of Lucas Ciruzzi online profiles",
   "display": "standalone",
   "icons": [
     {
-      "purpose": "maskable",
+      "sizes": "512x512",
+      "src": "/assets/images/manifest/512.png",
+      "type": "image/png"
+    },
+    {
       "sizes": "512x512",
       "src": "/assets/images/manifest/512.maskable.png",
       "type": "image/png"
