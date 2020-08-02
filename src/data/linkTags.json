@@ -7,7 +7,7 @@
     },
     "/assets/images/favicon.ico"
   ],
-  "manifest": "/manifest.webmanifest",
+  "manifest": "/manifest.json",
   "shortlink": "https://lshi.ru",
   "apple-touch-icon": [
     "/assets/images/manifest/048.png",
