@@ -1,4 +1,11 @@
-import { arrayMap, objectEntries, Tuple } from "@vangware/utils";
+import {
+	arrayMap,
+	numberDivide,
+	numberMultiply,
+	numberSubtract,
+	objectEntries,
+	Tuple
+} from "@vangware/utils";
 import { h, VNode } from "preact";
 import { OrbitAnchor } from "../components/OrbitAnchor";
 import { OrbitIcon } from "../components/OrbitIcon";
@@ -19,7 +26,9 @@ const linksArray = objectEntries(links).map(([key, value], index, array) => [
 
 export const orbitLinks = arrayMap<typeof linksArray[number], VNode>(
 	([title, { href, icon, index, length }]) => {
-		const angle = (360 / length) * index - 90;
+		const angle = numberSubtract(90)(
+			numberMultiply(index)(numberDivide(length)(360))
+		);
 		const duration = 300;
 
 		return (
