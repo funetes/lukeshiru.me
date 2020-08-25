@@ -3,8 +3,7 @@ import {
 	numberDivide,
 	numberMultiply,
 	numberSubtract,
-	objectEntries,
-	Tuple
+	objectEntries
 } from "@vangware/utils";
 import { h, VNode } from "preact";
 import { OrbitAnchor } from "../components/OrbitAnchor";
@@ -16,13 +15,13 @@ import links from "../data/links.json";
 const linksArray = objectEntries(links).map(([key, value], index, array) => [
 	key,
 	{ ...value, index, length: array.length }
-]) as readonly Tuple<
-	string,
-	typeof links[keyof typeof links] & {
+]) as readonly (readonly [
+	key: string,
+	value: typeof links[keyof typeof links] & {
 		readonly index: number;
 		readonly length: number;
 	}
->[];
+])[];
 
 export const orbitLinks = arrayMap<typeof linksArray[number], VNode>(
 	([title, { href, icon, index, length }]) => {
