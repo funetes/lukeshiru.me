@@ -12,7 +12,8 @@
     {
       "sizes": "512x512",
       "src": "/assets/images/manifest/512.maskable.png",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "maskable"
     }
   ],
   "name": "LUKE知る",
