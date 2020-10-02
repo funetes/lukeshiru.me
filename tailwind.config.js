@@ -2,6 +2,9 @@ module.exports = {
 	purge: false,
 	theme: {
 		extend: {
+			colors: {
+				red: "#F04"
+			},
 			fontSize: {
 				vmin: "1vmin"
 			},
