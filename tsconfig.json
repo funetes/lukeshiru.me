@@ -6,6 +6,10 @@
     "forceConsistentCasingInFileNames": true,
     "jsx": "react",
     "jsxFactory": "h",
+    "lib": [
+      "ES5",
+      "ESNext.Array"
+    ],
     "module": "ESNext",
     "moduleResolution": "node",
     "newLine": "LF",
