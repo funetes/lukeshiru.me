@@ -3,7 +3,7 @@ module.exports = {
 	theme: {
 		extend: {
 			colors: {
-				red: "#F04"
+				red: "#F05"
 			},
 			fontSize: {
 				vmin: "1vmin"

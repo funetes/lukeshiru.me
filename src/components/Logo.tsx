@@ -18,7 +18,7 @@ export const Logo: WrapperComponent = ({ class: className, ...properties }) => (
 				}}
 				// eslint-disable-next-line max-len
 				class="animation animation-ease-in-out animation-fill-both animation-shrink-rotate origin-center transform"
-				fill="#F04"
+				fill="#F05"
 				d="M40 3.987l31.173 54.02H8.827z"
 			/>
 			<path
