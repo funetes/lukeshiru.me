@@ -1,5 +1,5 @@
 import { isString, isUndefined } from "@vangware/utils";
-import { ComponentChild, h } from "preact";
+import { ComponentChild } from "preact";
 import { WrapperComponent } from "../types/WrapperComponent";
 import { ResumeSectionTitle } from "./ResumeSectionTitle";
 

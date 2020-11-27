@@ -1,4 +1,3 @@
-import { h } from "preact";
 import { WrapperComponent } from "../types/WrapperComponent";
 
 export type AnchorProperties = {

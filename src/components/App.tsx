@@ -1,4 +1,4 @@
-import { Fragment, h } from "preact";
+import { Fragment } from "preact";
 import { orbitLinks } from "../transformations/orbitLinks";
 import { resume } from "../transformations/resume";
 import { WrapperComponent } from "../types/WrapperComponent";

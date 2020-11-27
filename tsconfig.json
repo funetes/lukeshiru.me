@@ -4,23 +4,25 @@
     "declaration": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
-    "jsx": "react",
-    "jsxFactory": "h",
+    "jsx": "react-jsx",
+    "jsxImportSource": "preact",
     "lib": [
-      "ES5",
-      "ESNext.Array"
+      "ES2015",
+      "ESNext.Array",
+      "ESNext.BigInt"
     ],
     "module": "ESNext",
     "moduleResolution": "node",
     "newLine": "LF",
     "noEmitOnError": true,
+    "noUncheckedIndexedAccess": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "outDir": "./dist",
     "preserveConstEnums": true,
     "resolveJsonModule": true,
     "strict": true,
-    "target": "ES5"
+    "target": "ES2015"
   },
   "include": ["src/**/*.tsx", "src/**/*.ts"]
 }

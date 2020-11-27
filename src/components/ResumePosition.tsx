@@ -1,5 +1,4 @@
 import classnames from "classnames";
-import { h } from "preact";
 import { WrapperComponent } from "../types/WrapperComponent";
 
 export const ResumePosition: WrapperComponent<"h2"> = ({

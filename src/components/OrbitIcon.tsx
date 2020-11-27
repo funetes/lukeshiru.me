@@ -1,5 +1,4 @@
 import classnames from "classnames";
-import { h } from "preact";
 import { WrapperComponent } from "../types/WrapperComponent";
 import { Icon, IconProperties } from "./Icon";
 

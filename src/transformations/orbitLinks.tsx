@@ -5,7 +5,7 @@ import {
 	numberSubtract,
 	objectEntries
 } from "@vangware/utils";
-import { h, VNode } from "preact";
+import { VNode } from "preact";
 import { OrbitAnchor } from "../components/OrbitAnchor";
 import { OrbitIcon } from "../components/OrbitIcon";
 import { OrbitItem } from "../components/OrbitItem";

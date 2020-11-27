@@ -1,5 +1,4 @@
 import classnames from "classnames";
-import { h } from "preact";
 import { WrapperComponent } from "../types/WrapperComponent";
 
 export type OrbitItemContentProperties = {
@@ -23,8 +22,8 @@ export const OrbitItemContent: WrapperComponent<
 			className
 		)}
 		style={{
-			"--animation-duration": `${rotationDuration}s`,
-			"--transform-rotate": `${rotationAngle}deg`
+			["--animation-duration" as string]: `${rotationDuration}s`,
+			["--transform-rotate" as string]: `${rotationAngle}deg`
 		}}
 		{...properties}
 	/>

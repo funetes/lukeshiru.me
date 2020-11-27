@@ -1,4 +1,4 @@
-import { Fragment, h } from "preact";
+import { Fragment } from "preact";
 import { ResumeCertification } from "../components/ResumeCertification";
 import { ResumeCertifications } from "../components/ResumeCertifications";
 import { ResumeCourse } from "../components/ResumeCourse";

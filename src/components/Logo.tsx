@@ -1,5 +1,4 @@
 import classnames from "classnames";
-import { h } from "preact";
 import { WrapperComponent } from "../types/WrapperComponent";
 
 export const Logo: WrapperComponent = ({ class: className, ...properties }) => (
@@ -14,7 +13,7 @@ export const Logo: WrapperComponent = ({ class: className, ...properties }) => (
 		<svg class="overflow-visible" viewBox="0 0 80 80">
 			<path
 				style={{
-					"--animation-duration": "1s"
+					["--animation-duration" as string]: "1s"
 				}}
 				// eslint-disable-next-line max-len
 				class="animation animation-ease-in-out animation-fill-both animation-shrink-rotate origin-center transform"
@@ -23,8 +22,8 @@ export const Logo: WrapperComponent = ({ class: className, ...properties }) => (
 			/>
 			<path
 				style={{
-					"--animation-delay": "1s",
-					"--animation-duration": "0.5s"
+					["--animation-delay" as string]: "1s",
+					["--animation-duration" as string]: "0.5s"
 				}}
 				fill="#000"
 				// eslint-disable-next-line max-len
