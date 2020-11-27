@@ -5,6 +5,4 @@
 @import "tailwindcss/utilities";
 
 /* Custom styles */
-@import "./animation.css";
-@import "./display.css";
 @import "./list.css";

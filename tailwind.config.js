@@ -2,11 +2,27 @@ module.exports = {
 	purge: false,
 	theme: {
 		extend: {
+			animation: {
+				"fade-in": "fade-in 0.5s ease-out 1s both",
+				"shrink-rotate": "shrink-rotate 1s ease-in-out both"
+			},
 			colors: {
 				red: "#F05"
 			},
 			fontSize: {
 				vmin: "1vmin"
+			},
+			keyframes: {
+				"fade-in": {
+					from: {
+						fill: "transparent"
+					}
+				},
+				"shrink-rotate": {
+					from: {
+						transform: "rotate(-90deg) scale(10)"
+					}
+				}
 			},
 			screens: {
 				print: { raw: "print" },
@@ -29,5 +45,7 @@ module.exports = {
 			auto: "auto"
 		}
 	},
-	variants: {}
+	variants: {
+		animation: ["motion-safe"]
+	}
 };

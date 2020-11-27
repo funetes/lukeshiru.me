@@ -28,14 +28,10 @@ export const orbitLinks = arrayMap<typeof linksArray[number], VNode>(
 		const angle = numberSubtract(90)(
 			numberMultiply(index)(numberDivide(length)(360))
 		);
-		const duration = 300;
 
 		return (
-			<OrbitItem rotationAngle={angle} rotationDuration={duration}>
-				<OrbitItemContent
-					rotationAngle={-angle}
-					rotationDuration={duration}
-				>
+			<OrbitItem rotationAngle={angle}>
+				<OrbitItemContent rotationAngle={-angle}>
 					<OrbitAnchor aside {...{ href, title }}>
 						<OrbitIcon path={icon} />
 					</OrbitAnchor>
