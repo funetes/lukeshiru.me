@@ -8,6 +8,8 @@ export const ResumePhoto: WrapperComponent<"img"> = ({
 }) => (
 	<img
 		class={classnames("rounded-md h-32 w-32", className)}
+		height={128}
+		width={128}
 		{...{ ...properties, alt }}
 	/>
 );
