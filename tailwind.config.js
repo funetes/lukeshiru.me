@@ -5,6 +5,10 @@ module.exports = {
 			fontSize: {
 				vmin: "1vmin"
 			},
+			colors: {
+				pink: "#E79",
+				purple: "#546"
+			},
 			screens: {
 				print: { raw: "print" },
 				screen: { raw: "screen" }

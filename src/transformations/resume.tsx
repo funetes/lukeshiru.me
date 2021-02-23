@@ -20,7 +20,7 @@ import resumeData from "../data/resume.json";
 export const resume = (
 	<Fragment>
 		<ResumeMain>
-			<ResumePhoto src="/assets/images/photo.webp" />
+			<ResumePhoto src="/assets/images/photo.png" />
 			<ResumeMainHeader>
 				<ResumeName>{resumeData.main.name}</ResumeName>
 				<ResumePosition>{resumeData.main.position}</ResumePosition>
