@@ -1,6 +1,6 @@
 {
   "$schema": "https://json.schemastore.org/web-manifest",
-  "background_color": "#f79",
+  "background_color": "#000",
   "description": "Quick access to some of Lucas Ciruzzi online profiles",
   "display": "standalone",
   "icons": [
@@ -20,5 +20,5 @@
   "orientation": "any",
   "short_name": "LUKE知る",
   "start_url": "/",
-  "theme_color": "#f79"
+  "theme_color": "#000"
 }
