@@ -1,4 +1,4 @@
-import { WrapperComponent } from "../types/WrapperComponent";
+import type { WrapperComponent } from "../types/WrapperComponent";
 
 export type AnchorProperties = {
 	readonly aside?: boolean;

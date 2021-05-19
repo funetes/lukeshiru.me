@@ -1,5 +1,5 @@
-import { FunctionComponent, JSX } from "preact";
-import { JSXProperties } from "./JSXProperties";
+import type { FunctionComponent, JSX } from "preact";
+import type { JSXProperties } from "./JSXProperties";
 
 export type WrapperComponent<
 	WrappedTagName extends keyof JSX.IntrinsicElements = "div",

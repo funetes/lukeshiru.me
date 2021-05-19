@@ -1,0 +1,38 @@
+@keyframes circle-reveal {
+	to {
+		clip-path: circle(125vmax);
+	}
+}
+
+@keyframes rotate {
+	to {
+		transform: translate3d(var(--tw-translate-x), var(--tw-translate-y), 0)
+			rotate(360deg) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
+			scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+	}
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	:root {
+		--rotate-duration: calc(60s * 5);
+		--reveal-duration: 2s;
+	}
+	.circle-reveal-animation {
+		animation-duration: var(--reveal-duration);
+		animation-fill-mode: both;
+		animation-name: circle-reveal;
+		animation-timing-function: ease-in-out;
+		clip-path: circle(0);
+	}
+	.rotate-clockwise-animation,
+	.rotate-counterclockwise-animation {
+		animation-duration: var(--rotate-duration);
+		animation-fill-mode: both;
+		animation-iteration-count: infinite;
+		animation-name: rotate;
+		animation-timing-function: linear;
+	}
+	.rotate-counterclockwise-animation {
+		animation-direction: reverse;
+	}
+}

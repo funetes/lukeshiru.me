@@ -1,6 +1,6 @@
 import classnames from "classnames";
-import { WrapperComponent } from "../types/WrapperComponent";
-import { IconProperties } from "./Icon";
+import type { WrapperComponent } from "../types/WrapperComponent";
+import type { IconProperties } from "./Icon";
 
 export const OrbitItemList: WrapperComponent<"ul", IconProperties> = ({
 	class: className,

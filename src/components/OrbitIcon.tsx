@@ -1,6 +1,7 @@
 import classnames from "classnames";
-import { WrapperComponent } from "../types/WrapperComponent";
-import { Icon, IconProperties } from "./Icon";
+import type { WrapperComponent } from "../types/WrapperComponent";
+import type { IconProperties } from "./Icon";
+import { Icon } from "./Icon";
 
 export const OrbitIcon: WrapperComponent<"svg", IconProperties> = ({
 	class: className,

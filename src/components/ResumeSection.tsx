@@ -1,6 +1,6 @@
 import { isString, isUndefined } from "@vangware/utils";
-import { ComponentChild } from "preact";
-import { WrapperComponent } from "../types/WrapperComponent";
+import type { ComponentChild } from "preact";
+import type { WrapperComponent } from "../types/WrapperComponent";
 import { ResumeSectionTitle } from "./ResumeSectionTitle";
 
 export type ResumeSectionProperties = {

@@ -1,5 +1,5 @@
 import classnames from "classnames";
-import { WrapperComponent } from "../types/WrapperComponent";
+import type { WrapperComponent } from "../types/WrapperComponent";
 
 export const ResumePhoto: WrapperComponent<"img"> = ({
 	alt = "Profile photo",

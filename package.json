@@ -63,9 +63,9 @@
     "typescript": "^4.2.4"
   },
   "engines": {
-    "node": "16.0.0",
-    "npm": "7.11.1",
-    "pnpm": "6.0.2"
+    "node": "16.2.0",
+    "npm": "7.13.0",
+    "pnpm": "6.4.0"
   },
   "eslintIgnore": [
     "build/*"
