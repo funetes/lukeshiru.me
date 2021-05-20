@@ -5,8 +5,5 @@ export const OnlyScreen: WrapperComponent = ({
 	class: className,
 	...properties
 }) => (
-	<div
-		class={classnames("print:hidden h-stretch", className)}
-		{...properties}
-	/>
+	<div class={classnames("print:hidden h-full", className)} {...properties} />
 );

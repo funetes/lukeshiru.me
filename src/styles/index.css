@@ -7,8 +7,3 @@
 /* Custom styles */
 @import "./list.css";
 @import "./animations.css";
-
-.h-stretch {
-	height: 100vh;
-	height: stretch;
-}
