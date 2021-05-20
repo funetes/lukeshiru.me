@@ -1,4 +1,3 @@
-import { Fragment } from "preact";
 import { orbitLinks } from "../transformations/orbitLinks";
 import { resume } from "../transformations/resume";
 import type { WrapperComponent } from "../types/WrapperComponent";
@@ -11,7 +10,7 @@ import { OrbitNavigation } from "./OrbitNavigation";
 
 // eslint-disable-next-line functional/functional-parameters
 export const App: WrapperComponent = () => (
-	<Fragment>
+	<>
 		<OnlyScreen class="bg-black circle-reveal-animation">
 			<OrbitContainer>
 				<OrbitNavigation>
@@ -21,7 +20,7 @@ export const App: WrapperComponent = () => (
 			<Logo />
 		</OnlyScreen>
 		<OnlyPrint>{resume}</OnlyPrint>
-	</Fragment>
+	</>
 );
 
 export default App;

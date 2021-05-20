@@ -149,7 +149,6 @@ $RECYCLE.BIN/
 *.lnk
 
 # Build
-build
-size-plugin.json
+dist
 
 .env

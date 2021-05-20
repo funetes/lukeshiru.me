@@ -1,4 +1,3 @@
-import { Fragment } from "preact";
 import { ResumeCertification } from "../components/ResumeCertification";
 import { ResumeCertifications } from "../components/ResumeCertifications";
 import { ResumeCourse } from "../components/ResumeCourse";
@@ -18,7 +17,7 @@ import { ResumeWorkProjects } from "../components/ResumeWorkProjects";
 import resumeData from "../data/resume.json";
 
 export const resume = (
-	<Fragment>
+	<>
 		<ResumeMain>
 			<ResumePhoto src="/assets/images/photo.png" />
 			<ResumeMainHeader>
@@ -70,5 +69,5 @@ export const resume = (
 				))}
 			</ResumeCertifications>
 		</ResumeSection>
-	</Fragment>
+	</>
 );

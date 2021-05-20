@@ -1,5 +1,6 @@
 module.exports = {
-	purge: false,
+	purge: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
+	darkMode: false,
 	theme: {
 		extend: {
 			fontSize: {
@@ -25,5 +26,9 @@ module.exports = {
 			"1/2": "50%",
 			auto: "auto"
 		}
-	}
+	},
+	variants: {
+		extend: {}
+	},
+	plugins: []
 };

@@ -1,28 +1,31 @@
 {
-  "compilerOptions": {
-    "allowJs": true,
-    "declaration": true,
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "jsx": "react-jsx",
-    "jsxImportSource": "preact",
-    "lib": [
-      "ES2015",
-      "ESNext.Array",
-      "ESNext.BigInt"
-    ],
-    "module": "ESNext",
-    "moduleResolution": "node",
-    "newLine": "LF",
-    "noEmitOnError": true,
-    "noUncheckedIndexedAccess": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "outDir": "./dist",
-    "preserveConstEnums": true,
-    "resolveJsonModule": true,
-    "strict": true,
-    "target": "ES2015"
-  },
-  "include": ["src/**/*.tsx", "src/**/*.ts"]
+	"compilerOptions": {
+		"allowJs": true,
+		"allowSyntheticDefaultImports": true,
+		"alwaysStrict": true,
+		"checkJs": true,
+		"declaration": true,
+		"jsx": "react-jsx",
+		"jsxImportSource": "preact",
+		"extendedDiagnostics": true,
+		"esModuleInterop": true,
+		"forceConsistentCasingInFileNames": true,
+		"importsNotUsedAsValues": "error",
+		"isolatedModules": true,
+		"lib": ["DOM", "DOM.Iterable", "ESNext"],
+		"module": "ESNext",
+		"moduleResolution": "Node",
+		"newLine": "LF",
+		"noEmitOnError": true,
+		"noUncheckedIndexedAccess": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"outDir": "./dist",
+		"preserveConstEnums": true,
+		"resolveJsonModule": true,
+		"strict": true,
+		"target": "ESNext",
+		"types": ["vite/client", "vite-plugin-pwa/client"]
+	},
+	"include": ["./src/**/*.ts", "./src/**/*.tsx"]
 }
