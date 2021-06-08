@@ -5,7 +5,7 @@ export const Logo: WrapperComponent = ({ class: className, ...properties }) => (
 	<div
 		class={classnames(
 			// eslint-disable-next-line max-len
-			"pointer-events-none absolute origin-center left-1/2 top-1/2 w-200 h-200 transform-gpu -translate-y-1/2 -translate-x-1/2 flex rounded-full overflow-hidden text-white",
+			"pointer-events-none absolute origin-center left-1/2 top-1/2 w-200 h-200 transform-gpu -translate-y-1/2 -translate-x-1/2 flex rounded-full overflow-hidden text-black dark:text-white",
 			className
 		)}
 		{...properties}

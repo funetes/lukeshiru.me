@@ -52,7 +52,7 @@
 	"engines": {
 		"node": "16.2.0",
 		"npm": "7.13.0",
-		"pnpm": "6.4.0"
+		"pnpm": "6.7.1"
 	},
 	"homepage": "https://lukeshiru.me",
 	"husky": {
