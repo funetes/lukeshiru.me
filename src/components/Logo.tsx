@@ -10,7 +10,7 @@ export const Logo: WrapperComponent = ({ class: className, ...properties }) => (
 		)}
 		{...properties}
 	>
-		<svg viewBox="0 0 4 4" class="w-full">
+		<svg class="w-full" viewBox="0 0 4 4">
 			<circle class="fill-current" cx="2" cy="2" r="2" />
 			<path
 				class="text-white dark:text-black stroke-current"

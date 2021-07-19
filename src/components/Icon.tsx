@@ -17,6 +17,6 @@ export const Icon: WrapperComponent<"svg", IconProperties> = ({
 		viewBox={`0 0 ${size} ${size}`}
 		{...properties}
 	>
-		<path d={path} />
+		<path d={path} fill-rule="evenodd" />
 	</svg>
 );

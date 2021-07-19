@@ -47,7 +47,7 @@ export const resume = (
 				))}
 			</ResumeWorkPositions>
 		</ResumeSection>
-		<ResumeSection title="Given courses and talks" class="mb-8">
+		<ResumeSection class="mb-8" title="Given courses and talks">
 			<ResumeCourses>
 				{resumeData.courses.map(course => (
 					<ResumeCourse>
