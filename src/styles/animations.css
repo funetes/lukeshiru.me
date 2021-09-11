@@ -1,9 +1,3 @@
-@keyframes circle-reveal {
-	to {
-		clip-path: circle(125vmax);
-	}
-}
-
 @keyframes rotate {
 	to {
 		transform: translate3d(var(--tw-translate-x), var(--tw-translate-y), 0)
@@ -15,14 +9,6 @@
 @media (prefers-reduced-motion: no-preference) {
 	:root {
 		--rotate-duration: calc(60s * 5);
-		--reveal-duration: 2s;
-	}
-	.circle-reveal-animation {
-		animation-duration: var(--reveal-duration);
-		animation-fill-mode: both;
-		animation-name: circle-reveal;
-		animation-timing-function: ease-in-out;
-		clip-path: circle(0);
 	}
 	.rotate-clockwise-animation,
 	.rotate-counterclockwise-animation {
@@ -34,5 +20,24 @@
 	}
 	.rotate-counterclockwise-animation {
 		animation-direction: reverse;
+	}
+
+	.ears,
+	.face {
+		transition: ease-out transform 0.2s;
+	}
+
+	.ears {
+		transform: translate(
+			clamp(-0.3px, calc(var(--x, 0) * (-0.3px / 100)), 0.3px),
+			clamp(-0.5px, calc(var(--y, 0) * (-0.5px / 100)), 0.5px)
+		);
+	}
+
+	.face {
+		transform: translate(
+			clamp(-1px, calc(var(--x, 0) * (1px / 100)), 1px),
+			clamp(-1px, calc(var(--y, 0) * (1px / 100)), 1px)
+		);
 	}
 }

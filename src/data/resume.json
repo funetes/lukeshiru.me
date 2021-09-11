@@ -379,6 +379,11 @@
 	],
 	"certifications": [
 		{
+			"provider": "Dan Abramov",
+			"title": "Just JavaScript",
+			"year": 2021
+		},
+		{
 			"provider": "Globant Academy (Acamica)",
 			"title": "Angular 2",
 			"year": 2018

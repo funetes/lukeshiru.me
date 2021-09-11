@@ -24,10 +24,10 @@ export default defineConfig({
 						type: "image/png"
 					}
 				],
-				name: "LUKE知る",
+				name: "LUKESHIRU",
 				orientation: "any",
 				// eslint-disable-next-line @typescript-eslint/naming-convention
-				short_name: "LUKE知る",
+				short_name: "LUKESHIRU",
 				// eslint-disable-next-line @typescript-eslint/naming-convention
 				start_url: "/",
 				// eslint-disable-next-line @typescript-eslint/naming-convention

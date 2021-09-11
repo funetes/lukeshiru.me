@@ -1,6 +1,6 @@
-# LUKE知る Website (lukeshiru.me)
+# LUKESHIRU Website (lukeshiru.me)
 
-Quick access to some of LUKE知る cloud profiles.
+Quick access to some of LUKESHIRU cloud profiles.
 
 ## Technologies
 

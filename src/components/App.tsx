@@ -11,7 +11,7 @@ import { OrbitNavigation } from "./OrbitNavigation";
 // eslint-disable-next-line functional/functional-parameters
 export const App: WrapperComponent = () => (
 	<>
-		<OnlyScreen class="bg-white circle-reveal-animation dark:bg-black">
+		<OnlyScreen class="bg-white dark:bg-black">
 			<OrbitContainer>
 				<OrbitNavigation>
 					<OrbitItemList>{orbitLinks}</OrbitItemList>

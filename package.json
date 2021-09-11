@@ -1,6 +1,6 @@
 {
 	"name": "lukeshiru.me",
-	"description": "Quick access to some of LUKE知る cloud profiles",
+	"description": "Quick access to some of LUKESHIRU cloud profiles",
 	"version": "2.0.0",
 	"author": {
 		"email": "hello@vangware.com",
@@ -56,7 +56,7 @@
 	"engines": {
 		"node": "16.6.0",
 		"npm": "7.20.5",
-		"pnpm": "6.12.1"
+		"pnpm": "6.14.7"
 	},
 	"homepage": "https://lukeshiru.me",
 	"husky": {
