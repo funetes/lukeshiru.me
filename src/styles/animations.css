@@ -23,7 +23,8 @@
 	}
 
 	.ears,
-	.face {
+	.face,
+	.hair {
 		transition: ease-out transform 0.2s;
 	}
 
@@ -35,6 +36,13 @@
 	}
 
 	.face {
+		transform: translate(
+			clamp(-1.3px, calc(var(--x, 0) * (1px / 100)), 1.3px),
+			clamp(-1.5px, calc(var(--y, 0) * (1px / 100)), 1.5px)
+		);
+	}
+
+	.hair {
 		transform: translate(
 			clamp(-1px, calc(var(--x, 0) * (1px / 100)), 1px),
 			clamp(-1px, calc(var(--y, 0) * (1px / 100)), 1px)

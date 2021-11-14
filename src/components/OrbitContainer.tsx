@@ -9,7 +9,7 @@ export const OrbitContainer: WrapperComponent<"main"> = ({
 		class={classnames(
 			// eslint-disable-next-line max-len
 			"flex flex-wrap items-center justify-between h-full min-w-screen px-8",
-			className
+			className,
 		)}
 		{...properties}
 	/>

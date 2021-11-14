@@ -12,7 +12,7 @@ export const OrbitItemContent: WrapperComponent<
 	<span
 		class={classnames("inline-block h-full transform-gpu", className)}
 		style={{
-			["--tw-rotate" as string]: `${rotationAngle}deg`
+			["--tw-rotate" as string]: `${rotationAngle}deg`,
 		}}
 		{...properties}
 	/>

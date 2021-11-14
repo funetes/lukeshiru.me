@@ -379,6 +379,11 @@
 	],
 	"certifications": [
 		{
+			"provider": "Kent C. Dodds",
+			"title": "Epic React",
+			"year": 2021
+		},
+		{
 			"provider": "Dan Abramov",
 			"title": "Just JavaScript",
 			"year": 2021

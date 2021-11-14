@@ -6,38 +6,48 @@ export const Logo: WrapperComponent = ({ class: className, ...properties }) => {
 	// eslint-disable-next-line no-null/no-null
 	const svg = useRef<SVGSVGElement>(null);
 
-	// eslint-disable-next-line functional/no-expression-statement, functional/functional-parameters
-	useEffect(() => {
-		const follow = ({
-			x: pointerX,
-			y: pointerY
-		}: Readonly<PointerEvent>) => {
-			const {
-				x: svgX = 0,
-				y: svgY = 0,
-				width = 0,
-				height = 0
-			} = svg.current?.getBoundingClientRect() ?? {};
-
-			// eslint-disable-next-line functional/no-expression-statement
-			svg.current?.style.setProperty(
-				"--x",
-				`${pointerX - (svgX + width / 2)}`
-			);
-			// eslint-disable-next-line functional/no-expression-statement
-			svg.current?.style.setProperty(
-				"--y",
-				`${pointerY - (svgY + height / 2)}`
-			);
-		};
+	// eslint-disable-next-line functional/no-return-void
+	const follow = ({ x: pointerX, y: pointerY }: Readonly<PointerEvent>) => {
+		const {
+			x: svgX = 0,
+			y: svgY = 0,
+			width = 0,
+			height = 0,
+		} = svg.current?.getBoundingClientRect() ?? {};
 
 		// eslint-disable-next-line functional/no-expression-statement
-		window.addEventListener("pointermove", follow);
+		svg.current?.style.setProperty(
+			"--x",
+			`${pointerX - (svgX + width / 2)}`,
+		);
+		// eslint-disable-next-line functional/no-expression-statement
+		svg.current?.style.setProperty(
+			"--y",
+			`${pointerY - (svgY + height / 2)}`,
+		);
+	};
 
-		// eslint-disable-next-line functional/functional-parameters
+	// eslint-disable-next-line functional/functional-parameters, functional/no-return-void
+	const recenter = () => {
+		// eslint-disable-next-line functional/no-expression-statement
+		svg.current?.style.setProperty("--x", "0");
+		// eslint-disable-next-line functional/no-expression-statement
+		svg.current?.style.setProperty("--y", "0");
+	};
+
+	// eslint-disable-next-line functional/no-expression-statement, functional/functional-parameters
+	useEffect(() => {
+		// eslint-disable-next-line functional/no-expression-statement
+		window.addEventListener("pointermove", follow);
+		// eslint-disable-next-line functional/no-expression-statement
+		window.addEventListener("blur", recenter);
+
+		// eslint-disable-next-line functional/functional-parameters, functional/no-return-void
 		return () => {
 			// eslint-disable-next-line functional/no-expression-statement
 			window.removeEventListener("pointermove", follow);
+			// eslint-disable-next-line functional/no-expression-statement
+			window.removeEventListener("pointermove", recenter);
 		};
 	});
 
@@ -46,7 +56,7 @@ export const Logo: WrapperComponent = ({ class: className, ...properties }) => {
 			class={classnames(
 				// eslint-disable-next-line max-len
 				"pointer-events-none absolute origin-center left-1/2 top-1/2 w-200 h-200 transform-gpu -translate-y-1/2 -translate-x-1/2 flex rounded-full overflow-hidden text-black dark:text-white",
-				className
+				className,
 			)}
 			{...properties}
 		>
@@ -55,88 +65,89 @@ export const Logo: WrapperComponent = ({ class: className, ...properties }) => {
 				class="w-full"
 				ref={svg}
 				role="img"
-				viewBox="0 0 32 32"
+				viewBox="0 0 64 64"
 			>
 				<defs>
-					<clipPath id="clip">
-						<circle cx="16" cy="16" r="16" />
-					</clipPath>
+					<path
+						id="head"
+						fill="#FFF"
+						stroke="#000"
+						// eslint-disable-next-line max-len
+						d="M32.03 8.38c-5.61 0-11.22 2.86-12.82 4.59-1.56 1.68-2.38 5.32-2.79 9.32-.4 4-.4 8.36-.4 11.49 0 6.2 2.72 12.74 4.98 17.37 2.25 4.62 5.41 8.36 8 9.85.66.38 1.83.5 3 .5 1.16 0 2.34-.12 3-.5 2.59-1.5 5.75-5.24 8-9.86 2.26-4.63 5.03-11.16 5.03-17.36 0-3.13 0-7.49-.4-11.49s-1.23-7.64-2.79-9.32c-1.6-1.73-7.2-4.59-12.81-4.59Z"
+					/>
 				</defs>
-				<g clip-path="url(#clip)">
-					<circle
-						class="text-black dark:text-white fill-current"
-						cx="16"
-						cy="16"
-						r="16"
-					/>
-					<g class="ears">
-						<path
-							fill="#B98"
-							// eslint-disable-next-line max-len
-							d="M6 9l-1.35 6.07C4.3 16.7 5.35 18 7 18h18c1.66 0 2.7-1.31 2.35-2.93L26 9H6z"
-						/>
-						<path
-							fill="#333"
-							d="M5 16a1 1 0 001 1h20a1 1 0 000-2H6a1 1 0 00-1 1z"
-						/>
-					</g>
+				<path fill="#e06" d="M0 0h64v64H0z" />
+				<g className="ears">
 					<path
-						fill="#FDC"
+						fill="#DDD"
+						stroke="#000"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						stroke-miterlimit="3"
 						// eslint-disable-next-line max-len
-						d="M5 0v10c0 4.35 1.42 8.75 3 12s4.18 5.95 6 7c.93.54 3.07.54 4 0 1.82-1.05 4.42-3.75 6-7 1.59-3.25 3-7.65 3-12V0H5z"
+						d="M18.5 32h27c1.1 0 2.07.9 2.15 2l.7 9c.08 1.1-.75 2-1.85 2h-29c-1.1 0-1.93-.9-1.85-2l.7-9a2.2 2.2 0 0 1 2.15-2Z"
 					/>
-					<g class="face">
-						<path
-							fill="#ECB"
-							// eslint-disable-next-line max-len
-							d="M20 23h-8l.4-.4A3.32 3.32 0 0116 22a3.32 3.32 0 013.6.6l.4.4z"
-						/>
-						<path
-							fill="#B98"
-							// eslint-disable-next-line max-len
-							d="M14.59 18.59l-.24-.24c-.2-.2-.28-.56-.2-.82l.27-.79c.87-2.61 2.29-2.61 3.16 0l.26.79c.09.26 0 .63-.2.82l-.23.24a2 2 0 01-2.82 0z"
-						/>
-						<path
-							fill="#ECB"
-							// eslint-disable-next-line max-len
-							d="M14.16 17.53l1.52-4.58c.18-.52.46-.52.64 0l1.52 4.58a.6.6 0 01-.29.7l-.66.32c-.49.25-1.3.25-1.78 0l-.66-.33a.6.6 0 01-.3-.7z"
-						/>
-						<path
-							fill="#FCB"
-							// eslint-disable-next-line max-len
-							d="M9 16h3a1 1 0 010 2H9a1 1 0 010-2zm11 0h3a1 1 0 010 2h-3a1 1 0 010-2z"
-						/>
-						<path
-							fill="#ECB"
-							// eslint-disable-next-line max-len
-							d="M10 11.99V13a1 1 0 002 0v-1l-2-.01zm10 0V13a1 1 0 002 0v-1l-2-.01z"
-						/>
-						<path
-							fill="#333"
-							// eslint-disable-next-line max-len
-							d="M10 9.99V10h-.5c-.28 0-.34.16-.15.35L10 11v1a1 1 0 002 0v-2a1 1 0 00-1-1 1 1 0 00-1 .99zm10 0V12a1 1 0 002 0v-1l.65-.65c.2-.2.13-.35-.15-.35H22a1 1 0 00-1-1 1 1 0 00-1 .99zM10 8L6.45 9.78C6.2 9.9 6 9.78 6 9.5v-2c0-.28.2-.6.45-.72l3.1-1.56c.25-.12.65-.12.9 0l3.76 1.89c.99.49.9.89-.21.89h-4zm10-4.5V4l2.53-.84c.26-.09.63 0 .82.2l2.24 2.23c.78.78.54 1.2-.53.92L23 6l-5.53 1.84c-.26.09-.47-.06-.47-.34v-3c0-.28.21-.57.47-.66l2.06-.68c.26-.09.47.06.47.34z"
-						/>
-					</g>
-					<radialGradient
-						cx="16"
-						cy="0"
-						fx="16"
-						fy="0"
-						gradientUnits="userSpaceOnUse"
-						id="gradient"
-						r="32"
-					>
-						<stop offset="0" stop-color="#fff" />
-						<stop offset="1" />
-					</radialGradient>
 					<path
 						// eslint-disable-next-line max-len
-						d="M5 0v10c0 4.35 1.42 8.75 3 12s4.18 5.95 6 7c.93.54 3.07.54 4 0 1.82-1.05 4.42-3.75 6-7 1.59-3.25 3-7.65 3-12V0H5z"
-						fill="url(#gradient)"
-						fill-opacity=".25"
-						style="mix-blend-mode: color-burn"
+						d="M18.02 41h27.96c.84 0 1.52.67 1.52 1.5s-.68 1.5-1.52 1.5H18.03c-.85 0-1.53-.67-1.53-1.5s.68-1.5 1.52-1.5Z"
 					/>
 				</g>
+				<use xlinkHref="#head" />
+				<clipPath id="c">
+					<use xlinkHref="#head" />
+				</clipPath>
+				<g clip-path="url(#c)">
+					<path
+						className="hair"
+						fill="#444"
+						// eslint-disable-next-line max-len
+						d="M12 30h4l5.16-11.18c.46-1 1.53-2.4 2.38-3.1l2.92-2.44A6.42 6.42 0 0 1 30 12h4c1.1 0 2.69.57 3.54 1.28l2.92 2.44c.85.7 1.92 2.1 2.38 3.1L48 30h4V7H12v23Z"
+					/>
+				</g>
+				<path
+					fill="none"
+					stroke="#000"
+					// eslint-disable-next-line max-len
+					d="M32.03 8.38c-5.61 0-11.22 2.86-12.82 4.59-1.56 1.68-2.38 5.32-2.79 9.32-.4 4-.4 8.36-.4 11.49 0 6.2 2.72 12.74 4.98 17.37 2.25 4.62 5.41 8.36 8 9.85.66.38 1.83.5 3 .5 1.16 0 2.34-.12 3-.5 2.59-1.5 5.75-5.24 8-9.86 2.26-4.63 5.03-11.16 5.03-17.36 0-3.13 0-7.49-.4-11.49s-1.23-7.64-2.79-9.32c-1.6-1.73-7.2-4.59-12.81-4.59Z"
+				/>
+				<g className="face">
+					<g
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						stroke-miterlimit="3"
+					>
+						<path
+							fill="#DDD"
+							stroke="#DDD"
+							d="m32 33.5-2.5 9 2.5 1 2.5-1-2.5-9Z"
+						/>
+						<path
+							fill="none"
+							stroke="#000"
+							d="m29.5 42.5 2.5 1 2.5-1"
+						/>
+					</g>
+					<path
+						stroke="#000"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						stroke-miterlimit="3"
+						d="M28.5 51.5h7"
+					/>
+					<path
+						// eslint-disable-next-line max-len
+						d="M22.5 32h5a.5.5 0 0 1 0 1H27v2.5a1.5 1.5 0 0 1-3 0V33h-1.5a.5.5 0 0 1 0-1Zm14.5.5c0 .28.22.5.5.5h.5v2.5a1.5 1.5 0 0 0 3 0V33h1.5a.5.5 0 0 0 0-1h-5a.5.5 0 0 0-.5.5Zm-13.42-2.95-4.97 2.4c-.34.15-.61-.02-.61-.4V28.9c0-.38.27-.82.61-.98l4.36-2.1c.34-.15.89-.15 1.23 0l5.3 2.55c1.36.66 1.24 1.2-.28 1.2h-5.64Zm13.97-6.03v.66l3.54-1.14c.36-.11.87 0 1.14.27l3.12 3c1.1 1.05.78 1.61-.69 1.26l-2.92-.7-7.73 2.47c-.36.12-.65-.1-.65-.47v-4a1 1 0 0 1 .65-.9l2.89-.93c.36-.11.65.1.65.48Z"
+					/>
+				</g>
+				<path
+					className="hair"
+					stroke="#000"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					stroke-miterlimit="3"
+					// eslint-disable-next-line max-len
+					d="M20 15c-4.01-3.5-.06-12.28 7.05-12Q25.02 4 24 6q3.98-3.32 11-4-1.53.79-3 2 9.42-2.76 15 4-1.9-.65-4-1 4.87 3.41 5 8c-1.88-1.44-5.71-3.63-9 0-2.14-1.3-5.72-3.65-10.95 0-.67 1-3.68 3.81-8.05 0Z"
+				/>
 			</svg>
 		</div>
 	);
