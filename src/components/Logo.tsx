@@ -2,6 +2,12 @@ import classnames from "classnames";
 import { useEffect, useRef } from "preact/hooks";
 import type { WrapperComponent } from "../types/WrapperComponent";
 
+const headPath =
+	// eslint-disable-next-line max-len
+	"M32.03 8.38c-5.61 0-11.22 2.86-12.82 4.59-1.56 1.68-2.38 5.32-2.79 9.32-.4 4-.4 8.36-.4 11.49 0 6.2 2.72 12.74 4.98 17.37 2.25 4.62 5.41 8.36 8 9.85.66.38 1.83.5 3 .5 1.16 0 2.34-.12 3-.5 2.59-1.5 5.75-5.24 8-9.86 2.26-4.63 5.03-11.16 5.03-17.36 0-3.13 0-7.49-.4-11.49s-1.23-7.64-2.79-9.32c-1.6-1.73-7.2-4.59-12.81-4.59Z";
+
+const fullBackground = "M0 0h64v64H0z";
+
 export const Logo: WrapperComponent = ({ class: className, ...properties }) => {
 	// eslint-disable-next-line no-null/no-null
 	const svg = useRef<SVGSVGElement>(null);
@@ -67,16 +73,15 @@ export const Logo: WrapperComponent = ({ class: className, ...properties }) => {
 				role="img"
 				viewBox="0 0 64 64"
 			>
-				<defs>
+				<mask id="short-hair-mask">
+					<path fill="#fff" d={fullBackground} />
 					<path
-						id="head"
-						fill="#FFF"
-						stroke="#000"
+						fill="#000"
 						// eslint-disable-next-line max-len
-						d="M32.03 8.38c-5.61 0-11.22 2.86-12.82 4.59-1.56 1.68-2.38 5.32-2.79 9.32-.4 4-.4 8.36-.4 11.49 0 6.2 2.72 12.74 4.98 17.37 2.25 4.62 5.41 8.36 8 9.85.66.38 1.83.5 3 .5 1.16 0 2.34-.12 3-.5 2.59-1.5 5.75-5.24 8-9.86 2.26-4.63 5.03-11.16 5.03-17.36 0-3.13 0-7.49-.4-11.49s-1.23-7.64-2.79-9.32c-1.6-1.73-7.2-4.59-12.81-4.59Z"
+						d={`M0 0h64v64h-64v-64${headPath}`}
 					/>
-				</defs>
-				<path fill="#e06" d="M0 0h64v64H0z" />
+				</mask>
+				<path fill="#e06" d={fullBackground} />
 				<g className="ears">
 					<path
 						fill="#DDD"
@@ -92,11 +97,8 @@ export const Logo: WrapperComponent = ({ class: className, ...properties }) => {
 						d="M18.02 41h27.96c.84 0 1.52.67 1.52 1.5s-.68 1.5-1.52 1.5H18.03c-.85 0-1.53-.67-1.53-1.5s.68-1.5 1.52-1.5Z"
 					/>
 				</g>
-				<use xlinkHref="#head" />
-				<clipPath id="c">
-					<use xlinkHref="#head" />
-				</clipPath>
-				<g clip-path="url(#c)">
+				<path id="head" fill="#FFF" d={headPath} />
+				<g mask="url(#short-hair-mask)">
 					<path
 						className="hair"
 						fill="#444"
@@ -104,12 +106,7 @@ export const Logo: WrapperComponent = ({ class: className, ...properties }) => {
 						d="M12 30h4l5.16-11.18c.46-1 1.53-2.4 2.38-3.1l2.92-2.44A6.42 6.42 0 0 1 30 12h4c1.1 0 2.69.57 3.54 1.28l2.92 2.44c.85.7 1.92 2.1 2.38 3.1L48 30h4V7H12v23Z"
 					/>
 				</g>
-				<path
-					fill="none"
-					stroke="#000"
-					// eslint-disable-next-line max-len
-					d="M32.03 8.38c-5.61 0-11.22 2.86-12.82 4.59-1.56 1.68-2.38 5.32-2.79 9.32-.4 4-.4 8.36-.4 11.49 0 6.2 2.72 12.74 4.98 17.37 2.25 4.62 5.41 8.36 8 9.85.66.38 1.83.5 3 .5 1.16 0 2.34-.12 3-.5 2.59-1.5 5.75-5.24 8-9.86 2.26-4.63 5.03-11.16 5.03-17.36 0-3.13 0-7.49-.4-11.49s-1.23-7.64-2.79-9.32c-1.6-1.73-7.2-4.59-12.81-4.59Z"
-				/>
+				<path fill="none" stroke="#000" d={headPath} />
 				<g className="face">
 					<g
 						stroke-linecap="round"
